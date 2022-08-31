@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Random Food Suggestion Prototype</string>
+    <string name="tap_for_a_random_recipe">Tap for a Random Recipe</string>
+</resources>

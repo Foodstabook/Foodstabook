@@ -16,6 +16,7 @@
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="128dp"
         tools:layout_editor_absoluteY="136dp"
+        tools:src="@drawable/defaultprofile"
         tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
     <TextView

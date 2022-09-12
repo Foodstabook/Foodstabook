@@ -5,8 +5,8 @@
     </ANNOTATIONS>
     <CLASSES>
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/47ee6faa6f7ed7cd1fd8a3e44cb67e0a/transformed/activity-1.5.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/47ee6faa6f7ed7cd1fd8a3e44cb67e0a/transformed/activity-1.5.0/AndroidManifest.xml" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/47ee6faa6f7ed7cd1fd8a3e44cb67e0a/transformed/activity-1.5.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/47ee6faa6f7ed7cd1fd8a3e44cb67e0a/transformed/activity-1.5.0/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

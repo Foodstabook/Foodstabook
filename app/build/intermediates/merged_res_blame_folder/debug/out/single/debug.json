@@ -1,78 +1,134 @@
 [
     {
-        "merged": "com.example.foodstabook.app-merged_res-29:/mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "com.example.foodstabook.app-main-31:/mipmap-xxhdpi/ic_launcher.webp"
+        "merged": "com.example.foodstabook.app-merged_res-32:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.foodstabook.app-main-34:/mipmap-xxxhdpi/ic_launcher.webp"
     },
     {
-        "merged": "com.example.foodstabook.app-merged_res-29:/layout_activity_main.xml.flat",
-        "source": "com.example.foodstabook.app-main-31:/layout/activity_main.xml"
+        "merged": "com.example.foodstabook.app-merged_res-32:/layout_activity_reset_password.xml.flat",
+        "source": "com.example.foodstabook.app-main-34:/layout/activity_reset_password.xml"
     },
     {
-        "merged": "com.example.foodstabook.app-merged_res-29:/mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.foodstabook.app-main-31:/mipmap-mdpi/ic_launcher_round.webp"
+        "merged": "com.example.foodstabook.app-merged_res-32:/drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "com.example.foodstabook.app-pngs-27:/drawable-anydpi-v24/ic_launcher_foreground.xml"
     },
     {
-        "merged": "com.example.foodstabook.app-merged_res-29:/mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "com.example.foodstabook.app-main-31:/mipmap-xhdpi/ic_launcher.webp"
+        "merged": "com.example.foodstabook.app-merged_res-32:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.example.foodstabook.app-main-34:/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
-        "merged": "com.example.foodstabook.app-merged_res-29:/drawable_ic_launcher_background.xml.flat",
-        "source": "com.example.foodstabook.app-main-31:/drawable/ic_launcher_background.xml"
+        "merged": "com.example.foodstabook.app-merged_res-32:/drawable_kimchi_jjigae.png.flat",
+        "source": "com.example.foodstabook.app-main-34:/drawable/kimchi_jjigae.png"
     },
     {
-        "merged": "com.example.foodstabook.app-merged_res-29:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "com.example.foodstabook.app-main-31:/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "com.example.foodstabook.app-merged_res-32:/layout_activity_login_page.xml.flat",
+        "source": "com.example.foodstabook.app-main-34:/layout/activity_login_page.xml"
     },
     {
-        "merged": "com.example.foodstabook.app-merged_res-29:/xml_data_extraction_rules.xml.flat",
-        "source": "com.example.foodstabook.app-main-31:/xml/data_extraction_rules.xml"
+        "merged": "com.example.foodstabook.app-merged_res-32:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.foodstabook.app-main-34:/mipmap-xxhdpi/ic_launcher.webp"
     },
     {
-        "merged": "com.example.foodstabook.app-merged_res-29:/mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "com.example.foodstabook.app-main-31:/mipmap-xxxhdpi/ic_launcher.webp"
+        "merged": "com.example.foodstabook.app-merged_res-32:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.example.foodstabook.app-main-34:/mipmap-mdpi/ic_launcher.webp"
     },
     {
-        "merged": "com.example.foodstabook.app-merged_res-29:/xml_backup_rules.xml.flat",
-        "source": "com.example.foodstabook.app-main-31:/xml/backup_rules.xml"
+        "merged": "com.example.foodstabook.app-merged_res-32:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.example.foodstabook.app-main-34:/mipmap-anydpi-v26/ic_launcher_round.xml"
     },
     {
-        "merged": "com.example.foodstabook.app-merged_res-29:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.foodstabook.app-main-31:/mipmap-xxxhdpi/ic_launcher_round.webp"
+        "merged": "com.example.foodstabook.app-merged_res-32:/layout_activity_suggestion_main.xml.flat",
+        "source": "com.example.foodstabook.app-main-34:/layout/activity_suggestion_main.xml"
     },
     {
-        "merged": "com.example.foodstabook.app-merged_res-29:/layout_activity_reset_password.xml.flat",
-        "source": "com.example.foodstabook.app-main-31:/layout/activity_reset_password.xml"
+        "merged": "com.example.foodstabook.app-merged_res-32:/drawable_shrimp_al_mojo_de_ajo.png.flat",
+        "source": "com.example.foodstabook.app-main-34:/drawable/shrimp_al_mojo_de_ajo.png"
     },
     {
-        "merged": "com.example.foodstabook.app-merged_res-29:/mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.foodstabook.app-main-31:/mipmap-xhdpi/ic_launcher_round.webp"
+        "merged": "com.example.foodstabook.app-merged_res-32:/drawable_bunny_chow.png.flat",
+        "source": "com.example.foodstabook.app-main-34:/drawable/bunny_chow.png"
     },
     {
-        "merged": "com.example.foodstabook.app-merged_res-29:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "com.example.foodstabook.app-main-31:/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "com.example.foodstabook.app-merged_res-32:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.foodstabook.app-main-34:/mipmap-mdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.foodstabook.app-merged_res-29:/mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.foodstabook.app-main-31:/mipmap-hdpi/ic_launcher_round.webp"
+        "merged": "com.example.foodstabook.app-merged_res-32:/drawable_blueberry_crumble.png.flat",
+        "source": "com.example.foodstabook.app-main-34:/drawable/blueberry_crumble.png"
     },
     {
-        "merged": "com.example.foodstabook.app-merged_res-29:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.foodstabook.app-main-31:/mipmap-xxhdpi/ic_launcher_round.webp"
+        "merged": "com.example.foodstabook.app-merged_res-32:/drawable_ochazuke.png.flat",
+        "source": "com.example.foodstabook.app-main-34:/drawable/ochazuke.png"
     },
     {
-        "merged": "com.example.foodstabook.app-merged_res-29:/drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
-        "source": "com.example.foodstabook.app-pngs-24:/drawable-anydpi-v24/ic_launcher_foreground.xml"
+        "merged": "com.example.foodstabook.app-merged_res-32:/drawable_ratatouille.png.flat",
+        "source": "com.example.foodstabook.app-main-34:/drawable/ratatouille.png"
     },
     {
-        "merged": "com.example.foodstabook.app-merged_res-29:/mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "com.example.foodstabook.app-main-31:/mipmap-mdpi/ic_launcher.webp"
+        "merged": "com.example.foodstabook.app-merged_res-32:/drawable_chicken_tikka_masala.png.flat",
+        "source": "com.example.foodstabook.app-main-34:/drawable/chicken_tikka_masala.png"
     },
     {
-        "merged": "com.example.foodstabook.app-merged_res-29:/layout_activity_login_page.xml.flat",
-        "source": "com.example.foodstabook.app-main-31:/layout/activity_login_page.xml"
+        "merged": "com.example.foodstabook.app-merged_res-32:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.example.foodstabook.app-main-34:/mipmap-hdpi/ic_launcher.webp"
     },
     {
-        "merged": "com.example.foodstabook.app-merged_res-29:/mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "com.example.foodstabook.app-main-31:/mipmap-hdpi/ic_launcher.webp"
+        "merged": "com.example.foodstabook.app-merged_res-32:/drawable_foodstabook_logo4.png.flat",
+        "source": "com.example.foodstabook.app-main-34:/drawable/foodstabook_logo4.png"
+    },
+    {
+        "merged": "com.example.foodstabook.app-merged_res-32:/drawable_borscht.png.flat",
+        "source": "com.example.foodstabook.app-main-34:/drawable/borscht.png"
+    },
+    {
+        "merged": "com.example.foodstabook.app-merged_res-32:/layout_activity_main.xml.flat",
+        "source": "com.example.foodstabook.app-main-34:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.example.foodstabook.app-merged_res-32:/xml_data_extraction_rules.xml.flat",
+        "source": "com.example.foodstabook.app-main-34:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "com.example.foodstabook.app-merged_res-32:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.foodstabook.app-main-34:/mipmap-xxxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.foodstabook.app-merged_res-32:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.foodstabook.app-main-34:/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.foodstabook.app-merged_res-32:/drawable_falafel.png.flat",
+        "source": "com.example.foodstabook.app-main-34:/drawable/falafel.png"
+    },
+    {
+        "merged": "com.example.foodstabook.app-merged_res-32:/drawable_vegetable_terrine.jpg.flat",
+        "source": "com.example.foodstabook.app-main-34:/drawable/vegetable_terrine.jpg"
+    },
+    {
+        "merged": "com.example.foodstabook.app-merged_res-32:/xml_backup_rules.xml.flat",
+        "source": "com.example.foodstabook.app-main-34:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "com.example.foodstabook.app-merged_res-32:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.foodstabook.app-main-34:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.foodstabook.app-merged_res-32:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.example.foodstabook.app-main-34:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.example.foodstabook.app-merged_res-32:/layout_activity_user_account.xml.flat",
+        "source": "com.example.foodstabook.app-main-34:/layout/activity_user_account.xml"
+    },
+    {
+        "merged": "com.example.foodstabook.app-merged_res-32:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.example.foodstabook.app-main-34:/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.foodstabook.app-merged_res-32:/drawable_red_question_mark.png.flat",
+        "source": "com.example.foodstabook.app-main-34:/drawable/red_question_mark.png"
+    },
+    {
+        "merged": "com.example.foodstabook.app-merged_res-32:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.foodstabook.app-main-34:/mipmap-xxhdpi/ic_launcher_round.webp"
     }
 ]

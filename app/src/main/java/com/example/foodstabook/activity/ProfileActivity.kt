@@ -24,8 +24,9 @@ class ProfileActivity : AppCompatActivity() {
 
 
         binding.buttonUserOne.setOnClickListener{
-            val userName : String = binding.displayProfileName.text.toString()
-            val userEmail : String = binding.displayProfileEmail.text.toString()
+
+
+            val userName : String = binding.textSearchUsernameProfile.text.toString()
 
             if(userName.isNotEmpty()){
                 readData(userName)
@@ -40,7 +41,28 @@ class ProfileActivity : AppCompatActivity() {
     private fun readData(userName: String) {
 
         database = FirebaseDatabase.getInstance().getReference("users")
-        database.child(userName).get().addOnSuccessListener {  }
+        database.child(userName).get().addOnSuccessListener {
+
+            if(it.exists()){
+
+                val name = it.child("name").value
+                val email = it.child("email").value
+                val age = it.child("age").value
+
+                Toast.makeText(this,"Successfully Read",Toast.LENGTH_SHORT).show()
+
+                binding.displayProfileName.text = name.toString()
+                binding.displayProfileEmail.text = email.toString()
+
+
+
+            }else{
+                Toast.makeText(this,"User don't exist",Toast.LENGTH_SHORT).show()
+            }
+
+        }.addOnFailureListener{
+            Toast.makeText(this,"Fail",Toast.LENGTH_SHORT).show()
+        }
 
     }
 }

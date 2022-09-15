@@ -7,8 +7,9 @@
     tools:context=".activity.ProfileActivity">
 
     <LinearLayout
-        android:layout_width="361dp"
-        android:layout_height="274dp"
+        android:id="@+id/linearLayout"
+        android:layout_width="350dp"
+        android:layout_height="132dp"
         android:layout_marginTop="24dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -17,17 +18,48 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/displayProfileName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/profile_name" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/displayProfileEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/profile_email" />
+
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="267dp"
+        android:layout_height="154dp"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <Button
+            android:id="@+id/buttonUserOne"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="User One" />
+
+        <Button
+            android:id="@+id/buttonUserTwo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="User Two" />
+
+        <Button
+            android:id="@+id/buttonClear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Clear" />
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

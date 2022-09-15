@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Foodstabook</string>
+    <string name="profile_name">profile_name</string>
+    <string name="profile_email">profile_email</string>
 </resources>

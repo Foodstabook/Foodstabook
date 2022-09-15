@@ -1,6 +1,6 @@
 package com.example.foodstabook.model
 
-class user_model {
+class UserModel {
     var uid: String? = null
     var name: String? = null
     var email: String? = null

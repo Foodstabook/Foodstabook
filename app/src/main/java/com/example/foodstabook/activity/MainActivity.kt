@@ -11,7 +11,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //To have a
+        //To force change the title of the activity
         title = "Main Menu"
 
         val button:Button = findViewById(R.id.profileButton)

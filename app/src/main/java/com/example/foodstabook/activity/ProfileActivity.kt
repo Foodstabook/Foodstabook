@@ -36,6 +36,10 @@ class ProfileActivity : AppCompatActivity() {
 
 
         }
+
+        binding.buttonClear.setOnClickListener{
+            binding.textSearchUsernameProfile.setText("")
+        }
     }
 
     private fun readData(userName: String) {

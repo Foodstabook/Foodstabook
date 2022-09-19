@@ -151,7 +151,7 @@ class SuggestionMainActivity : AppCompatActivity() {
                 8 -> 28471
                 9 -> 68299
                 10 -> 629001
-                else -> { // Note the block
+                else -> {
                     0
                 }
             }.also { pseudorandomId = it.toLong() }

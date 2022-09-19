@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "com.example.foodstabook.app-mergeDebugResources-33:/layout/activity_main.xml",
+        "source": "com.example.foodstabook.app-main-36:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.example.foodstabook.app-mergeDebugResources-33:/layout/activity_login.xml",
+        "source": "com.example.foodstabook.app-main-36:/layout/activity_login.xml"
+    }
+]

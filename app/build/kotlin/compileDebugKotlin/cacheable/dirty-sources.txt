@@ -1,5 +1,0 @@
-C:\Users\XPS\Desktop\491\Foodstabook\Foodstabook\app\src\main\java\com\example\foodstabook\ResetPassword.kt
-C:\Users\XPS\Desktop\491\Foodstabook\Foodstabook\app\src\main\java\com\example\foodstabook\SuggestionMainActivity.kt
-C:\Users\XPS\Desktop\491\Foodstabook\Foodstabook\app\src\main\java\com\example\foodstabook\UserAccount.kt
-C:\Users\XPS\Desktop\491\Foodstabook\Foodstabook\app\src\main\java\com\example\foodstabook\MainActivity.kt
-C:\Users\XPS\Desktop\491\Foodstabook\Foodstabook\app\src\main\java\com\example\foodstabook\LoginPage.kt

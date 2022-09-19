@@ -1,7 +1,12 @@
 <resources>
     <string name="app_name">Foodstabook</string>
-    <string name="random_recipe">Random Recipe</string>
+    <string name="random_suggestion">Random</string>
+    <string name="tailored_suggestion">Tailored</string>
     <string name="blank_instructions"> </string>
+    <string name="wip_title">Work in Progress</string>
+    <string name="wip_summary">Hi, thank you for using Foodstabook.
+    Currently tailored food suggestions aren\'t working, so please check on this feature again at
+    a later date!</string>
     <string name="shrimp_al_mojo_de_ajo_instructions">
         Ingredients:\n
 ▢ 1 tablespoon smoked paprika\n

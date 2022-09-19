@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.foodstabook.app-mergeDebugResources-30:/values-w320dp-land-v13/values-w320dp-land-v13.xml",
+            "outputFile": "com.example.foodstabook.app-mergeDebugResources-34:/values-w320dp-land-v13/values-w320dp-land-v13.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Spencer\\.gradle\\caches\\transforms-3\\24ff1a8473d427a327eee9e8e522fdcf\\transformed\\material-1.6.1\\res\\values-w320dp-land-v13\\values-w320dp-land-v13.xml",

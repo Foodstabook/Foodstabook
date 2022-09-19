@@ -202,7 +202,7 @@ Instructions:\n
         6. Pour the tea into the bowl to cover half the rice and top with the mitsuba and wasabi. Add the soy sauce, if you\'d like.
     </string>
     <string name="project_id" translatable="false">foodstabook-a34b4</string>
-    <string name="random_recipe">Random Recipe</string>
+    <string name="random_suggestion">Random</string>
     <string name="ratatouille_instructions">
         Ingredients (for 8 servings):\n
 VEGGIES:\n
@@ -259,6 +259,7 @@ Instructions:\n
 6. Add the lime juice and parsley.\n
 7. Enjoy with white rice, angel hair pasta, or tortillas.\n
     </string>
+    <string name="tailored_suggestion">Tailored</string>
     <string name="vegetable_terrine_instructions">
         Ingredients:\n
         ▢ 2 medium beets (about 10 ounces), trimmed\n
@@ -289,6 +290,10 @@ Instructions:\n
 7. Arrange the beets in one layer over the gelatin layer then sprinkle with one-third of the chives. Arrange the carrots on top, leaving some space between them for the gelatin to fill and hold the vegetables together. Sprinkle half the remaining chives over the carrots, then top with a layer of squash. Sprinkle the remaining chives over the squash. Stir the remaining gelatin-stock mixture again, reserve 1/2 cup at room temperature, then slowly pour the remainder into the terrine, pushing down the vegetables if necessary to just submerge in the gelatin mixture. Chill, uncovered, until the top is set, 1 1/2 to 2 hours.\n
 8. If the reserved 1/2 cup gelatin mixture has begun to set, heat until just liquefied but not hot, then pour over the set terrine. Chill until firm, about 2 hours.\n
 9. To serve, run a thin knife along the short sides of the terrine, then invert the terrine onto a cutting board, gently pulling on the plastic overhang to help unmold; discard the plastic. With a very sharp knife, carefully cut the terrine into 8 slices. Using a metal spatula to hold the outside of each slice steady, transfer 1 or 2 slices to each plate. Place the mache next to the terrine slices. Drizzle the olive oil over the mache and around the plates and then sprinkle the plates with fleur de sel and freshly ground pepper. Serve.    </string>
+    <string name="wip_summary">Hi, thank you for using Foodstabook.
+    Currently tailored food suggestions aren\'t working, so please check on this feature again at
+    a later date!</string>
+    <string name="wip_title">Work in Progress</string>
     <style name="Theme.Foodstabook" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         
         <item name="colorPrimary">@color/purple_500</item>

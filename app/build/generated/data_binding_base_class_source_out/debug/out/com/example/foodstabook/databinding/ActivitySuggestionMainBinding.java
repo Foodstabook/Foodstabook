@@ -24,10 +24,19 @@ public final class ActivitySuggestionMainBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final Button button;
+  public final TextSwitcher ingredientsTitleCard;
+
+  @NonNull
+  public final TextSwitcher instructionsTitleCard;
 
   @NonNull
   public final ImageButton logo;
+
+  @NonNull
+  public final Button randomButton;
+
+  @NonNull
+  public final TextSwitcher recipeIngredients;
 
   @NonNull
   public final TextSwitcher recipeInstructions;
@@ -41,17 +50,31 @@ public final class ActivitySuggestionMainBinding implements ViewBinding {
   @NonNull
   public final ScrollView scrollView;
 
-  private ActivitySuggestionMainBinding(@NonNull ConstraintLayout rootView, @NonNull Button button,
-      @NonNull ImageButton logo, @NonNull TextSwitcher recipeInstructions,
+  @NonNull
+  public final TextSwitcher summary;
+
+  @NonNull
+  public final Button tailoredButton;
+
+  private ActivitySuggestionMainBinding(@NonNull ConstraintLayout rootView,
+      @NonNull TextSwitcher ingredientsTitleCard, @NonNull TextSwitcher instructionsTitleCard,
+      @NonNull ImageButton logo, @NonNull Button randomButton,
+      @NonNull TextSwitcher recipeIngredients, @NonNull TextSwitcher recipeInstructions,
       @NonNull TextSwitcher recipeName, @NonNull ImageSwitcher recipePicture,
-      @NonNull ScrollView scrollView) {
+      @NonNull ScrollView scrollView, @NonNull TextSwitcher summary,
+      @NonNull Button tailoredButton) {
     this.rootView = rootView;
-    this.button = button;
+    this.ingredientsTitleCard = ingredientsTitleCard;
+    this.instructionsTitleCard = instructionsTitleCard;
     this.logo = logo;
+    this.randomButton = randomButton;
+    this.recipeIngredients = recipeIngredients;
     this.recipeInstructions = recipeInstructions;
     this.recipeName = recipeName;
     this.recipePicture = recipePicture;
     this.scrollView = scrollView;
+    this.summary = summary;
+    this.tailoredButton = tailoredButton;
   }
 
   @Override
@@ -81,15 +104,33 @@ public final class ActivitySuggestionMainBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.button;
-      Button button = ViewBindings.findChildViewById(rootView, id);
-      if (button == null) {
+      id = R.id.ingredients_title_card;
+      TextSwitcher ingredientsTitleCard = ViewBindings.findChildViewById(rootView, id);
+      if (ingredientsTitleCard == null) {
+        break missingId;
+      }
+
+      id = R.id.instructions_title_card;
+      TextSwitcher instructionsTitleCard = ViewBindings.findChildViewById(rootView, id);
+      if (instructionsTitleCard == null) {
         break missingId;
       }
 
       id = R.id.logo;
       ImageButton logo = ViewBindings.findChildViewById(rootView, id);
       if (logo == null) {
+        break missingId;
+      }
+
+      id = R.id.randomButton;
+      Button randomButton = ViewBindings.findChildViewById(rootView, id);
+      if (randomButton == null) {
+        break missingId;
+      }
+
+      id = R.id.recipe_ingredients;
+      TextSwitcher recipeIngredients = ViewBindings.findChildViewById(rootView, id);
+      if (recipeIngredients == null) {
         break missingId;
       }
 
@@ -117,8 +158,21 @@ public final class ActivitySuggestionMainBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivitySuggestionMainBinding((ConstraintLayout) rootView, button, logo,
-          recipeInstructions, recipeName, recipePicture, scrollView);
+      id = R.id.summary;
+      TextSwitcher summary = ViewBindings.findChildViewById(rootView, id);
+      if (summary == null) {
+        break missingId;
+      }
+
+      id = R.id.tailoredButton;
+      Button tailoredButton = ViewBindings.findChildViewById(rootView, id);
+      if (tailoredButton == null) {
+        break missingId;
+      }
+
+      return new ActivitySuggestionMainBinding((ConstraintLayout) rootView, ingredientsTitleCard,
+          instructionsTitleCard, logo, randomButton, recipeIngredients, recipeInstructions,
+          recipeName, recipePicture, scrollView, summary, tailoredButton);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

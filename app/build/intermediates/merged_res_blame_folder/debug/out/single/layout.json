@@ -1,22 +1,26 @@
 [
     {
-        "merged": "com.example.foodstabook.app-mergeDebugResources-31:/layout/activity_main.xml",
-        "source": "com.example.foodstabook.app-main-34:/layout/activity_main.xml"
+        "merged": "C:\\Users\\Spencer\\.gradle\\daemon\\7.3.3\\com.example.foodstabook.app-mergeDebugResources-35:\\layout\\activity_suggestion_main.xml",
+        "source": "C:\\Users\\Spencer\\.gradle\\daemon\\7.3.3\\com.example.foodstabook.app-main-38:\\layout\\activity_suggestion_main.xml"
     },
     {
-        "merged": "com.example.foodstabook.app-mergeDebugResources-31:/layout/activity_login_page.xml",
-        "source": "com.example.foodstabook.app-main-34:/layout/activity_login_page.xml"
+        "merged": "C:\\Users\\Spencer\\.gradle\\daemon\\7.3.3\\com.example.foodstabook.app-mergeDebugResources-35:\\layout\\activity_login_page.xml",
+        "source": "C:\\Users\\Spencer\\.gradle\\daemon\\7.3.3\\com.example.foodstabook.app-main-38:\\layout\\activity_login_page.xml"
     },
     {
-        "merged": "com.example.foodstabook.app-mergeDebugResources-31:/layout/activity_user_account.xml",
-        "source": "com.example.foodstabook.app-main-34:/layout/activity_user_account.xml"
+        "merged": "C:\\Users\\Spencer\\.gradle\\daemon\\7.3.3\\com.example.foodstabook.app-mergeDebugResources-35:\\layout\\activity_user_account.xml",
+        "source": "C:\\Users\\Spencer\\.gradle\\daemon\\7.3.3\\com.example.foodstabook.app-main-38:\\layout\\activity_user_account.xml"
     },
     {
-        "merged": "com.example.foodstabook.app-mergeDebugResources-31:/layout/activity_suggestion_main.xml",
-        "source": "com.example.foodstabook.app-main-34:/layout/activity_suggestion_main.xml"
+        "merged": "C:\\Users\\Spencer\\.gradle\\daemon\\7.3.3\\com.example.foodstabook.app-mergeDebugResources-35:\\layout\\activity_reset_password.xml",
+        "source": "C:\\Users\\Spencer\\.gradle\\daemon\\7.3.3\\com.example.foodstabook.app-main-38:\\layout\\activity_reset_password.xml"
     },
     {
-        "merged": "com.example.foodstabook.app-mergeDebugResources-31:/layout/activity_reset_password.xml",
-        "source": "com.example.foodstabook.app-main-34:/layout/activity_reset_password.xml"
+        "merged": "com.example.foodstabook.app-mergeDebugResources-35:/layout/activity_suggestion_main.xml",
+        "source": "com.example.foodstabook.app-main-38:/layout/activity_suggestion_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\Spencer\\.gradle\\daemon\\7.3.3\\com.example.foodstabook.app-mergeDebugResources-35:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\Spencer\\.gradle\\daemon\\7.3.3\\com.example.foodstabook.app-main-38:\\layout\\activity_main.xml"
     }
 ]

@@ -8,7 +8,11 @@ import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 import com.example.foodstabook.databinding.ActivitySuggestionMainBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class SuggestionMainActivity : AppCompatActivity() {
 
@@ -34,11 +38,16 @@ class SuggestionMainActivity : AppCompatActivity() {
         binding = ActivitySuggestionMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-        val textSwitcher = binding.recipeName
-        val imageSwitcher = binding.recipePicture
+        var pseudorandomId: Long = 0
+        val titleSwitcher = binding.recipeName
+        val summarySwitcher = binding.summary
+        val ingredientsTitleCardSwitcher = binding.ingredientsTitleCard
+        val ingredientsSwitcher = binding.recipeIngredients
+        val instructionsTitleCardSwitcher = binding.instructionsTitleCard
         val instructionSwitcher = binding.recipeInstructions
+        val imageSwitcher = binding.recipePicture
 
-        textSwitcher.setFactory {
+        titleSwitcher.setFactory {
             val textView = TextView(this@SuggestionMainActivity)
             textView.gravity = Gravity.CENTER
             textView.textSize = 40f
@@ -46,10 +55,36 @@ class SuggestionMainActivity : AppCompatActivity() {
             textView
         }
 
-        imageSwitcher.setFactory{
-            val imageView = ImageView(this@SuggestionMainActivity)
-            imageView.scaleType = ImageView.ScaleType.FIT_CENTER
-            imageView
+        summarySwitcher.setFactory {
+            val textView = TextView(this@SuggestionMainActivity)
+            textView.gravity = Gravity.START
+            textView.textSize = 20f
+            textView.setTextColor(Color.rgb(0,0,0))
+            textView
+        }
+
+        ingredientsTitleCardSwitcher.setFactory {
+            val textView = TextView(this@SuggestionMainActivity)
+            textView.gravity = Gravity.CENTER
+            textView.textSize = 30f
+            textView.setTextColor(Color.rgb(153,40,204))
+            textView
+        }
+
+        ingredientsSwitcher.setFactory {
+            val textView = TextView(this@SuggestionMainActivity)
+            textView.gravity = Gravity.START
+            textView.textSize = 20f
+            textView.setTextColor(Color.rgb(0,0,0))
+            textView
+        }
+
+        instructionsTitleCardSwitcher.setFactory {
+            val textView = TextView(this@SuggestionMainActivity)
+            textView.gravity = Gravity.CENTER
+            textView.textSize = 30f
+            textView.setTextColor(Color.rgb(153,40,204))
+            textView
         }
 
         instructionSwitcher.setFactory {
@@ -59,29 +94,113 @@ class SuggestionMainActivity : AppCompatActivity() {
             textView.setTextColor(Color.rgb(0,0,0))
             textView
         }
-        textSwitcher.setText(recipeList[0])
+
+        imageSwitcher.setFactory{
+            val imageView = ImageView(this@SuggestionMainActivity)
+            imageView.scaleType = ImageView.ScaleType.FIT_CENTER
+            imageView
+        }
+
+        val animIn = AnimationUtils.loadAnimation(
+            this, android.R.anim.fade_in)
+        animIn.duration = 600
+        titleSwitcher.inAnimation = animIn
+        summarySwitcher.inAnimation = animIn
+        ingredientsTitleCardSwitcher.inAnimation = animIn
+        ingredientsSwitcher.inAnimation = animIn
+        instructionsTitleCardSwitcher.inAnimation = animIn
+        instructionSwitcher.inAnimation = animIn
+        imageSwitcher.inAnimation = animIn
+
+        val animOut = AnimationUtils.loadAnimation(
+            this, android.R.anim.fade_out)
+        animOut.duration = 150
+        titleSwitcher.outAnimation = animOut
+        summarySwitcher.outAnimation = animOut
+        ingredientsTitleCardSwitcher.outAnimation = animOut
+        ingredientsSwitcher.outAnimation = animOut
+        instructionsTitleCardSwitcher.outAnimation = animOut
+        instructionSwitcher.outAnimation = animOut
+        imageSwitcher.outAnimation = animOut
+
+        titleSwitcher.setText(recipeList[0])
         imageSwitcher.setImageResource(imageList[0])
         instructionSwitcher.setText(getString(instructionsList[0]))
-        binding.button.setOnClickListener{
+
+        /*binding.randomButton.setOnClickListener{
             newIndex = (1 until (recipeList.size)).random()
             while (newIndex == index)
                 newIndex = (1 until (recipeList.size)).random()
-            textSwitcher.setText(recipeList[newIndex])
             imageSwitcher.setImageResource(imageList[newIndex])
             instructionSwitcher.setText(getString(instructionsList[newIndex]))
             index = newIndex
-        }
-        val animIn = AnimationUtils.loadAnimation(
-            this, android.R.anim.slide_in_left)
-        textSwitcher.inAnimation = animIn
-        imageSwitcher.inAnimation = animIn
-        instructionSwitcher.inAnimation = animIn
+        }*/
 
-        val animOut = AnimationUtils.loadAnimation(
-            this, android.R.anim.slide_out_right)
-        textSwitcher.outAnimation = animOut
-        imageSwitcher.outAnimation = animOut
-        instructionSwitcher.outAnimation = animOut
+        binding.randomButton.setOnClickListener{
+            newIndex = (1 until (recipeList.size)).random()
+            while (newIndex == index)
+                newIndex = (1 until (recipeList.size)).random()
+            when (newIndex) {
+                1 -> 100777
+                2 -> 1
+                3 -> 100
+                4 -> 200
+                5 -> 2
+                6 -> 491
+                7 -> 42
+                8 -> 28471
+                9 -> 68299
+                10 -> 629001
+                else -> { // Note the block
+                    0
+                }
+            }.also { pseudorandomId = it.toLong() }
+            CoroutineScope(Dispatchers.Main).launch {
+                val ingredientsBuilder = StringBuilder()
+                val instructionsBuilder = StringBuilder()
+                val response = RetrofitInstance.spoonacularApi.getRecipeInfo(pseudorandomId,
+                    false,"e16c808bc22e41ceb1cc4f18180159f5")
+                val responseBody = response.body()!!
+                val recipeImage = responseBody.image
+                Glide.with(this@SuggestionMainActivity)
+                    .asDrawable()
+                    .load(recipeImage)
+                    .into(imageSwitcher.nextView as ImageView)
+                responseBody.extendedIngredients.forEach{
+                    ingredientsBuilder.append(it.amount.toString()+" "+it.unit+" "
+                            +it.nameClean+"\n")
+                }
+
+                responseBody.analyzedInstructions.forEach { it1 ->
+                    if (it1.steps.isNotEmpty()) {
+                        it1.steps.forEach {
+                            instructionsBuilder.append(it.number.toString() + ". " + it.step + "\n")
+                        }
+                    }
+                    else
+                        instructionsBuilder.append("")
+                }
+                titleSwitcher.setText(responseBody.title)
+                summarySwitcher.setText(responseBody.summary)
+                ingredientsTitleCardSwitcher.setText("INGREDIENTS:")
+                ingredientsSwitcher.setText(ingredientsBuilder)
+                instructionsTitleCardSwitcher.setText("INSTRUCTIONS:")
+                instructionSwitcher.setText(instructionsBuilder)
+                imageSwitcher.showNext()
+                binding.scrollView.smoothScrollTo(0,0)
+            }
+        }
+
+        binding.tailoredButton.setOnClickListener{
+            titleSwitcher.setText(getString(R.string.wip_title))
+            summarySwitcher.setText(getString(R.string.wip_summary))
+            ingredientsTitleCardSwitcher.setText("INGREDIENTS:")
+            ingredientsSwitcher.setText("A lot of:\nSweat\nTears\nSleepless Nights")
+            instructionsTitleCardSwitcher.setText("INSTRUCTIONS:")
+            instructionSwitcher.setText("This is might take a while...")
+            imageSwitcher.setImageResource(imageList[0])
+            binding.scrollView.smoothScrollTo(0,0)
+        }
 
         goHome()
     }

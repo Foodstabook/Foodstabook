@@ -1219,6 +1219,10 @@ color bright_foreground_inverse_material_dark
 color bright_foreground_inverse_material_light
 color bright_foreground_material_dark
 color bright_foreground_material_light
+color browser_actions_bg_grey
+color browser_actions_divider_color
+color browser_actions_text_color
+color browser_actions_title_color
 color button_material_dark
 color button_material_light
 color cardview_dark_background
@@ -1875,6 +1879,8 @@ dimen abc_text_size_title_material
 dimen abc_text_size_title_material_toolbar
 dimen action_bar_size
 dimen appcompat_dialog_background_inset
+dimen browser_actions_context_menu_max_width
+dimen browser_actions_context_menu_min_padding
 dimen cardview_compat_inset_shadow
 dimen cardview_default_elevation
 dimen cardview_default_radius
@@ -2663,7 +2669,11 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
-id button
+id browser_actions_header_text
+id browser_actions_menu_item_icon
+id browser_actions_menu_item_text
+id browser_actions_menu_items
+id browser_actions_menu_view
 id buttonPanel
 id cache_measures
 id callMeasure
@@ -2774,6 +2784,7 @@ id frost
 id fullscreen_header
 id ghost_view
 id ghost_view_holder
+id glide_custom_view_target_tag
 id gone
 id graph
 id graph_wrap
@@ -2797,6 +2808,8 @@ id image
 id immediateStop
 id included
 id info
+id ingredients_title_card
+id instructions_title_card
 id invisible
 id inward
 id italic
@@ -2914,7 +2927,9 @@ id postLayout
 id progress_circular
 id progress_horizontal
 id radio
+id randomButton
 id ratio
+id recipe_ingredients
 id recipe_instructions
 id recipe_name
 id recipe_picture
@@ -2987,6 +3002,7 @@ id stop
 id stretch
 id submenuarrow
 id submit_area
+id summary
 id supportScrollUp
 id tabMode
 id tag_accessibility_actions
@@ -3002,6 +3018,7 @@ id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
 id tag_window_insets_animation_callback
+id tailoredButton
 id test_checkbox_android_button_tint
 id test_checkbox_app_button_tint
 id test_radiobutton_android_button_tint
@@ -3163,6 +3180,8 @@ layout activity_main
 layout activity_reset_password
 layout activity_suggestion_main
 layout activity_user_account
+layout browser_actions_context_menu_page
+layout browser_actions_context_menu_row
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -3256,6 +3275,7 @@ layout text_view_without_line_height
 mipmap ic_launcher
 mipmap ic_launcher_round
 plurals mtrl_badge_content_description
+raw firebase_common_keep
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description
@@ -3316,12 +3336,16 @@ string common_google_play_services_wear_update_text
 string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
+string copy_toast_msg
 string default_web_client_id
 string error_icon_content_description
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
 string falafel_instructions
+string fallback_menu_item_copy_link
+string fallback_menu_item_open_in_browser
+string fallback_menu_item_share_link
 string firebase_database_url
 string gcm_defaultSenderId
 string google_api_key
@@ -3411,12 +3435,15 @@ string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
 string project_id
-string random_recipe
+string random_suggestion
 string ratatouille_instructions
 string search_menu_title
 string shrimp_al_mojo_de_ajo_instructions
 string status_bar_notification_info_overflow
+string tailored_suggestion
 string vegetable_terrine_instructions
+string wip_summary
+string wip_title
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style AndroidThemeColorAccentYellow
@@ -4624,6 +4651,7 @@ styleable ViewTransition android_id SharedValue SharedValueId clearsTag duration
 styleable include constraintSet
 xml backup_rules
 xml data_extraction_rules
+xml image_share_filepaths
 xml standalone_badge
 xml standalone_badge_gravity_bottom_end
 xml standalone_badge_gravity_bottom_start

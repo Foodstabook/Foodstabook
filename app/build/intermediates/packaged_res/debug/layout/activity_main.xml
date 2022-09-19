@@ -35,10 +35,9 @@
         android:text="Suggestions"
         app:layout_constraintBottom_toTopOf="@+id/user_account_button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_button"
-        app:layout_constraintVertical_bias="0.646" />
+        app:layout_constraintVertical_bias="0.692" />
 
     <Button
         android:id="@+id/user_account_button"
@@ -50,7 +49,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_button"
-        app:layout_constraintVertical_bias="0.647" />
+        app:layout_constraintVertical_bias="0.769" />
 
     <ImageButton
         android:id="@+id/logo"

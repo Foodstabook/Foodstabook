@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.foodstabook.app-mergeDebugResources-30:/values-land/values-land.xml",
+            "outputFile": "com.example.foodstabook.app-mergeDebugResources-34:/values-land/values-land.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Spencer\\.gradle\\caches\\transforms-3\\549abd614c71a841365becdd1f0d2670\\transformed\\appcompat-1.5.0\\res\\values-land\\values-land.xml",
+                    "source": "C:\\Users\\Spencer\\.gradle\\caches\\transforms-3\\6b5deae62f3d6a722920f05b93254305\\transformed\\appcompat-1.5.1\\res\\values-land\\values-land.xml",
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",

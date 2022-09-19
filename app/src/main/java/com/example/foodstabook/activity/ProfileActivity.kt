@@ -23,7 +23,7 @@ class ProfileActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
-        binding.buttonUserOne.setOnClickListener{
+        binding.buttonSearch.setOnClickListener{
 
 
             val userName : String = binding.textSearchUsernameProfile.text.toString()
@@ -37,26 +37,35 @@ class ProfileActivity : AppCompatActivity() {
 
         }
 
+        binding.buttonAutoUserDummy.setOnClickListener {
+            //This is a pre-set user.
+            val dummyUserName = "SKiM92XvbVN5BvYcGn9zk5fjUTC2"
+            readData(dummyUserName)
+        }
+
         binding.buttonClear.setOnClickListener{
             binding.textSearchUsernameProfile.setText("")
         }
     }
 
-    private fun readData(userName: String) {
+    private fun readData(uid: String) {
 
         database = FirebaseDatabase.getInstance().getReference("users")
-        database.child(userName).get().addOnSuccessListener {
+        database.child(uid).get().addOnSuccessListener {
 
             if(it.exists()){
 
                 val name = it.child("name").value
+                val id = it.child("username").value
                 val email = it.child("email").value
                 val age = it.child("age").value
 
                 Toast.makeText(this,"Successfully Read",Toast.LENGTH_SHORT).show()
 
                 binding.displayProfileName.text = name.toString()
+                binding.displayProfileId.text = id.toString()
                 binding.displayProfileEmail.text = email.toString()
+                binding.displayProfileAge.text = age.toString()
 
 
 

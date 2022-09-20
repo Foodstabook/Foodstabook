@@ -44,8 +44,20 @@
         "source": "com.example.foodstabook.app-main-39:/mipmap-xxhdpi/ic_launcher_round.webp"
     },
     {
+        "merged": "com.example.foodstabook.app-merged_res-37:/layout_activity_profile.xml.flat",
+        "source": "com.example.foodstabook.app-main-39:/layout/activity_profile.xml"
+    },
+    {
         "merged": "com.example.foodstabook.app-merged_res-37:/drawable_blueberry_crumble.png.flat",
         "source": "com.example.foodstabook.app-main-39:/drawable/blueberry_crumble.png"
+    },
+    {
+        "merged": "com.example.foodstabook.app-merged_res-37:/layout_activity_sign_in.xml.flat",
+        "source": "com.example.foodstabook.app-main-39:/layout/activity_sign_in.xml"
+    },
+    {
+        "merged": "com.example.foodstabook.app-merged_res-37:/drawable-v24_default_profile_photo.png.flat",
+        "source": "com.example.foodstabook.app-main-39:/drawable-v24/default_profile_photo.png"
     },
     {
         "merged": "com.example.foodstabook.app-merged_res-37:/drawable_foodstabook_logo4.png.flat",
@@ -72,8 +84,8 @@
         "source": "com.example.foodstabook.app-main-39:/xml/data_extraction_rules.xml"
     },
     {
-        "merged": "com.example.foodstabook.app-merged_res-37:/layout_activity_userprofile.xml.flat",
-        "source": "com.example.foodstabook.app-main-39:/layout/activity_userprofile.xml"
+        "merged": "com.example.foodstabook.app-merged_res-37:/layout_activity_sign_up.xml.flat",
+        "source": "com.example.foodstabook.app-main-39:/layout/activity_sign_up.xml"
     },
     {
         "merged": "com.example.foodstabook.app-merged_res-37:/mipmap-anydpi-v26_ic_launcher.xml.flat",
@@ -114,6 +126,10 @@
     {
         "merged": "com.example.foodstabook.app-merged_res-37:/mipmap-mdpi_ic_launcher.webp.flat",
         "source": "com.example.foodstabook.app-main-39:/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.foodstabook.app-merged_res-37:/layout_activity_login.xml.flat",
+        "source": "com.example.foodstabook.app-main-39:/layout/activity_login.xml"
     },
     {
         "merged": "com.example.foodstabook.app-merged_res-37:/drawable_red_question_mark.png.flat",

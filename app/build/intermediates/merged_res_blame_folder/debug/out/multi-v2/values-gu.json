@@ -4,24 +4,7 @@
             "outputFile": "com.example.foodstabook.app-mergeDebugResources-35:/values-gu/values-gu.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Spencer\\.gradle\\caches\\transforms-3\\40357fa96f1344672a3cf4df4f40bb2d\\transformed\\play-services-base-17.1.0\\res\\values-gu\\values.xml",
-                    "from": {
-                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
-                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
-                        "startOffsets": "245,351,549,672,782,979,1099,1236,1361,1568,1674,1869,1992,2194,2370,2457,2549",
-                        "endColumns": "105,197,122,109,196,119,136,124,206,105,194,122,201,175,86,91,106",
-                        "endOffsets": "350,548,671,781,978,1098,1235,1360,1567,1673,1868,1991,2193,2369,2456,2548,2655"
-                    },
-                    "to": {
-                        "startLines": "37,38,39,40,41,42,43,44,46,47,48,49,50,51,52,53,54",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "3341,3451,3649,3776,3890,4087,4211,4352,4628,4835,4945,5140,5267,5469,5649,5740,5836",
-                        "endColumns": "109,197,126,113,196,123,140,128,206,109,194,126,201,179,90,95,110",
-                        "endOffsets": "3446,3644,3771,3885,4082,4206,4347,4476,4830,4940,5135,5262,5464,5644,5735,5831,5942"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Spencer\\.gradle\\caches\\transforms-3\\6b5deae62f3d6a722920f05b93254305\\transformed\\appcompat-1.5.1\\res\\values-gu\\values-gu.xml",
+                    "source": "C:\\Users\\runti\\.gradle\\caches\\transforms-3\\a0e5dc2ffc6943789525de09949d55ee\\transformed\\appcompat-1.5.1\\res\\values-gu\\values-gu.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -38,7 +21,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Spencer\\.gradle\\caches\\transforms-3\\62d267152f1af37b3c9922374e70924c\\transformed\\browser-1.4.0\\res\\values-gu\\values-gu.xml",
+                    "source": "C:\\Users\\runti\\.gradle\\caches\\transforms-3\\c4a3be7a966924cf4fc2e337c56a3cc8\\transformed\\play-services-base-17.1.0\\res\\values-gu\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
+                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
+                        "startOffsets": "245,351,549,672,782,979,1099,1236,1361,1568,1674,1869,1992,2194,2370,2457,2549",
+                        "endColumns": "105,197,122,109,196,119,136,124,206,105,194,122,201,175,86,91,106",
+                        "endOffsets": "350,548,671,781,978,1098,1235,1360,1567,1673,1868,1991,2193,2369,2456,2548,2655"
+                    },
+                    "to": {
+                        "startLines": "37,38,39,40,41,42,43,44,46,47,48,49,50,51,52,53,54",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "3341,3451,3649,3776,3890,4087,4211,4352,4628,4835,4945,5140,5267,5469,5649,5740,5836",
+                        "endColumns": "109,197,126,113,196,123,140,128,206,109,194,126,201,179,90,95,110",
+                        "endOffsets": "3446,3644,3771,3885,4082,4206,4347,4476,4830,4940,5135,5262,5464,5644,5735,5831,5942"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\runti\\.gradle\\caches\\transforms-3\\8fc2094fbd7a591e1608b309fe349484\\transformed\\browser-1.4.0\\res\\values-gu\\values-gu.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
@@ -55,7 +55,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Spencer\\.gradle\\caches\\transforms-3\\448f6453046f6f1235d0e851631448e3\\transformed\\play-services-basement-18.1.0\\res\\values-gu\\values.xml",
+                    "source": "C:\\Users\\runti\\.gradle\\caches\\transforms-3\\ac6b810eaa422dec3662ed49de73ea6e\\transformed\\play-services-basement-18.1.0\\res\\values-gu\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -72,7 +72,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Spencer\\.gradle\\caches\\transforms-3\\99acbbb6379833694453d50150f318a3\\transformed\\core-1.9.0\\res\\values-gu\\values-gu.xml",
+                    "source": "C:\\Users\\runti\\.gradle\\caches\\transforms-3\\66f1ffaa38a566606db1584ad5efba03\\transformed\\core-1.9.0\\res\\values-gu\\values-gu.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -89,7 +89,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Spencer\\.gradle\\caches\\transforms-3\\24ff1a8473d427a327eee9e8e522fdcf\\transformed\\material-1.6.1\\res\\values-gu\\values-gu.xml",
+                    "source": "C:\\Users\\runti\\.gradle\\caches\\transforms-3\\85397b3bb1b1c8952c389284344f9a1e\\transformed\\material-1.6.1\\res\\values-gu\\values-gu.xml",
                     "from": {
                         "startLines": "2,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

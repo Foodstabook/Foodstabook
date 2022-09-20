@@ -5,7 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageButton;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -21,29 +21,20 @@ public final class ActivityMainBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final Button foodSuggestionButton;
+  public final Button profileButton;
 
   @NonNull
-  public final Button loginButton;
+  public final Button resetButton;
 
   @NonNull
-  public final ImageButton logo;
+  public final TextView textView;
 
-  @NonNull
-  public final Button resetPasswordButton;
-
-  @NonNull
-  public final Button userAccountButton;
-
-  private ActivityMainBinding(@NonNull ConstraintLayout rootView,
-      @NonNull Button foodSuggestionButton, @NonNull Button loginButton, @NonNull ImageButton logo,
-      @NonNull Button resetPasswordButton, @NonNull Button userAccountButton) {
+  private ActivityMainBinding(@NonNull ConstraintLayout rootView, @NonNull Button profileButton,
+      @NonNull Button resetButton, @NonNull TextView textView) {
     this.rootView = rootView;
-    this.foodSuggestionButton = foodSuggestionButton;
-    this.loginButton = loginButton;
-    this.logo = logo;
-    this.resetPasswordButton = resetPasswordButton;
-    this.userAccountButton = userAccountButton;
+    this.profileButton = profileButton;
+    this.resetButton = resetButton;
+    this.textView = textView;
   }
 
   @Override
@@ -73,38 +64,26 @@ public final class ActivityMainBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.food_suggestion_button;
-      Button foodSuggestionButton = ViewBindings.findChildViewById(rootView, id);
-      if (foodSuggestionButton == null) {
+      id = R.id.profileButton;
+      Button profileButton = ViewBindings.findChildViewById(rootView, id);
+      if (profileButton == null) {
         break missingId;
       }
 
-      id = R.id.login_button;
-      Button loginButton = ViewBindings.findChildViewById(rootView, id);
-      if (loginButton == null) {
+      id = R.id.resetButton;
+      Button resetButton = ViewBindings.findChildViewById(rootView, id);
+      if (resetButton == null) {
         break missingId;
       }
 
-      id = R.id.logo;
-      ImageButton logo = ViewBindings.findChildViewById(rootView, id);
-      if (logo == null) {
+      id = R.id.textView;
+      TextView textView = ViewBindings.findChildViewById(rootView, id);
+      if (textView == null) {
         break missingId;
       }
 
-      id = R.id.reset_password_button;
-      Button resetPasswordButton = ViewBindings.findChildViewById(rootView, id);
-      if (resetPasswordButton == null) {
-        break missingId;
-      }
-
-      id = R.id.user_account_button;
-      Button userAccountButton = ViewBindings.findChildViewById(rootView, id);
-      if (userAccountButton == null) {
-        break missingId;
-      }
-
-      return new ActivityMainBinding((ConstraintLayout) rootView, foodSuggestionButton, loginButton,
-          logo, resetPasswordButton, userAccountButton);
+      return new ActivityMainBinding((ConstraintLayout) rootView, profileButton, resetButton,
+          textView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

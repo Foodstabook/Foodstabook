@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context=".activity.ProfileActivity">
 
     <LinearLayout
@@ -30,18 +31,21 @@
             android:id="@+id/buttonSearch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/orange"
             android:text="Search" />
 
         <Button
             android:id="@+id/buttonAutoUserDummy"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/orange"
             android:text="AUTO = USER DUMMY" />
 
         <Button
             android:id="@+id/buttonClear"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/orange"
             android:text="Clear" />
 
     </LinearLayout>
@@ -51,7 +55,7 @@
         android:layout_width="144dp"
         android:layout_height="137dp"
         android:layout_marginBottom="12dp"
-        android:src="@drawable/ic_launcher_background"
+        android:src="@drawable/default_profile_photo"
         app:civ_border_color="#FF000000"
         app:civ_border_width="2dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
@@ -159,6 +163,7 @@
             android:id="@+id/buttonProfileLogOut"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/orange"
             android:text="Log Out" />
     </LinearLayout>
 

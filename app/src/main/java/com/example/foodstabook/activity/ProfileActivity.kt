@@ -1,12 +1,14 @@
 package com.example.foodstabook.activity
 
-import androidx.appcompat.app.AppCompatActivity
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.widget.Toast
-import com.example.foodstabook.R //Not used when we use binding
+import androidx.appcompat.app.ActionBar
+import androidx.appcompat.app.AppCompatActivity
 import com.example.foodstabook.databinding.ActivityProfileBinding
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+
 
 class ProfileActivity : AppCompatActivity() {
 
@@ -16,6 +18,8 @@ class ProfileActivity : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+
         super.onCreate(savedInstanceState)
 
         binding = ActivityProfileBinding.inflate(layoutInflater)
@@ -39,7 +43,7 @@ class ProfileActivity : AppCompatActivity() {
 
         binding.buttonAutoUserDummy.setOnClickListener {
             //This is a pre-set user.
-            val dummyUserName = "SKiM92XvbVN5BvYcGn9zk5fjUTC2"
+            val dummyUserName = "Q4urHJQmhRcCTuQFyw2CvMQEAPr2"
             readData(dummyUserName)
         }
 
@@ -55,14 +59,16 @@ class ProfileActivity : AppCompatActivity() {
 
             if(it.exists()){
 
-                val name = it.child("name").value
+                val firstName = it.child("firstname").value
+                val lastName = it.child("lastname").value
+                val name = firstName.toString() +" "+ lastName.toString()
                 val id = it.child("username").value
                 val email = it.child("email").value
                 val age = it.child("age").value
 
                 Toast.makeText(this,"Successfully Read",Toast.LENGTH_SHORT).show()
 
-                binding.displayProfileName.text = name.toString()
+                binding.displayProfileName.text = name
                 binding.displayProfileId.text = id.toString()
                 binding.displayProfileEmail.text = email.toString()
                 binding.displayProfileAge.text = age.toString()

@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import com.example.foodstabook.LoginActivity
 import com.example.foodstabook.R
 
 class MainActivity : AppCompatActivity() {
@@ -17,6 +18,12 @@ class MainActivity : AppCompatActivity() {
         val button:Button = findViewById(R.id.profileButton)
         button.setOnClickListener {
             val intent = Intent(this@MainActivity, ProfileActivity::class.java)
+            startActivity(intent)
+        }
+
+        val button2:Button = findViewById(R.id.resetButton)
+        button2.setOnClickListener {
+            val intent = Intent(this@MainActivity, LoginActivity::class.java)
             startActivity(intent)
         }
 

@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import com.example.foodstabook.*
-import com.example.foodstabook.MainActivity
+import com.example.foodstabook.activity.MainActivity
 import com.example.foodstabook.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -29,6 +29,9 @@ class MainActivity : AppCompatActivity() {
         goToResetPassword()
         goToFoodSuggestion()
         goToUserAccount()
+        goToSignIn()
+        goToSignUp()
+        goToSettings()
         goHome()
 
     }
@@ -64,6 +67,27 @@ class MainActivity : AppCompatActivity() {
     private fun goHome(){
         binding.logo.setOnClickListener{
             val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+    }
+
+    private fun goToSignIn(){
+        binding.signInButton.setOnClickListener{
+            val intent = Intent(this, SignInActivity::class.java)
+            startActivity(intent)
+        }
+    }
+
+    private fun goToSignUp(){
+        binding.signUpButton.setOnClickListener{
+            val intent = Intent(this, SignUpActivity::class.java)
+            startActivity(intent)
+        }
+    }
+
+    private fun goToSettings(){
+        binding.settingsButton.setOnClickListener{
+            val intent = Intent(this, SettingActivity::class.java)
             startActivity(intent)
         }
     }

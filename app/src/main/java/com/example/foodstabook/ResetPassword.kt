@@ -13,6 +13,7 @@ import com.example.foodstabook.databinding.ActivityResetPasswordBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import com.example.foodstabook.activity.MainActivity
 
 
 
@@ -40,6 +41,13 @@ class ResetPassword : AppCompatActivity() {
                         Log.d(TAG, "Email sent.")
                     }
                 }
+        }
+        goHome()
+    }
+    private fun goHome(){
+        binding.logo.setOnClickListener{
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
         }
     }
 }

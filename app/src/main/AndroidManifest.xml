@@ -22,13 +22,25 @@
             android:name=".SuggestionMainActivity"
             android:exported="false" />
         <activity
-            android:name="ResetPassword"
+            android:name=".ResetPassword"
             android:exported="false" />
         <activity
             android:name=".LoginPage"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.ProfileActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".SignInActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".SignUpActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".SettingActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

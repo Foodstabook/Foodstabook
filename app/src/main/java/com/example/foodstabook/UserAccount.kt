@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.foodstabook.databinding.ActivityUserAccountBinding
+import com.example.foodstabook.activity.MainActivity
 
 class UserAccount : AppCompatActivity() {
     private lateinit var binding: ActivityUserAccountBinding

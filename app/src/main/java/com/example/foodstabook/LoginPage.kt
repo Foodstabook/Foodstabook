@@ -3,6 +3,7 @@ package com.example.foodstabook
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.foodstabook.activity.MainActivity
 import com.example.foodstabook.databinding.ActivityLoginPageBinding
 
 class LoginPage : AppCompatActivity() {

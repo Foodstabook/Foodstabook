@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.example.foodstabook.activity.MainActivity
 import com.example.foodstabook.databinding.ActivitySignUpBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
@@ -67,6 +68,7 @@ class SignUpActivity : AppCompatActivity() {
                 Toast.makeText(this, "Please agree to the terms and conditions by checking the box", Toast.LENGTH_LONG).show()
             }
         }
+        goHome()
     }
 
     private fun inputValidation(userName: String?, email: String?, password: String?, age: String?): Boolean {
@@ -96,5 +98,12 @@ class SignUpActivity : AppCompatActivity() {
             return false;
         }
         return true
+    }
+
+    private fun goHome(){
+        binding.smallLogo.setOnClickListener{
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

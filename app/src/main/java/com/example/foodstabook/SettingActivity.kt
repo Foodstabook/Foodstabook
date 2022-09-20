@@ -7,7 +7,7 @@ import android.view.LayoutInflater
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.example.foodstabook.databinding.ActivitySettingBinding
-import com.example.foodstabook.MainActivity
+import com.example.foodstabook.activity.MainActivity
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_setting.*
 import kotlinx.android.synthetic.main.delete_dialog.view.*
@@ -65,11 +65,19 @@ class SettingActivity : AppCompatActivity() {
 
             }
         }
+        goHome()
     }
 
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
         return true
+    }
+
+    private fun goHome(){
+        binding.logo.setOnClickListener{
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
     }
 
 }

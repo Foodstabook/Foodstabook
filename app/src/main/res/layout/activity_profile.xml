@@ -167,4 +167,18 @@
             android:text="Log Out" />
     </LinearLayout>
 
+    <ImageButton
+        android:id="@+id/logo"
+        android:layout_width="79dp"
+        android:layout_height="74dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/foodstabook_logo4" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

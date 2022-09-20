@@ -2,4 +2,289 @@
     <string name="app_name">Foodstabook</string>
     <string name="profile_name">profile_name</string>
     <string name="profile_email">profile_email</string>
+    <string name="random_suggestion">Random</string>
+    <string name="tailored_suggestion">Tailored</string>
+    <string name="blank_instructions"> </string>
+    <string name="wip_title">Work in Progress</string>
+    <string name="wip_summary">Hi, thank you for using Foodstabook.
+    Currently tailored food suggestions aren\'t working, so please check on this feature again at
+    a later date!</string>
+    <string name="shrimp_al_mojo_de_ajo_instructions">
+        Ingredients:\n
+▢ 1 tablespoon smoked paprika\n
+▢ 2 teaspoons salt?\n
+▢ 2 pounds large shrimp, defrosted, peeled, and deveined\n
+▢ 1/2 cup Land O Lakes® Butter with Olive Oil &amp; Sea Salt\n
+▢ 1 small red onion, sliced\n
+▢ 6 cloves garlic, minced\n
+▢ 1 lime, juiced\n
+▢ 1/2 cup chopped fresh parsley (flat-leaf or Italian)\n\n
+
+Instructions:\n
+1. In a small bowl combine paprika and salt.\n
+2. Season the shrimp with spice mixture.\n
+3. Add the Land O Lakes® Butter with Olive Oil &amp; Sea Salt to a frying pan over medium heat until it begins to melt.\n
+4. Add the onion and garlic and sauté for about 5 minutes.\n
+5. Add the shrimp and cook for 6 to 8 minutes or until they are completely cooked through.\n
+6. Add the lime juice and parsley.\n
+7. Enjoy with white rice, angel hair pasta, or tortillas.\n
+    </string>
+    <string name="ratatouille_instructions">
+        Ingredients (for 8 servings):\n
+VEGGIES:\n
+▢ 2 eggplants\n
+▢ 6 roma tomatoes\n
+▢ 2 yellow squashes\n
+▢ 2 zucchinis\n
+SAUCE:\n
+▢ 2 tablespoons olive oil\n
+▢ 1 onion, diced\n
+▢ 4 cloves garlic, minced\n
+▢ 1 red bell pepper, diced\n
+▢ 1 yellow bell pepper, diced\n
+▢ salt, to taste\n
+▢ pepper, to taste\n
+▢ 28 oz can of crushed tomatoes\n
+▢ 2 tablespoons chopped fresh basil, from 8-10 leaves\n
+HERB SEASONING:\n
+▢ 2 tablespoons chopped fresh basil, from 8-10 leaves\n
+▢ 1 teaspoon garlic, minced\n
+▢ 2 tablespoons Chopped fresh parsley\n
+▢ 2 teaspoons fresh thyme\n
+▢ salt, to taste\n
+▢ pepper, to taste\n
+▢ 4 tablespoons olive oil\n\n
+
+        Instructions:\n
+1. Preheat the oven for 375˚F (190˚C).\n
+2. Slice the eggplant, tomatoes, squash, and zucchini into approximately ¹⁄₁₆-inch (1-mm) rounds, then set aside.\n
+3. Make the sauce: Heat the olive oil in a 12-inch (30-cm) oven-safe pan over medium-high heat. Sauté the onion, garlic, and bell peppers until soft, about 10 minutes. Season with salt and pepper, then add the crushed tomatoes. Stir until the ingredients are fully incorporated. Remove from heat, then add the basil. Stir once more, then smooth the surface of the sauce with a spatula.\n
+4. Arrange the sliced veggies in alternating patterns, (for example, eggplant, tomato, squash, zucchini) on top of the sauce from the outer edge to the middle of the pan. Season with salt and pepper.\n
+5. Make the herb seasoning: In a small bowl, mix together the basil, garlic, parsley, thyme, salt, pepper, and olive oil. Spoon the herb seasoning over the vegetables.\n
+6. Cover the pan with foil and bake for 40 minutes. Uncover, then bake for another 20 minutes, until the vegetables are softened.\n
+7. Serve while hot as a main dish or side. The ratatouille is also excellent the next day—cover with foil and reheat in a 350˚F (180˚C) oven for 15 minutes, or simply microwave to desired temperature.\n
+8. Enjoy!
+    </string>
+    <string name="blueberry_crumble_instructions">
+       Ingredients:\n
+For the blueberry filling:\n
+▢12 ounces (about 1 pint) fresh blueberries\n
+▢1/2 cup granulated sugar\n
+▢2 tablespoons all-purpose flour\n
+▢1 to 2 tablespoons lemon juice depending on how tart the blueberries\n
+▢1/4 teaspoon kosher salt\n
+For the crumble:\n
+▢3/4 cup all-purpose flour\n
+▢1/2 cup quick-cooking oats\n
+▢1/2 cup light or dark brown sugar\n
+▢1/2 teaspoon vanilla extract\n
+▢1/2 teaspoon kosher salt\n
+▢1 stick (4 oz) unsalted butter cut into cubes and softened just a little, plus more for the pie plate\n
+▢Vanilla ice cream preferably homemade\n\n
+
+Instructions:\n
+1. Prepare the oven and pan\n
+2. Preheat the oven to 375°F (190°C). Adjust the oven rack to the center position. Generously butter a 9-inch pie plate.\n
+3. Make the blueberry filling\n
+4. Nibble a blueberry or three to determine how sweet or tart it is. Toss the blueberries with the sugar, flour, lemon juice, and salt, adjusting the amount of lemon juice according to the relative sweetness or tartness of the berries. Dump the berries into the pie plate.\n
+5. Make the crumble topping\n
+6. In a large bowl, stir together the flour, oats, brown sugar, vanilla, and salt. Blend in the butter, using your fingertips or a pastry cutter, and mix until well combined. Crumble the topping over the berries in clumps of varying sizes.\n
+7. Bake the blueberry crumble until the berry filling is bubbling and the crisp oat topping is set and browned in places, 25 to 35 minutes. Let the crumble cool a little (but not a lot) before spooning it onto plates or into dishes and serving it warm with a scoop of ice cream plopped on top or on the side or wherever you choose.\n
+    </string>
+
+    <string name="ochazuke_instructions">
+Ingredients:\n
+▢ 1 Japanese Salted Salmon (homemade or store bought) (or ½ fillet of salmon and a pinch of salt for 1 serving)\n
+▢ 1 cup cooked Japanese short-grain rice\n
+▢ 1 tsp bubu arare (crispy puffed rice pellets) (or use crushed Japanese rice crackers)\n
+▢ 1 tsp shredded nori seaweed (kizami nori)\n
+▢ ¼ tsp toasted white sesame seeds\n
+▢ 2 sprigs mitsuba (Japanese parsley) (you can substitute trefoil or ⅛ scallion for 1 serving, cut into small pieces)\n
+▢ wasabi (optional, to taste)\n
+▢ 2 tsp Japanese green tea leaves (3 g (1 tsp) tea leaves for 100 ml (about ½ cup) hot water)\n
+▢ 1 cup hot water (see the tea package for appropriate temperature for your tea leaves)\n
+▢ ½ tsp soy sauce (optional)\n\n
+
+Instructions:\n
+        1. Gather all the ingredients\n
+        2.Preheat the oven to 425ºF (218ºC). For a convection oven, reduce the cooking temperature by 25ºF (15ºC). Bake the salted salmon fillet (shiojake) for 20-25 minutes until the skin and flesh are blistered and charred (Japanese salted salmon is always cooked until firm and well done). If you’re using regular salmon, season it with a pinch of salt and set it aside for 10 minutes before baking. When it’s cooked, remove the skin and bones and break up the salmon flesh into flakes. Set aside.\n
+        3. If you don’t have bubu arare, crush Japanese rice crackers into small pieces (you can also use a bag to crush it).\n
+        4. Put the tea leaves in the pot. Bring the water to the appropriate temperature for your tea and pour it into the pot. Set aside for 1-2 minutes (follow the directions on your tea package).\n
+        5. Now, place the cooked rice in the serving bowl. Place the flaked salmon on the rice and sprinkle the rice crackers, nori, and sesame seeds on top. Serve with tsukemono (pickles), such as Pickled Cucumber, as a part of the meal.\n
+        6. Pour the tea into the bowl to cover half the rice and top with the mitsuba and wasabi. Add the soy sauce, if you\'d like.
+    </string>
+
+    <string name="vegetable_terrine_instructions">
+        Ingredients:\n
+        ▢ 2 medium beets (about 10 ounces), trimmed\n
+        ▢ Kosher salt and freshly ground black pepper\n
+        ▢ One 8- to 10-ounce delicata squash\n
+        ▢ 2 teaspoons vegetable oil, plus more, for the pan\n
+        ▢ 2 medium carrots, cut into 2-inch pieces\n
+        ▢ 10 black peppercorns\n
+        ▢ 1 1/2 cups dry white wine\n
+        ▢ 2 leeks, white and light green parts, trimmed, sliced and well rinsed\n
+        ▢ 2 stalks celery, sliced\n
+        ▢ 1 shallot, thinly sliced\n
+        ▢ 4 sprigs fresh flat-leaf parsley\n
+        ▢ 3 sprigs fresh thyme\n
+        ▢ Two 1/4-ounce envelopes or 4 1/2 teaspoons powdered gelatin\n
+        ▢ 2/3 cup finely chopped fresh chives (about 1 large bunch)\n
+        ▢ 4 cups mache or other baby lettuce\n
+        ▢ Extra-virgin olive oil, for drizzling\n
+        ▢ Fleur de sel, for sprinkling\n\n
+
+Instructions:\n
+1. Preheat the oven to 450 degrees F.\n
+2. Divide the beets between 2 sheets of heavy-duty foil and wrap to enclose. Put the wrapped beets on a baking sheet and roast until very tender, 1 to 1 1/2 hours. Let the beets steam in the foil 15 minutes, then peel and cut into 3/4-inch pieces. Season generously with salt and pepper. Cool.\n
+3. Meanwhile, trim the squash, then halve lengthwise, scrape out the seeds and cut crosswise into 1/2-inch slices, leaving the skin intact. Toss the squash with the vegetable oil and 1/2 teaspoon salt on a baking sheet. Roast, flipping once, until tender, about 15 minutes. Cool.\n
+4. Put the carrots in a saucepan with the peppercorns, 1 3/4 teaspoons salt and 3 1/2 cups water. Bring to a simmer, cover and cook until the carrots are very tender, about 15 minutes. With a slotted spoon, transfer the carrots to a bowl, reserving the pan and the cooking liquid. Add the wine, leeks, celery and shallot to the saucepan and bring back to a simmer over medium-low heat. Cook, uncovered, until the vegetables are tender, about 30 minutes. Add the parsley and thyme and simmer 10 minutes. Pour the vegetable stock through a fine-mesh sieve into a 1-quart glass measure or heatproof bowl; discard the solids. If the stock measures more than 2 1/2 cups, return to the saucepan and boil until reduced to 2 1/2 cups. If there is less, add water. Season the stock with salt and pepper.\n
+5. Stir the gelatin into 1/4 cup cold water and let stand 1 minute to soften, then add the gelatin to the hot stock, stirring until dissolved. Set aside.\n
+6. Very lightly oil a 4 1/2-by-8 1/2-inch terrine or glass loaf pan with vegetable oil, then line the long sides and bottom with a sheet of plastic wrap, smoothing out any wrinkles and allowing at least 2 inches of overhang on each side. Pour about 1/3 cup of the gelatin-stock mixture into the terrine and quick-chill in the freezer until just set, about 10 minutes.\n
+7. Arrange the beets in one layer over the gelatin layer then sprinkle with one-third of the chives. Arrange the carrots on top, leaving some space between them for the gelatin to fill and hold the vegetables together. Sprinkle half the remaining chives over the carrots, then top with a layer of squash. Sprinkle the remaining chives over the squash. Stir the remaining gelatin-stock mixture again, reserve 1/2 cup at room temperature, then slowly pour the remainder into the terrine, pushing down the vegetables if necessary to just submerge in the gelatin mixture. Chill, uncovered, until the top is set, 1 1/2 to 2 hours.\n
+8. If the reserved 1/2 cup gelatin mixture has begun to set, heat until just liquefied but not hot, then pour over the set terrine. Chill until firm, about 2 hours.\n
+9. To serve, run a thin knife along the short sides of the terrine, then invert the terrine onto a cutting board, gently pulling on the plastic overhang to help unmold; discard the plastic. With a very sharp knife, carefully cut the terrine into 8 slices. Using a metal spatula to hold the outside of each slice steady, transfer 1 or 2 slices to each plate. Place the mache next to the terrine slices. Drizzle the olive oil over the mache and around the plates and then sprinkle the plates with fleur de sel and freshly ground pepper. Serve.    </string>
+
+    <string name="chicken_tikka_masala_instructions">
+       Ingredients:\n
+▢ 1 cup basmati rice\n
+▢ 1 1/2 tablespoons canola oil\n
+▢ 1 1/2 pounds boneless, skinless chicken thighs, cut into 1-inch chunks\n
+▢ Kosher salt and freshly ground black pepper, to taste\n
+▢ 1/2 medium sweet onion, diced\n
+▢ 3 tablespoons tomato paste\n
+▢ 3 cloves garlic, minced\n
+▢ 1 tablespoon freshly grated ginger\n
+▢ 1 1/2 teaspoons garam masala\n
+▢ 1 1/2 teaspoons chili powder\n
+▢ 1 1/2 teaspoons ground turmeric\n
+▢ 1 (15-ounce) can tomato sauce\n
+▢ 1 cup chicken stock\n
+▢ 1/2 cup heavy cream\n
+▢ 2 tablespoons chopped fresh cilantro leaves\n\n
+
+Instructions:\n
+1. In a large saucepan of 2 cups water, cook rice according to package instructions; set aside.\n
+2. Heat canola oil in a large stockpot or Dutch oven over medium heat. Season chicken with salt and pepper, to taste. Add chicken and onion to the stockpot and cook until golden, about 4-5 minutes.\n
+3. Stir in tomato paste, garlic, ginger, garam masala, chili powder and turmeric until fragrant, about 1 minute.\n
+4. Stir in tomato sauce and chicken stock; season with salt and pepper, to taste. Bring to a boil; reduce heat and simmer, stirring occasionally, until reduced and slightly thickened, about 10 minutes.\n
+5. Stir in heavy cream until heated through, about 1 minute.\n
+6. Serve immediately with rice, garnished with cilantro, if desired.
+    </string>
+
+    <string name="borscht_instructions">
+        Ingredients:\n
+For Borscht:\n
+▢ 3 medium beets, peeled and grated\n
+▢ 4 Tbsp olive oil, divided\n
+▢ 8 cups chicken broth + 2 cups water\n
+▢ 3 medium yukon potatoes, peeled and sliced into bite-sized pieces\n
+▢ 2 carrots, peeled and thinly sliced\n
+For Zazharka (Mirepoix):\n
+▢ 2 celery ribs, trimmed and finely chopped\n
+▢ 1 small red bell pepper, finely chopped, optional\n
+▢ 1 medium onion, finely chopped\n
+▢ 4 Tbsp ketchup or 3 Tbsp tomato sauce\n
+Additional Flavorings:\n
+▢ 1 can white cannelini beans with their juice\n
+▢ 2 bay leaves\n
+▢ 2-3 Tbsp white vinegar, or to taste\n
+▢ 1 tsp sea salt, or to taste\n
+▢ 1/4 tsp black pepper, freshly ground\n
+▢ 1 large garlic clove, pressed\n
+▢ 3 Tbsp chopped dill\n\n
+
+Instructions:\n
+1. Peel, grate and/or slice all vegetables (keeping sliced potatoes in cold water to prevent browning until ready to use then drain).\n
+        2.Heat a large soup pot (5 1/2 Qt or larger) over medium/high heat and add 2 Tbsp olive oil. Add grated beets and sauté 10 minutes, stirring occasionally until beets are softened. \n
+        3.Add 8 cups broth and 2 cups water. Add sliced potatoes and sliced carrots then cook for 10-15 minutes or until easily pierced with a fork.\n
+        4.While potatoes are cooking, place a large skillet over medium/high heat and add 2 Tbsp oil. Add chopped onion, celery and bell pepper. Saute stirring occasionally until softened and lightly golden (7-8 minutes). Add 4 Tbsp Ketchup and stir fry 30 seconds then transfer to the soup pot to continue cooking with the potatoes.\n
+        5.When potatoes and carrots reach desired softness, add 1 can of beans with their juice, 2 bay leaves, 2-3 Tbsp white vinegar, 1 tsp salt, 1/4 tsp black pepper, 1 pressed garlic clove, and 3 Tbsp chopped dill. Simmer for an additional 2-3 minutes and add more salt and vinegar to taste.
+    </string>
+
+    <string name="kimchi_jjigae_instructions">
+        Ingredients:\n
+For the rice:\n
+▢ 2 cups short or medium grain rice, washed and drained\n
+▢ 2 cups water\n
+For the stew:\n
+▢ 1 pound pork belly, cut into 1 1/2 x 1/4-inch pieces\n
+▢ 2 cups kimchi\n
+▢ 1/3 cup gochujang\n
+▢ 1 tablespoon gochugaru\n
+▢ 2 teaspoons sugar\n
+▢ 4 1/2 cups water\n
+▢ Soy sauce or fish sauce, to taste\n
+▢ 1 (16-ounce) package firm tofu, drained and cut into 1 1/2 x 1/4-inch planks\n
+For the garnish:\n
+▢ 1 tablespoon toasted sesame oil (optional)\n
+▢ 1 teaspoon toasted sesame seeds (optional)\n
+▢ 2 scallions, trimmed and thinly sliced\n\n
+
+Instructions:\n
+1. In a medium saucepan over medium-low to low heat, combine the rice and water. Cover the pot and cook for 25 to 30 minutes. Check the pot about 10 minutes in to make sure it’s not boiling over. If so, lower the heat and continue cooking. Turn the heat off and keep the lid on until ready to serve.\n
+2. In a medium Dutch oven set over medium heat, add the pork and cook, stirring occasionally, until it starts to render fat, about 10 minutes. It should lose most of its pink color but it should not brown. You can add a little oil in the pot to get it started but I don’t find it necessary.\n
+3. Using your hands, squeeze the liquid (the brine) out of the kimchi into a small bowl. You should have about 1/4 cup of kimchi brine. If not, scoop some out of the kimchi jar. Set the brine aside. Chop the kimchi into bite-size pieces.\n
+4. Add the chopped kimchi, gochujang, gochugaru (add to taste if you prefer a less spicy stew), and sugar to the pork and mix well. Cook, stirring often, until the mixture looks glossy and saucy, about 3 minutes.\n
+        5. Add the reserved kimchi brine and the water and bring to a boil. Reduce the heat to maintain a simmer for about 20 minutes for the flavors to meld. Taste the stew and if you’d like, add a drizzle of soy sauce or fish sauce to taste.\n
+6. Arrange the tofu, slightly shingled, on top of the stew. They may sink completely into the stew but that’s fine. Let it heat through, about 3 minutes.\n
+7. If using, drizzle with sesame oil and top with sesame seeds and scallions. Fluff the rice with a a spoon or a fork and serve alongside the stew.\n
+    </string>
+
+    <string name="falafel_instructions">
+        Ingredients:\n
+▢ 1 cup dried chickpeas, soaked overnight (don\'t use canned chickpeas)\n
+▢ 1/2 cup onion, roughly chopped\n
+▢ 1 cup parsley, roughly chopped (about a one large bunch)\n
+▢ 1 cup cilantro, roughly chopped (about a one large bunch)\n
+▢ 1 small green chile pepper, serrano or jalapeno pepper\n
+▢ 3 garlic cloves\n
+▢ 1 tsp cumin\n
+▢ 1 tsp salt\n
+▢ 1/2 tsp cardamom\n
+▢ 1/4 tsp black pepper\n
+▢ 2 tbsp chickpea flour\n
+▢ 1/2 tsp baking soda\n
+▢ avocado oil for frying\n\n
+
+Instructions:\n
+1. The night before, soak the dried chickpeas in water. Make sure the water covers the chickpeas by 2-3 inches, as they\'ll triple in size.\n
+2. Drain and rinse the chickpeas and add them to your food processor, along with the onion, parsley, cilantro, pepper, garlic, cumin, salt, cardamom and black pepper.\n
+3. Pulse the food processor several times until the mixture resembles the texture of coarse sand.\n
+4. Transfer the falafel mixture to a bowl and add the chickpea flour and baking soda. Stir together, then cover or add a lid and refrigerate the mixture for 30 minutes to one hour.\n
+5. Use your hands, an ice cream scoop or falafel scoop to form the falafel into balls or patties. If you find the mixture is too wet, you can add another tablespoon of chickpea flour. If it\'s too dry and crumbly, you can add a teaspoon or two of water or lemon juice.\n
+6. Once the falafel are formed, you can cook them by your preferred method mentioned above. To deep fry the falafel, add about 3 inches of oil to a pot on medium heat. Heat the oil to 350F. Cook the falafel in batches (about 6-8 at a time) for 1-2 minutes or until golden.\n
+7. Use a skimmer to check the color of the falafel and make sure they don\'t over cook. Then remove them to a paper towel-lined plate.\n
+8. Serve the falafel immediately, while warm and crispy on the outside. They\'re delicious served with tahini sauce as well.
+    </string>
+
+    <string name="bunny_chow_instructions">
+        Ingredients:\n
+▢ 2 tbsp vegetable oil\n
+▢ 1 cinnamon stick\n
+▢ 2 large white onions\n
+▢ 2 garlic cloves, minced\n
+▢ 1 tsp fresh ginger, finely chopped\n
+▢ 1 tsp coriander\n
+▢ 1/2 tsp cumin\n
+▢ 3 tbsp garam masala\n
+▢ 1 tsp cayenne pepper (or more, it\'s up to you)\n
+▢ 2 tsp tumeric\n
+▢ 2 ground cardamom pods\n
+▢ 2 tomatoes, diced\n
+▢ 2 cups carrots, diced (or green beans)\n
+▢ 2 cups potatoes, cubed\n
+▢ 2 large, skinless chicken breasts\n
+▢ 1 – 2 cups chicken stock or water\n
+▢ 2 unsliced loaves of crusty (traditionally) white bread, cut across in half in the middle and most of inside hollowed out like a bread bowl\n\n
+
+        Instructions:\n
+1. In a frying pan, heat the oil and sauté the cinnamon and bay leaves until fragrant (approx 1-2 mins).\n
+2. Add the onions and fry until they are almost translucent then add garlic, ginger, and all of the spices. Cook another 1-2 minutes.\n
+3. Add the carrots or beans, potatoes, chicken, and stock (or water).\n
+4. Stir and bring to a low simmer.\n
+5. Leave to cook and cover for about 30 minutes until chicken is tender, stirring occasionally.\n
+6. Remove the cinnamon stick and spoon the curry inside the bread.\n
+7. Serve
+    </string>
 </resources>

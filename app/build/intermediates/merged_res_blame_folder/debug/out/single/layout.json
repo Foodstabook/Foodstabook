@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "com.example.foodstabook.app-mergeDebugResources-33:/layout/activity_setting.xml",
+        "source": "com.example.foodstabook.app-main-36:/layout/activity_setting.xml"
+    },
+    {
+        "merged": "/Users/tang/.gradle/daemon/7.3.3/com.example.foodstabook.app-mergeDebugResources-33:/layout/activity_main.xml",
+        "source": "/Users/tang/.gradle/daemon/7.3.3/com.example.foodstabook.app-main-36:/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/tang/.gradle/daemon/7.3.3/com.example.foodstabook.app-mergeDebugResources-33:/layout/activity_setting.xml",
+        "source": "/Users/tang/.gradle/daemon/7.3.3/com.example.foodstabook.app-main-36:/layout/activity_setting.xml"
+    },
+    {
+        "merged": "/Users/tang/.gradle/daemon/7.3.3/com.example.foodstabook.app-mergeDebugResources-33:/layout/activity_deactivate.xml",
+        "source": "/Users/tang/.gradle/daemon/7.3.3/com.example.foodstabook.app-main-36:/layout/activity_deactivate.xml"
+    },
+    {
+        "merged": "/Users/tang/.gradle/daemon/7.3.3/com.example.foodstabook.app-mergeDebugResources-33:/layout/delete_dialog.xml",
+        "source": "/Users/tang/.gradle/daemon/7.3.3/com.example.foodstabook.app-main-36:/layout/delete_dialog.xml"
+    }
+]

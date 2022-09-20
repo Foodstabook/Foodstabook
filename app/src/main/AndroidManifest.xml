@@ -22,7 +22,7 @@
             android:name=".SuggestionMainActivity"
             android:exported="false" />
         <activity
-            android:name=".ResetPassword"
+            android:name="ResetPassword"
             android:exported="false" />
         <activity
             android:name=".LoginPage"

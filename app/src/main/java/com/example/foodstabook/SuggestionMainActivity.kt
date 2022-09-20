@@ -13,6 +13,7 @@ import com.example.foodstabook.databinding.ActivitySuggestionMainBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import com.example.foodstabook.activity.MainActivity
 
 class SuggestionMainActivity : AppCompatActivity() {
 

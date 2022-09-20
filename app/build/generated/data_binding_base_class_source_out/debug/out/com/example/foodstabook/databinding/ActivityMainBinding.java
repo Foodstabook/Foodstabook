@@ -5,7 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
+import android.widget.ImageButton;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -21,20 +21,47 @@ public final class ActivityMainBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
+  public final Button foodSuggestionButton;
+
+  @NonNull
+  public final Button loginButton;
+
+  @NonNull
+  public final ImageButton logo;
+
+  @NonNull
   public final Button profileButton;
 
   @NonNull
-  public final Button resetButton;
+  public final Button resetPasswordButton;
 
   @NonNull
-  public final TextView textView;
+  public final Button settingsButton;
 
-  private ActivityMainBinding(@NonNull ConstraintLayout rootView, @NonNull Button profileButton,
-      @NonNull Button resetButton, @NonNull TextView textView) {
+  @NonNull
+  public final Button signInButton;
+
+  @NonNull
+  public final Button signUpButton;
+
+  @NonNull
+  public final Button userAccountButton;
+
+  private ActivityMainBinding(@NonNull ConstraintLayout rootView,
+      @NonNull Button foodSuggestionButton, @NonNull Button loginButton, @NonNull ImageButton logo,
+      @NonNull Button profileButton, @NonNull Button resetPasswordButton,
+      @NonNull Button settingsButton, @NonNull Button signInButton, @NonNull Button signUpButton,
+      @NonNull Button userAccountButton) {
     this.rootView = rootView;
+    this.foodSuggestionButton = foodSuggestionButton;
+    this.loginButton = loginButton;
+    this.logo = logo;
     this.profileButton = profileButton;
-    this.resetButton = resetButton;
-    this.textView = textView;
+    this.resetPasswordButton = resetPasswordButton;
+    this.settingsButton = settingsButton;
+    this.signInButton = signInButton;
+    this.signUpButton = signUpButton;
+    this.userAccountButton = userAccountButton;
   }
 
   @Override
@@ -64,26 +91,63 @@ public final class ActivityMainBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.food_suggestion_button;
+      Button foodSuggestionButton = ViewBindings.findChildViewById(rootView, id);
+      if (foodSuggestionButton == null) {
+        break missingId;
+      }
+
+      id = R.id.login_button;
+      Button loginButton = ViewBindings.findChildViewById(rootView, id);
+      if (loginButton == null) {
+        break missingId;
+      }
+
+      id = R.id.logo;
+      ImageButton logo = ViewBindings.findChildViewById(rootView, id);
+      if (logo == null) {
+        break missingId;
+      }
+
       id = R.id.profileButton;
       Button profileButton = ViewBindings.findChildViewById(rootView, id);
       if (profileButton == null) {
         break missingId;
       }
 
-      id = R.id.resetButton;
-      Button resetButton = ViewBindings.findChildViewById(rootView, id);
-      if (resetButton == null) {
+      id = R.id.resetPasswordButton;
+      Button resetPasswordButton = ViewBindings.findChildViewById(rootView, id);
+      if (resetPasswordButton == null) {
         break missingId;
       }
 
-      id = R.id.textView;
-      TextView textView = ViewBindings.findChildViewById(rootView, id);
-      if (textView == null) {
+      id = R.id.settings_button;
+      Button settingsButton = ViewBindings.findChildViewById(rootView, id);
+      if (settingsButton == null) {
         break missingId;
       }
 
-      return new ActivityMainBinding((ConstraintLayout) rootView, profileButton, resetButton,
-          textView);
+      id = R.id.sign_in_button;
+      Button signInButton = ViewBindings.findChildViewById(rootView, id);
+      if (signInButton == null) {
+        break missingId;
+      }
+
+      id = R.id.sign_up_button;
+      Button signUpButton = ViewBindings.findChildViewById(rootView, id);
+      if (signUpButton == null) {
+        break missingId;
+      }
+
+      id = R.id.user_account_button;
+      Button userAccountButton = ViewBindings.findChildViewById(rootView, id);
+      if (userAccountButton == null) {
+        break missingId;
+      }
+
+      return new ActivityMainBinding((ConstraintLayout) rootView, foodSuggestionButton, loginButton,
+          logo, profileButton, resetPasswordButton, settingsButton, signInButton, signUpButton,
+          userAccountButton);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

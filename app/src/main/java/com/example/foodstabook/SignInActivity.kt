@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.example.foodstabook.activity.MainActivity
 import com.example.foodstabook.databinding.ActivitySignInBinding
 import com.google.firebase.auth.FirebaseAuth
 
@@ -18,7 +19,7 @@ class SignInActivity : AppCompatActivity() {
         setContentView(binding.root)
         setContentView(R.layout.activity_sign_in)
         firebaseAuth = FirebaseAuth.getInstance()
-
+        goHome()
         // Button to navigate to user sign-up page
         binding.btnsignup.setOnClickListener {
             val intent = Intent(this, SignUpActivity::class.java)
@@ -35,6 +36,12 @@ class SignInActivity : AppCompatActivity() {
                 }
             }
         }
-
+    }
+    private fun goHome(){
+        binding.smallLogo.setOnClickListener{
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
+

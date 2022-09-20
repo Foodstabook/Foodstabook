@@ -7,17 +7,24 @@
     tools:context=".SettingActivity"><![CDATA[
     android:padding="32dp"
     tools:context=".SecondActivity">
+
+
+
+
     ]]>
 
     <TextView
         android:id="@+id/tvUserEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:text="User Email"
         android:textColor="@color/black"
         android:textSize="20sp"
-        tools:layout_editor_absoluteX="31dp"
-        tools:layout_editor_absoluteY="49dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.126"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo" />
 
     <TextView
         android:id="@+id/textView4"
@@ -89,5 +96,19 @@
         android:backgroundTint="#FB8965"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageButton
+        android:id="@+id/logo"
+        android:layout_width="79dp"
+        android:layout_height="74dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/foodstabook_logo4" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

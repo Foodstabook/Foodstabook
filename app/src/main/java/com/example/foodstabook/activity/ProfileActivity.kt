@@ -1,5 +1,6 @@
 package com.example.foodstabook.activity
 
+import android.content.Intent
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.widget.Toast
@@ -50,6 +51,7 @@ class ProfileActivity : AppCompatActivity() {
         binding.buttonClear.setOnClickListener{
             binding.textSearchUsernameProfile.setText("")
         }
+        goHome()
     }
 
     private fun readData(uid: String) {
@@ -82,6 +84,12 @@ class ProfileActivity : AppCompatActivity() {
         }.addOnFailureListener{
             Toast.makeText(this,"Fail",Toast.LENGTH_SHORT).show()
         }
+    }
 
+    private fun goHome(){
+        binding.logo.setOnClickListener{
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

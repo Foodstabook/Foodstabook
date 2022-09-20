@@ -1,121 +1,34 @@
 {
   "project_info": {
-    "project_number": "953372665389",
-    "firebase_url": "https://foodstabook-a34b4-default-rtdb.firebaseio.com",
-    "project_id": "foodstabook-a34b4",
-    "storage_bucket": "foodstabook-a34b4.appspot.com"
+    "project_number": "556860007449",
+    "firebase_url": "https://foodstabook-65e07-default-rtdb.firebaseio.com",
+    "project_id": "foodstabook-65e07",
+    "storage_bucket": "foodstabook-65e07.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:953372665389:android:77868bbb0661f174517aa4",
+        "mobilesdk_app_id": "1:556860007449:android:dba69fd4110e60f0e13688",
         "android_client_info": {
           "package_name": "com.example.foodstabook"
         }
       },
       "oauth_client": [
         {
-          "client_id": "953372665389-njitvgm28tks4gdd9arq6ni4l9h9ki5h.apps.googleusercontent.com",
+          "client_id": "556860007449-2jptfr1jalbm28mr9kfte6mm867ac2ep.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyB7oTL-l8EWzmw12EbnMqzsd-_3jI0agdQ"
+          "current_key": "AIzaSyDoetHMJeqdV0uYA3-9rqpIUOPmFfzlcLI"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "953372665389-njitvgm28tks4gdd9arq6ni4l9h9ki5h.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:953372665389:android:ab4e9726cf397dd5517aa4",
-        "android_client_info": {
-          "package_name": "com.example.foodstapersonal"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "953372665389-njitvgm28tks4gdd9arq6ni4l9h9ki5h.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyB7oTL-l8EWzmw12EbnMqzsd-_3jI0agdQ"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "953372665389-njitvgm28tks4gdd9arq6ni4l9h9ki5h.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:953372665389:android:93e734b6906a54d1517aa4",
-        "android_client_info": {
-          "package_name": "com.example.loginkot"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "953372665389-njitvgm28tks4gdd9arq6ni4l9h9ki5h.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyB7oTL-l8EWzmw12EbnMqzsd-_3jI0agdQ"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "953372665389-njitvgm28tks4gdd9arq6ni4l9h9ki5h.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:953372665389:android:c4d33fc51c82b898517aa4",
-        "android_client_info": {
-          "package_name": "com.example.signin"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "953372665389-njitvgm28tks4gdd9arq6ni4l9h9ki5h.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyB7oTL-l8EWzmw12EbnMqzsd-_3jI0agdQ"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "953372665389-njitvgm28tks4gdd9arq6ni4l9h9ki5h.apps.googleusercontent.com",
+              "client_id": "556860007449-2jptfr1jalbm28mr9kfte6mm867ac2ep.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

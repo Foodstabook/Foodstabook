@@ -4,8 +4,9 @@ package com.example.foodstabook.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -21,16 +22,21 @@ public final class ActivityResetPasswordBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final ImageButton logo;
+  public final Button btnResetPassword;
 
   @NonNull
-  public final TextView textView;
+  public final EditText edtResetEmail;
+
+  @NonNull
+  public final ImageButton logo;
 
   private ActivityResetPasswordBinding(@NonNull ConstraintLayout rootView,
-      @NonNull ImageButton logo, @NonNull TextView textView) {
+      @NonNull Button btnResetPassword, @NonNull EditText edtResetEmail,
+      @NonNull ImageButton logo) {
     this.rootView = rootView;
+    this.btnResetPassword = btnResetPassword;
+    this.edtResetEmail = edtResetEmail;
     this.logo = logo;
-    this.textView = textView;
   }
 
   @Override
@@ -60,19 +66,26 @@ public final class ActivityResetPasswordBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.btnResetPassword;
+      Button btnResetPassword = ViewBindings.findChildViewById(rootView, id);
+      if (btnResetPassword == null) {
+        break missingId;
+      }
+
+      id = R.id.edtResetEmail;
+      EditText edtResetEmail = ViewBindings.findChildViewById(rootView, id);
+      if (edtResetEmail == null) {
+        break missingId;
+      }
+
       id = R.id.logo;
       ImageButton logo = ViewBindings.findChildViewById(rootView, id);
       if (logo == null) {
         break missingId;
       }
 
-      id = R.id.textView;
-      TextView textView = ViewBindings.findChildViewById(rootView, id);
-      if (textView == null) {
-        break missingId;
-      }
-
-      return new ActivityResetPasswordBinding((ConstraintLayout) rootView, logo, textView);
+      return new ActivityResetPasswordBinding((ConstraintLayout) rootView, btnResetPassword,
+          edtResetEmail, logo);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

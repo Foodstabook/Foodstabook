@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.foodstabook.app-mergeDebugResources-34:/values-sw/values-sw.xml",
+            "outputFile": "com.example.foodstabook.app-mergeDebugResources-35:/values-sw/values-sw.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Spencer\\.gradle\\caches\\transforms-3\\448f6453046f6f1235d0e851631448e3\\transformed\\play-services-basement-18.1.0\\res\\values-sw\\values.xml",

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.foodstabook.app-mergeDebugResources-34:/values-zh-rHK/values-zh-rHK.xml",
+            "outputFile": "com.example.foodstabook.app-mergeDebugResources-35:/values-zh-rHK/values-zh-rHK.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Spencer\\.gradle\\caches\\transforms-3\\99acbbb6379833694453d50150f318a3\\transformed\\core-1.9.0\\res\\values-zh-rHK\\values-zh-rHK.xml",

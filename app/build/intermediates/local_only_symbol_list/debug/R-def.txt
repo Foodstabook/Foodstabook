@@ -22,10 +22,12 @@ drawable red_question_mark
 drawable shrimp_al_mojo_de_ajo
 drawable vegetable_terrine
 id food_suggestion_button
+id imageView
 id ingredients_title_card
 id instructions_title_card
 id login_button
 id logo
+id profile_image
 id randomButton
 id recipe_ingredients
 id recipe_instructions
@@ -43,6 +45,7 @@ layout activity_main
 layout activity_reset_password
 layout activity_suggestion_main
 layout activity_user_account
+layout activity_userprofile
 mipmap ic_launcher
 mipmap ic_launcher_round
 string app_name

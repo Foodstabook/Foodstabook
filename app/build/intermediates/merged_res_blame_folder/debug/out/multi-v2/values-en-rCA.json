@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.foodstabook.app-mergeDebugResources-34:/values-en-rCA/values-en-rCA.xml",
+            "outputFile": "com.example.foodstabook.app-mergeDebugResources-35:/values-en-rCA/values-en-rCA.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Spencer\\.gradle\\caches\\transforms-3\\6b5deae62f3d6a722920f05b93254305\\transformed\\appcompat-1.5.1\\res\\values-en-rCA\\values-en-rCA.xml",

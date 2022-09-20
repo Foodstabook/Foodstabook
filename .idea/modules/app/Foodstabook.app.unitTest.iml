@@ -90,6 +90,7 @@
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/d12aeacd5f1f8143944c4a22d8570430/transformed/constraintlayout-2.1.4-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.firebase/firebase-annotations/16.1.0/64bf465fd5aa693067bfd6bc28efb260e1ad29ea/firebase-annotations-16.1.0.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.errorprone/error_prone_annotations/2.9.0/74fe3b8b4f3fc84dc940d0ca4c4b270dbc902764/error_prone_annotations-2.9.0.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/transforms-3/987dc058325c433cd4ae3819d0a14f88/transformed/circleimageview-3.1.0-api.jar</arg>
                 <arg>$MODULE_DIR$/../../../../../../Android/Sdk/platforms/android-33/android.jar</arg>
                 <arg>$MODULE_DIR$/../../../../../../Android/Sdk/build-tools/30.0.3/core-lambda-stubs.jar</arg>
               </args>
@@ -216,6 +217,7 @@
     <orderEntry type="library" scope="TEST" name="Gradle: com.google.firebase:firebase-common:20.1.2@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.google.firebase:firebase-components:17.0.1@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.google.firebase:firebase-common-ktx:20.1.2@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: de.hdodenhof:circleimageview:3.1.0@aar" level="project" />
   </component>
   <component name="TestModuleProperties" production-module="Foodstabook.app.main" />
 </module>

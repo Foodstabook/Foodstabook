@@ -43,8 +43,8 @@
 26-->C:\Users\XPS\Desktop\491\Foodstabook\Foodstabook\app\src\main\AndroidManifest.xml:16:9-24:20
 27            android:name="com.example.foodstabook.MainActivity"
 27-->C:\Users\XPS\Desktop\491\Foodstabook\Foodstabook\app\src\main\AndroidManifest.xml:17:13-41
-28            android:exported="false" >
-28-->C:\Users\XPS\Desktop\491\Foodstabook\Foodstabook\app\src\main\AndroidManifest.xml:18:13-37
+28            android:exported="true" >
+28-->C:\Users\XPS\Desktop\491\Foodstabook\Foodstabook\app\src\main\AndroidManifest.xml:18:13-36
 29            <intent-filter>
 29-->C:\Users\XPS\Desktop\491\Foodstabook\Foodstabook\app\src\main\AndroidManifest.xml:19:13-23:29
 30                <action android:name="android.intent.action.MAIN" />

@@ -1,6 +1,7 @@
 package com.example.foodstabook
 
 import android.content.ContentValues.TAG
+import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
@@ -31,9 +32,11 @@ class LoginActivity : AppCompatActivity() {
         binding.btnResetPassword.setOnClickListener {
             val emailAddress = "user@example.com"
 
-            Firebase.auth.sendPasswordResetEmail(emailAddress)
-                .addOnCompleteListener { task ->
+            auth.sendPasswordResetEmail(emailAddress).addOnCompleteListener { task ->
                     if (task.isSuccessful) {
+                        Toast.makeText(this, "Email sent!", Toast.LENGTH_SHORT).show()
+                        val intent = Intent(this, MainActivity::class.java)
+                        startActivity(intent)
                         Log.d(TAG, "Email sent.")
                     }
                 }

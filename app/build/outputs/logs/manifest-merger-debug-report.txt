@@ -140,7 +140,7 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\XPS\.gradle\caches
 activity#com.example.foodstabook.MainActivity
 ADDED from C:\Users\XPS\Desktop\491\Foodstabook\Foodstabook\app\src\main\AndroidManifest.xml:16:9-24:20
 	android:exported
-		ADDED from C:\Users\XPS\Desktop\491\Foodstabook\Foodstabook\app\src\main\AndroidManifest.xml:18:13-37
+		ADDED from C:\Users\XPS\Desktop\491\Foodstabook\Foodstabook\app\src\main\AndroidManifest.xml:18:13-36
 	android:name
 		ADDED from C:\Users\XPS\Desktop\491\Foodstabook\Foodstabook\app\src\main\AndroidManifest.xml:17:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER

@@ -20,7 +20,6 @@ class SignUpActivity : AppCompatActivity() {
         setContentView(binding.root)
         firebaseAuth = FirebaseAuth.getInstance()
         database = FirebaseDatabase.getInstance()
-        //check box needs to be initialized
 
         // button to navigate to sign-in page
         binding.btnlogin.setOnClickListener {

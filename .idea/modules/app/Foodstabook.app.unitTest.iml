@@ -160,5 +160,4 @@
     <orderEntry type="library" scope="TEST" name="Gradle: com.google.firebase:firebase-storage-ktx:20.0.0@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.google.firebase:firebase-storage:20.0.0@aar" level="project" />
   </component>
-  <component name="TestModuleProperties" production-module="Foodstabook.app.main" />
 </module>

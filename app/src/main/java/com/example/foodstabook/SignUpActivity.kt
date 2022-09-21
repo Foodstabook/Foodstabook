@@ -22,7 +22,7 @@ class SignUpActivity : AppCompatActivity() {
 
         // button to navigate to sign-in page
         binding.btnlogin.setOnClickListener {
-            val intent = Intent(this, SignInActivity::class.java)
+            val intent = Intent(this, LoginPage::class.java)
             startActivity(intent)
         }
 
@@ -53,7 +53,7 @@ class SignUpActivity : AppCompatActivity() {
                                     }
                                 }
                             // Everyting worked so send user to the sign-in page
-                            val intent = Intent(this, SignInActivity::class.java)
+                            val intent = Intent(this, LoginPage::class.java)
                             startActivity(intent)
 
                         }else{

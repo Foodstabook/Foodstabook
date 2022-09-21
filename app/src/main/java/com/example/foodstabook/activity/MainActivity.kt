@@ -25,7 +25,6 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        goToLogin()
         goToResetPassword()
         goToFoodSuggestion()
         goToUserAccount()
@@ -34,13 +33,6 @@ class MainActivity : AppCompatActivity() {
         goToSettings()
         goHome()
 
-    }
-
-    private fun goToLogin(){
-        binding.loginButton.setOnClickListener{
-            val intent = Intent(this, LoginPage::class.java)
-            startActivity(intent)
-        }
     }
 
     private fun goToResetPassword(){

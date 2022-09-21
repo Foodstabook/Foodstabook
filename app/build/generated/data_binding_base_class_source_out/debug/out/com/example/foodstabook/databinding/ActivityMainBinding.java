@@ -24,9 +24,6 @@ public final class ActivityMainBinding implements ViewBinding {
   public final Button foodSuggestionButton;
 
   @NonNull
-  public final Button loginButton;
-
-  @NonNull
   public final ImageButton logo;
 
   @NonNull
@@ -48,13 +45,12 @@ public final class ActivityMainBinding implements ViewBinding {
   public final Button userAccountButton;
 
   private ActivityMainBinding(@NonNull ConstraintLayout rootView,
-      @NonNull Button foodSuggestionButton, @NonNull Button loginButton, @NonNull ImageButton logo,
+      @NonNull Button foodSuggestionButton, @NonNull ImageButton logo,
       @NonNull Button profileButton, @NonNull Button resetPasswordButton,
       @NonNull Button settingsButton, @NonNull Button signInButton, @NonNull Button signUpButton,
       @NonNull Button userAccountButton) {
     this.rootView = rootView;
     this.foodSuggestionButton = foodSuggestionButton;
-    this.loginButton = loginButton;
     this.logo = logo;
     this.profileButton = profileButton;
     this.resetPasswordButton = resetPasswordButton;
@@ -94,12 +90,6 @@ public final class ActivityMainBinding implements ViewBinding {
       id = R.id.food_suggestion_button;
       Button foodSuggestionButton = ViewBindings.findChildViewById(rootView, id);
       if (foodSuggestionButton == null) {
-        break missingId;
-      }
-
-      id = R.id.login_button;
-      Button loginButton = ViewBindings.findChildViewById(rootView, id);
-      if (loginButton == null) {
         break missingId;
       }
 
@@ -145,8 +135,8 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityMainBinding((ConstraintLayout) rootView, foodSuggestionButton, loginButton,
-          logo, profileButton, resetPasswordButton, settingsButton, signInButton, signUpButton,
+      return new ActivityMainBinding((ConstraintLayout) rootView, foodSuggestionButton, logo,
+          profileButton, resetPasswordButton, settingsButton, signInButton, signUpButton,
           userAccountButton);
     }
     String missingId = rootView.getResources().getResourceName(id);

@@ -46,14 +46,13 @@ id edtResetEmail
 id emailinput
 id firstnameInput
 id food_suggestion_button
+id imageView
 id ingredients_title_card
 id instructions_title_card
 id lastnameInput
 id linearLayout
 id linearLayout2
-id login_button
 id logo
-id passwordTextEdt
 id passwordinput
 id profileButton
 id profile_image
@@ -81,8 +80,6 @@ id textView8
 id tvUserEmail
 id user_account_button
 id username
-layout activity_login
-layout activity_login_page
 layout activity_main
 layout activity_profile
 layout activity_reset_password

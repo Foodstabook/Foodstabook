@@ -117,7 +117,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="48dp"
-        android:background="@drawable/logo2"
+        android:background="@drawable/foodstabook_logo4"
         app:layout_constraintBottom_toTopOf="@+id/emailinput"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"

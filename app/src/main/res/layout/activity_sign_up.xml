@@ -69,13 +69,13 @@
         app:layout_constraintStart_toStartOf="@+id/lastnameInput"
         app:layout_constraintTop_toBottomOf="@+id/lastnameInput" />
 
-    <com.google.android.material.textfield.TextInputLayout
+    <EditText
         android:id="@+id/passwordinput"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Password"
-        android:inputType="textPassword"
+        android:inputType="text"
         android:textColorHint="@color/black"
         android:textSize="28dp"
         android:textStyle="bold"
@@ -85,20 +85,6 @@
         app:layout_constraintTop_toBottomOf="@+id/emailinput"
         app:passwordToggleEnabled = "true" />
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/passwordTextEdt"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Password"
-        android:inputType="textPassword"
-        android:textColorHint="@color/black"
-        android:textSize="28dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/emailinput"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="@+id/emailinput"
-        app:layout_constraintTop_toBottomOf="@+id/emailinput" />
 
     <EditText
         android:id="@+id/ageInput"
@@ -131,7 +117,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="48dp"
-        android:background="@drawable/foodstabook_logo4"
+        android:background="@drawable/logo2"
         app:layout_constraintBottom_toTopOf="@+id/emailinput"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -190,20 +176,6 @@
         app:layout_constraintStart_toEndOf="@+id/donthaveacct"
         app:layout_constraintTop_toBottomOf="@+id/btnsignup"
         tools:ignore="MissingConstraints,TouchTargetSizeCheck" />
-
-    <ImageButton
-        android:id="@+id/small_logo"
-        android:layout_width="79dp"
-        android:layout_height="74dp"
-        android:background="@android:color/transparent"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/foodstabook_logo4" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

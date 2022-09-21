@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.example.foodstabook.activity.MainActivity
 import com.example.foodstabook.databinding.ActivitySignUpBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
@@ -13,6 +12,7 @@ class SignUpActivity : AppCompatActivity() {
 
     private lateinit var binding:ActivitySignUpBinding
     private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var database: FirebaseDatabase
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,7 +31,7 @@ class SignUpActivity : AppCompatActivity() {
             val firstName = binding.firstnameInput.text.toString().trim()
             val lastName = binding.lastnameInput.text.toString().trim()
             val email = binding.emailinput.text.toString().trim()
-            val password = binding.passwordinput.toString().trim()
+            val password = binding.passwordinput.text.toString().trim()
             val age = binding.ageInput.text.toString()
             val checkBox = binding.checkbox
 
@@ -67,7 +67,6 @@ class SignUpActivity : AppCompatActivity() {
                 Toast.makeText(this, "Please agree to the terms and conditions by checking the box", Toast.LENGTH_LONG).show()
             }
         }
-        goHome()
     }
 
     private fun inputValidation(userName: String?, email: String?, password: String?, age: String?): Boolean {
@@ -97,12 +96,5 @@ class SignUpActivity : AppCompatActivity() {
             return false;
         }
         return true
-    }
-
-    private fun goHome(){
-        binding.smallLogo.setOnClickListener{
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-        }
     }
 }

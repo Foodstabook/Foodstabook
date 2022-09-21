@@ -73,7 +73,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun goToSignIn(){
         binding.signInButton.setOnClickListener{
-            val intent = Intent(this, SignInActivity::class.java)
+            val intent = Intent(this, LoginPage::class.java)
             startActivity(intent)
         }
     }

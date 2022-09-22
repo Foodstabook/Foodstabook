@@ -161,28 +161,35 @@ class SuggestionMainActivity : AppCompatActivity() {
                 val instructionsBuilder = StringBuilder()
                 val response = RetrofitInstance.spoonacularApi.getRecipeInfo(pseudorandomId,
                     false,"e16c808bc22e41ceb1cc4f18180159f5")
-                val responseBody = response.body()!!
-                val recipeImage = responseBody.image
+                val responseBody = response.body()
+                val recipeImage = responseBody?.image
                 Glide.with(this@SuggestionMainActivity)
                     .asDrawable()
                     .load(recipeImage)
                     .into(imageSwitcher.nextView as ImageView)
-                responseBody.extendedIngredients.forEach{
-                    ingredientsBuilder.append(it.amount.toString()+" "+it.unit+" "
-                            +it.nameClean+"\n")
+                if (responseBody != null) {
+                    responseBody.extendedIngredients.forEach{
+                        ingredientsBuilder.append(it.amount.toString()+" "+it.unit+" "
+                                +it.nameClean+"\n")
+                    }
                 }
 
-                responseBody.analyzedInstructions.forEach { it1 ->
-                    if (it1.steps.isNotEmpty()) {
-                        it1.steps.forEach {
-                            instructionsBuilder.append(it.number.toString() + ". " + it.step + "\n")
-                        }
+                if (responseBody != null) {
+                    responseBody.analyzedInstructions.forEach { it1 ->
+                        if (it1.steps.isNotEmpty()) {
+                            it1.steps.forEach {
+                                instructionsBuilder.append(it.number.toString() + ". " + it.step + "\n")
+                            }
+                        } else
+                            instructionsBuilder.append("")
                     }
-                    else
-                        instructionsBuilder.append("")
                 }
-                titleSwitcher.setText(responseBody.title)
-                summarySwitcher.setText(responseBody.summary)
+                if (responseBody != null) {
+                    titleSwitcher.setText(responseBody.title)
+                }
+                if (responseBody != null) {
+                    summarySwitcher.setText(responseBody.summary)
+                }
                 ingredientsTitleCardSwitcher.setText("INGREDIENTS:")
                 ingredientsSwitcher.setText(ingredientsBuilder)
                 instructionsTitleCardSwitcher.setText("INSTRUCTIONS:")

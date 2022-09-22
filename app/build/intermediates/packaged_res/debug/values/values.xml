@@ -120,7 +120,7 @@ Instructions:\n
 5. Stir in heavy cream until heated through, about 1 minute.\n
 6. Serve immediately with rice, garnished with cilantro, if desired.
     </string>
-    <string name="default_web_client_id" translatable="false">556860007449-2jptfr1jalbm28mr9kfte6mm867ac2ep.apps.googleusercontent.com</string>
+    <string name="default_web_client_id" translatable="false">953372665389-njitvgm28tks4gdd9arq6ni4l9h9ki5h.apps.googleusercontent.com</string>
     <string name="falafel_instructions">
         Ingredients:\n
 ▢ 1 cup dried chickpeas, soaked overnight (don\'t use canned chickpeas)\n
@@ -147,12 +147,12 @@ Instructions:\n
 7. Use a skimmer to check the color of the falafel and make sure they don\'t over cook. Then remove them to a paper towel-lined plate.\n
 8. Serve the falafel immediately, while warm and crispy on the outside. They\'re delicious served with tahini sauce as well.
     </string>
-    <string name="firebase_database_url" translatable="false">https://foodstabook-65e07-default-rtdb.firebaseio.com</string>
-    <string name="gcm_defaultSenderId" translatable="false">556860007449</string>
-    <string name="google_api_key" translatable="false">AIzaSyDoetHMJeqdV0uYA3-9rqpIUOPmFfzlcLI</string>
-    <string name="google_app_id" translatable="false">1:556860007449:android:dba69fd4110e60f0e13688</string>
-    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDoetHMJeqdV0uYA3-9rqpIUOPmFfzlcLI</string>
-    <string name="google_storage_bucket" translatable="false">foodstabook-65e07.appspot.com</string>
+    <string name="firebase_database_url" translatable="false">https://foodstabook-a34b4-default-rtdb.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">953372665389</string>
+    <string name="google_api_key" translatable="false">AIzaSyB7oTL-l8EWzmw12EbnMqzsd-_3jI0agdQ</string>
+    <string name="google_app_id" translatable="false">1:953372665389:android:77868bbb0661f174517aa4</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyB7oTL-l8EWzmw12EbnMqzsd-_3jI0agdQ</string>
+    <string name="google_storage_bucket" translatable="false">foodstabook-a34b4.appspot.com</string>
     <string name="kimchi_jjigae_instructions">
         Ingredients:\n
 For the rice:\n
@@ -204,7 +204,7 @@ Instructions:\n
     </string>
     <string name="profile_email">profile_email</string>
     <string name="profile_name">profile_name</string>
-    <string name="project_id" translatable="false">foodstabook-65e07</string>
+    <string name="project_id" translatable="false">foodstabook-a34b4</string>
     <string name="random_suggestion">Random</string>
     <string name="ratatouille_instructions">
         Ingredients (for 8 servings):\n

@@ -4,7 +4,7 @@
             "outputFile": "com.example.foodstabook.app-mergeDebugResources-35:/values-v17/values-v17.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\XPS\\.gradle\\caches\\transforms-3\\40757915f98b51fbb09f15c0a3fd3283\\transformed\\appcompat-1.5.1\\res\\values-v17\\values-v17.xml",
+                    "source": "C:\\Users\\runti\\.gradle\\caches\\transforms-3\\40757915f98b51fbb09f15c0a3fd3283\\transformed\\appcompat-1.5.1\\res\\values-v17\\values-v17.xml",
                     "from": {
                         "startLines": "2,5,9,12,15,18,22,25,29,33,37,40,43,46,50,53,57",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

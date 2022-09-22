@@ -1,6 +1,6 @@
-package com.example.foodstabook
+package com.example.foodstabook.data
 
-data class Equipment(
+data class Ingredient(
     val id: Int,
     val image: String,
     val localizedName: String,

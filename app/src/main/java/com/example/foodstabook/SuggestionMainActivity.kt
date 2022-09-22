@@ -17,29 +17,12 @@ import com.example.foodstabook.activity.MainActivity
 
 class SuggestionMainActivity : AppCompatActivity() {
 
-    private var index = 0
-    private var newIndex = -1
-    private val recipeList = mutableListOf("???", "Shrimp al Mojo de Ajo", "Ratatouille",
-        "Blueberry Crumble", "Ochazuke", "Vegetable Terrine", "Chicken Tikka Masala", "Borscht",
-        "Kimchi-jjigae", "Falafel", "Bunny Chow")
-    private val imageList = intArrayOf(R.drawable.red_question_mark, R.drawable.shrimp_al_mojo_de_ajo,
-        R.drawable.ratatouille, R.drawable.blueberry_crumble, R.drawable.ochazuke, R.drawable.vegetable_terrine,
-        R.drawable.chicken_tikka_masala, R.drawable.borscht, R.drawable.kimchi_jjigae, R.drawable.falafel,
-        R.drawable.bunny_chow)
-
-    private val instructionsList = intArrayOf(R.string.blank_instructions, R.string.shrimp_al_mojo_de_ajo_instructions,
-        R.string.ratatouille_instructions, R.string.blueberry_crumble_instructions, R.string.ochazuke_instructions,
-        R.string.vegetable_terrine_instructions, R.string.chicken_tikka_masala_instructions,
-        R.string.borscht_instructions, R.string.kimchi_jjigae_instructions, R.string.falafel_instructions,
-        R.string.bunny_chow_instructions)
-
     private lateinit var binding: ActivitySuggestionMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySuggestionMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-        var pseudorandomId: Long = 0
         val titleSwitcher = binding.recipeName
         val summarySwitcher = binding.summary
         val ingredientsTitleCardSwitcher = binding.ingredientsTitleCard
@@ -124,71 +107,40 @@ class SuggestionMainActivity : AppCompatActivity() {
         instructionSwitcher.outAnimation = animOut
         imageSwitcher.outAnimation = animOut
 
-        titleSwitcher.setText(recipeList[0])
-        imageSwitcher.setImageResource(imageList[0])
-        instructionSwitcher.setText(getString(instructionsList[0]))
-
-        /*binding.randomButton.setOnClickListener{
-            newIndex = (1 until (recipeList.size)).random()
-            while (newIndex == index)
-                newIndex = (1 until (recipeList.size)).random()
-            imageSwitcher.setImageResource(imageList[newIndex])
-            instructionSwitcher.setText(getString(instructionsList[newIndex]))
-            index = newIndex
-        }*/
+        titleSwitcher.setText("???")
+        imageSwitcher.setImageResource(R.drawable.red_question_mark)
+        instructionSwitcher.setText("")
 
         binding.randomButton.setOnClickListener{
-            newIndex = (1 until (recipeList.size)).random()
-            while (newIndex == index)
-                newIndex = (1 until (recipeList.size)).random()
-            when (newIndex) {
-                1 -> 100777
-                2 -> 1
-                3 -> 100
-                4 -> 200
-                5 -> 2
-                6 -> 491
-                7 -> 42
-                8 -> 28471
-                9 -> 68299
-                10 -> 629001
-                else -> {
-                    0
-                }
-            }.also { pseudorandomId = it.toLong() }
             CoroutineScope(Dispatchers.Main).launch {
                 val ingredientsBuilder = StringBuilder()
                 val instructionsBuilder = StringBuilder()
-                val response = RetrofitInstance.spoonacularApi.getRecipeInfo(pseudorandomId,
-                    false,"e16c808bc22e41ceb1cc4f18180159f5")
+                val response = RetrofitInstance.spoonacularApi.getRandomRecipe(false,
+                    "6a802448b4a34e4daaeb8be9bfb8d399")
                 val responseBody = response.body()
-                val recipeImage = responseBody?.image
+                val recipeImage = responseBody?.recipes?.get(0)?.image
                 Glide.with(this@SuggestionMainActivity)
                     .asDrawable()
                     .load(recipeImage)
                     .into(imageSwitcher.nextView as ImageView)
-                if (responseBody != null) {
-                    responseBody.extendedIngredients.forEach{
-                        ingredientsBuilder.append(it.amount.toString()+" "+it.unit+" "
-                                +it.nameClean+"\n")
-                    }
+                responseBody?.recipes?.get(0)?.extendedIngredients?.forEach{
+                    ingredientsBuilder.append(it.amount.toString()+" "+it.unit+" "
+                            +it.nameClean+"\n")
                 }
 
-                if (responseBody != null) {
-                    responseBody.analyzedInstructions.forEach { it1 ->
-                        if (it1.steps.isNotEmpty()) {
-                            it1.steps.forEach {
-                                instructionsBuilder.append(it.number.toString() + ". " + it.step + "\n")
-                            }
-                        } else
-                            instructionsBuilder.append("")
-                    }
+                responseBody?.recipes?.get(0)?.analyzedInstructions?.forEach { it1 ->
+                    if (it1.steps.isNotEmpty()) {
+                        it1.steps.forEach {
+                            instructionsBuilder.append(it.number.toString() + ". " + it.step + "\n")
+                        }
+                    } else
+                        instructionsBuilder.append("")
                 }
                 if (responseBody != null) {
-                    titleSwitcher.setText(responseBody.title)
+                    titleSwitcher.setText(responseBody.recipes[0].title)
                 }
                 if (responseBody != null) {
-                    summarySwitcher.setText(responseBody.summary)
+                    summarySwitcher.setText(responseBody.recipes[0].summary)
                 }
                 ingredientsTitleCardSwitcher.setText("INGREDIENTS:")
                 ingredientsSwitcher.setText(ingredientsBuilder)
@@ -206,7 +158,7 @@ class SuggestionMainActivity : AppCompatActivity() {
             ingredientsSwitcher.setText("A lot of:\nSweat\nTears\nSleepless Nights")
             instructionsTitleCardSwitcher.setText("INSTRUCTIONS:")
             instructionSwitcher.setText("This is might take a while...")
-            imageSwitcher.setImageResource(imageList[0])
+            imageSwitcher.setImageResource(R.drawable.red_question_mark)
             binding.scrollView.smoothScrollTo(0,0)
         }
 

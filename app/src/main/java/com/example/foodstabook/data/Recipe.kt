@@ -1,6 +1,6 @@
-package com.example.foodstabook
+package com.example.foodstabook.data
 
-data class recipeTest(
+data class Recipe(
     val aggregateLikes: Int,
     val analyzedInstructions: List<AnalyzedInstruction>,
     val cheap: Boolean,
@@ -27,6 +27,7 @@ data class recipeTest(
     val servings: Int,
     val sourceName: String,
     val sourceUrl: String,
+    val spoonacularSourceUrl: String,
     val summary: String,
     val sustainable: Boolean,
     val title: String,
@@ -34,6 +35,5 @@ data class recipeTest(
     val vegetarian: Boolean,
     val veryHealthy: Boolean,
     val veryPopular: Boolean,
-    val weightWatcherSmartPoints: Int,
-    val winePairing: WinePairing
+    val weightWatcherSmartPoints: Int
 )

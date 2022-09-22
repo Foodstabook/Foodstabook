@@ -1,6 +1,6 @@
-package com.example.foodstabook
+package com.example.foodstabook.data
 
-data class Metric(
+data class Us(
     val amount: Double,
     val unitLong: String,
     val unitShort: String

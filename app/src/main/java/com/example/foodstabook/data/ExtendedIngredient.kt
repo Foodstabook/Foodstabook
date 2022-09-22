@@ -1,4 +1,4 @@
-package com.example.foodstabook
+package com.example.foodstabook.data
 
 data class ExtendedIngredient(
     val aisle: String,

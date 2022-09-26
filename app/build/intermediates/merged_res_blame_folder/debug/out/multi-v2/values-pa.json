@@ -4,7 +4,11 @@
             "outputFile": "com.example.foodstabook.app-mergeDebugResources-32:/values-pa/values-pa.xml",
             "map": [
                 {
+<<<<<<< Updated upstream
                     "source": "C:\\Users\\XPS\\.gradle\\caches\\transforms-3\\9a8f30e8fe901acbc7b7fb51887b7f79\\transformed\\core-1.8.0\\res\\values-pa\\values-pa.xml",
+=======
+                    "source": "C:\\Users\\XPS\\.gradle\\caches\\transforms-3\\bfd44b420c3766757e3e91e835ef1b00\\transformed\\core-1.9.0\\res\\values-pa\\values-pa.xml",
+>>>>>>> Stashed changes
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

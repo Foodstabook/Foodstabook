@@ -21,6 +21,7 @@
                     }
                 },
                 {
+<<<<<<< Updated upstream
                     "source": "C:\\Users\\XPS\\.gradle\\caches\\transforms-3\\e66169a55732876720e2bd78b8165cbd\\transformed\\browser-1.4.0\\res\\values-en-rAU\\values-en-rAU.xml",
                     "from": {
                         "startLines": "2,3,4,5",
@@ -39,6 +40,9 @@
                 },
                 {
                     "source": "C:\\Users\\XPS\\.gradle\\caches\\transforms-3\\9a8f30e8fe901acbc7b7fb51887b7f79\\transformed\\core-1.8.0\\res\\values-en-rAU\\values-en-rAU.xml",
+=======
+                    "source": "C:\\Users\\XPS\\.gradle\\caches\\transforms-3\\bfd44b420c3766757e3e91e835ef1b00\\transformed\\core-1.9.0\\res\\values-en-rAU\\values-en-rAU.xml",
+>>>>>>> Stashed changes
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -52,6 +56,23 @@
                         "startOffsets": "3248",
                         "endColumns": "100",
                         "endOffsets": "3344"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\XPS\\.gradle\\caches\\transforms-3\\e66169a55732876720e2bd78b8165cbd\\transformed\\browser-1.4.0\\res\\values-en-rAU\\values-en-rAU.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,153,250,359",
+                        "endColumns": "97,96,108,98",
+                        "endOffsets": "148,245,354,453"
+                    },
+                    "to": {
+                        "startLines": "29,30,31,32",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "2762,2860,2957,3066",
+                        "endColumns": "97,96,108,98",
+                        "endOffsets": "2855,2952,3061,3160"
                     }
                 }
             ]

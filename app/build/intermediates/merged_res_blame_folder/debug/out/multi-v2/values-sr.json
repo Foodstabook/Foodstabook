@@ -4,6 +4,7 @@
             "outputFile": "com.example.foodstabook.app-mergeDebugResources-32:/values-sr/values-sr.xml",
             "map": [
                 {
+<<<<<<< Updated upstream
                     "source": "C:\\Users\\XPS\\.gradle\\caches\\transforms-3\\9a8f30e8fe901acbc7b7fb51887b7f79\\transformed\\core-1.8.0\\res\\values-sr\\values-sr.xml",
                     "from": {
                         "startLines": "2",
@@ -35,6 +36,39 @@
                         "startOffsets": "3440,3546,3702,3828,3938,4092,4219,4331,4563,4712,4819,4979,5106,5255,5397,5465,5530",
                         "endColumns": "105,155,125,109,153,126,111,101,148,106,159,126,148,141,67,64,79",
                         "endOffsets": "3541,3697,3823,3933,4087,4214,4326,4428,4707,4814,4974,5101,5250,5392,5460,5525,5605"
+=======
+                    "source": "C:\\Users\\XPS\\.gradle\\caches\\transforms-3\\2aaf0ba16eeda6a58b02f9358e0d98cd\\transformed\\play-services-base-18.0.1\\res\\values-sr\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
+                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
+                        "startOffsets": "193,295,447,569,675,825,948,1056,1154,1299,1402,1558,1681,1826,1964,2028,2089",
+                        "endColumns": "101,151,121,105,149,122,107,97,144,102,155,122,144,137,63,60,75",
+                        "endOffsets": "294,446,568,674,824,947,1055,1153,1298,1401,1557,1680,1825,1963,2027,2088,2164"
+                    },
+                    "to": {
+                        "startLines": "38,39,40,41,42,43,44,45,47,48,49,50,51,52,53,54,55",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "3440,3546,3702,3828,3938,4092,4219,4331,4563,4712,4819,4979,5106,5255,5397,5465,5530",
+                        "endColumns": "105,155,125,109,153,126,111,101,148,106,159,126,148,141,67,64,79",
+                        "endOffsets": "3541,3697,3823,3933,4087,4214,4326,4428,4707,4814,4974,5101,5250,5392,5460,5525,5605"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\XPS\\.gradle\\caches\\transforms-3\\bfd44b420c3766757e3e91e835ef1b00\\transformed\\core-1.9.0\\res\\values-sr\\values-sr.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "111",
+                        "startColumns": "4",
+                        "startOffsets": "10073",
+                        "endColumns": "100",
+                        "endOffsets": "10169"
+>>>>>>> Stashed changes
                     }
                 },
                 {

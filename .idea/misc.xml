@@ -6,9 +6,23 @@
         <entry key="..\:/Users/XPS/Desktop/491/Foodstabook/Foodstabook/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
         <entry key="..\:/Users/XPS/Desktop/491/Foodstabook/Foodstabook/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="..\:/Users/XPS/Desktop/491/Foodstabook/Foodstabook/app/src/main/res/layout/activity_login.xml" value="0.16666666666666666" />
+<<<<<<< Updated upstream
         <entry key="..\:/Users/XPS/Desktop/491/Foodstabook/Foodstabook/app/src/main/res/layout/activity_main.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/XPS/Desktop/491/Foodstabook/Foodstabook/app/src/main/res/layout/activity_reset_password.xml" value="0.1" />
         <entry key="..\:/Users/XPS/Desktop/491/Foodstabook/Foodstabook/app/src/main/res/layout/activity_suggestion_main.xml" value="0.10085470085470086" />
+=======
+        <entry key="..\:/Users/XPS/Desktop/491/Foodstabook/Foodstabook/app/src/main/res/layout/activity_login_page.xml" value="0.1" />
+        <entry key="..\:/Users/XPS/Desktop/491/Foodstabook/Foodstabook/app/src/main/res/layout/activity_main.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/XPS/Desktop/491/Foodstabook/Foodstabook/app/src/main/res/layout/activity_profile.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/XPS/Desktop/491/Foodstabook/Foodstabook/app/src/main/res/layout/activity_reset_password.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/XPS/Desktop/491/Foodstabook/Foodstabook/app/src/main/res/layout/activity_setting.xml" value="0.14375" />
+        <entry key="..\:/Users/XPS/Desktop/491/Foodstabook/Foodstabook/app/src/main/res/layout/activity_sign_in.xml" value="0.1640625" />
+        <entry key="..\:/Users/XPS/Desktop/491/Foodstabook/Foodstabook/app/src/main/res/layout/activity_sign_up.xml" value="0.1640625" />
+        <entry key="..\:/Users/XPS/Desktop/491/Foodstabook/Foodstabook/app/src/main/res/layout/activity_suggestion_main.xml" value="0.12" />
+        <entry key="..\:/Users/XPS/Desktop/491/Foodstabook/Foodstabook/app/src/main/res/layout/activity_user_account.xml" value="0.14375" />
+        <entry key="..\:/Users/XPS/Desktop/491/Foodstabook/Foodstabook/app/src/main/res/layout/delete_dialog.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/XPS/Desktop/491/Foodstabook/Foodstabook/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.121" />
+>>>>>>> Stashed changes
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_user_profile.xml" value="0.2717391304347826" />
         <entry key="app/src/main/res/layout/activity_userprofile.xml" value="0.25" />

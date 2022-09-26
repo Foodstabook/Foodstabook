@@ -74,6 +74,26 @@
                     }
                 },
                 {
+<<<<<<< Updated upstream
+=======
+                    "source": "C:\\Users\\XPS\\.gradle\\caches\\transforms-3\\bfd44b420c3766757e3e91e835ef1b00\\transformed\\core-1.9.0\\res\\values-hi\\values-hi.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "110",
+                        "startColumns": "4",
+                        "startOffsets": "10025",
+                        "endColumns": "100",
+                        "endOffsets": "10121"
+                    }
+                },
+                {
+>>>>>>> Stashed changes
                     "source": "C:\\Users\\XPS\\.gradle\\caches\\transforms-3\\2aaf0ba16eeda6a58b02f9358e0d98cd\\transformed\\play-services-base-18.0.1\\res\\values-hi\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
@@ -89,6 +109,7 @@
                         "endColumns": "107,159,125,111,150,129,111,111,156,108,165,129,140,152,62,66,87",
                         "endOffsets": "3452,3612,3738,3850,4001,4131,4243,4355,4658,4767,4933,5063,5204,5357,5420,5487,5575"
                     }
+<<<<<<< Updated upstream
                 },
                 {
                     "source": "C:\\Users\\XPS\\.gradle\\caches\\transforms-3\\9a8f30e8fe901acbc7b7fb51887b7f79\\transformed\\core-1.8.0\\res\\values-hi\\values-hi.xml",
@@ -106,6 +127,8 @@
                         "endColumns": "100",
                         "endOffsets": "10121"
                     }
+=======
+>>>>>>> Stashed changes
                 }
             ]
         }

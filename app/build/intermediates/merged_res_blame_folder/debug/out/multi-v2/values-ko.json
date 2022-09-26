@@ -57,6 +57,7 @@
                     }
                 },
                 {
+<<<<<<< Updated upstream
                     "source": "C:\\Users\\XPS\\.gradle\\caches\\transforms-3\\e66169a55732876720e2bd78b8165cbd\\transformed\\browser-1.4.0\\res\\values-ko\\values-ko.xml",
                     "from": {
                         "startLines": "2,3,4,5",
@@ -92,6 +93,9 @@
                 },
                 {
                     "source": "C:\\Users\\XPS\\.gradle\\caches\\transforms-3\\9a8f30e8fe901acbc7b7fb51887b7f79\\transformed\\core-1.8.0\\res\\values-ko\\values-ko.xml",
+=======
+                    "source": "C:\\Users\\XPS\\.gradle\\caches\\transforms-3\\bfd44b420c3766757e3e91e835ef1b00\\transformed\\core-1.9.0\\res\\values-ko\\values-ko.xml",
+>>>>>>> Stashed changes
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -105,6 +109,40 @@
                         "startOffsets": "9084",
                         "endColumns": "100",
                         "endOffsets": "9180"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\XPS\\.gradle\\caches\\transforms-3\\e66169a55732876720e2bd78b8165cbd\\transformed\\browser-1.4.0\\res\\values-ko\\values-ko.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,141,234,337",
+                        "endColumns": "85,92,102,93",
+                        "endOffsets": "136,229,332,426"
+                    },
+                    "to": {
+                        "startLines": "55,58,59,60",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "5114,5343,5436,5539",
+                        "endColumns": "85,92,102,93",
+                        "endOffsets": "5195,5431,5534,5628"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\XPS\\.gradle\\caches\\transforms-3\\61910677267b28f80d6e99af13feff06\\transformed\\play-services-basement-18.1.0\\res\\values-ko\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "195",
+                        "endColumns": "116",
+                        "endOffsets": "311"
+                    },
+                    "to": {
+                        "startLines": "45",
+                        "startColumns": "4",
+                        "startOffsets": "4062",
+                        "endColumns": "120",
+                        "endOffsets": "4178"
                     }
                 }
             ]

@@ -74,6 +74,7 @@
                     }
                 },
                 {
+<<<<<<< Updated upstream
                     "source": "C:\\Users\\XPS\\.gradle\\caches\\transforms-3\\9a8f30e8fe901acbc7b7fb51887b7f79\\transformed\\core-1.8.0\\res\\values-hr\\values-hr.xml",
                     "from": {
                         "startLines": "2",
@@ -105,6 +106,39 @@
                         "startOffsets": "5618,5887,5987,6101",
                         "endColumns": "104,99,113,101",
                         "endOffsets": "5718,5982,6096,6198"
+=======
+                    "source": "C:\\Users\\XPS\\.gradle\\caches\\transforms-3\\e66169a55732876720e2bd78b8165cbd\\transformed\\browser-1.4.0\\res\\values-hr\\values-hr.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,160,260,374",
+                        "endColumns": "104,99,113,101",
+                        "endOffsets": "155,255,369,471"
+                    },
+                    "to": {
+                        "startLines": "56,59,60,61",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "5618,5887,5987,6101",
+                        "endColumns": "104,99,113,101",
+                        "endOffsets": "5718,5982,6096,6198"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\XPS\\.gradle\\caches\\transforms-3\\bfd44b420c3766757e3e91e835ef1b00\\transformed\\core-1.9.0\\res\\values-hr\\values-hr.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "111",
+                        "startColumns": "4",
+                        "startOffsets": "10122",
+                        "endColumns": "100",
+                        "endOffsets": "10218"
+>>>>>>> Stashed changes
                     }
                 }
             ]

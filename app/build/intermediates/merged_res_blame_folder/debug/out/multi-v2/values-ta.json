@@ -38,7 +38,28 @@
                     }
                 },
                 {
+<<<<<<< Updated upstream
                     "source": "C:\\Users\\XPS\\.gradle\\caches\\transforms-3\\9a8f30e8fe901acbc7b7fb51887b7f79\\transformed\\core-1.8.0\\res\\values-ta\\values-ta.xml",
+=======
+                    "source": "C:\\Users\\XPS\\.gradle\\caches\\transforms-3\\2aaf0ba16eeda6a58b02f9358e0d98cd\\transformed\\play-services-base-18.0.1\\res\\values-ta\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
+                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
+                        "startOffsets": "193,294,442,565,667,815,939,1048,1145,1321,1424,1573,1704,1854,2006,2064,2123",
+                        "endColumns": "100,147,122,101,147,123,108,96,175,102,148,130,149,151,57,58,76",
+                        "endOffsets": "293,441,564,666,814,938,1047,1144,1320,1423,1572,1703,1853,2005,2063,2122,2199"
+                    },
+                    "to": {
+                        "startLines": "37,38,39,40,41,42,43,44,46,47,48,49,50,51,52,53,54",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "3438,3543,3695,3822,3928,4080,4208,4321,4583,4763,4870,5023,5158,5312,5468,5530,5593",
+                        "endColumns": "104,151,126,105,151,127,112,100,179,106,152,134,153,155,61,62,80",
+                        "endOffsets": "3538,3690,3817,3923,4075,4203,4316,4417,4758,4865,5018,5153,5307,5463,5525,5588,5669"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\XPS\\.gradle\\caches\\transforms-3\\bfd44b420c3766757e3e91e835ef1b00\\transformed\\core-1.9.0\\res\\values-ta\\values-ta.xml",
+>>>>>>> Stashed changes
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -55,6 +76,7 @@
                     }
                 },
                 {
+<<<<<<< Updated upstream
                     "source": "C:\\Users\\XPS\\.gradle\\caches\\transforms-3\\2aaf0ba16eeda6a58b02f9358e0d98cd\\transformed\\play-services-base-18.0.1\\res\\values-ta\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
@@ -81,6 +103,17 @@
                         "endOffsets": "351"
                     },
                     "to": {
+=======
+                    "source": "C:\\Users\\XPS\\.gradle\\caches\\transforms-3\\61910677267b28f80d6e99af13feff06\\transformed\\play-services-basement-18.1.0\\res\\values-ta\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "195",
+                        "endColumns": "156",
+                        "endOffsets": "351"
+                    },
+                    "to": {
+>>>>>>> Stashed changes
                         "startLines": "45",
                         "startColumns": "4",
                         "startOffsets": "4422",

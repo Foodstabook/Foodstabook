@@ -1,10 +1,9 @@
 package com.example.foodstabook.activity
 
 import android.content.Intent
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.provider.MediaStore
 import android.widget.Toast
-import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import com.example.foodstabook.databinding.ActivityProfileBinding
 import com.google.firebase.database.DatabaseReference
@@ -52,6 +51,12 @@ class ProfileActivity : AppCompatActivity() {
             binding.textSearchUsernameProfile.setText("")
         }
         goHome()
+
+        binding.profileImage.setOnClickListener{
+            val gallery = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
+            //startActivityForResult(gallery, pickImage)
+        }
+
     }
 
     private fun readData(uid: String) {
@@ -92,4 +97,8 @@ class ProfileActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
+
+
+
+
 }

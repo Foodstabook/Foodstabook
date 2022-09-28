@@ -1,4 +1,4 @@
-package com.example.foodstabook
+package com.example.foodstabook.activity
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,8 +8,6 @@ import com.example.foodstabook.databinding.ActivityResetPasswordBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-import com.example.foodstabook.activity.MainActivity
-
 
 
 class ResetPassword : AppCompatActivity() {

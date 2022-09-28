@@ -1,23 +1,28 @@
-package com.example.foodstabook
+package com.example.foodstabook.activity
 
 import android.content.Intent
 import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
+import android.text.Html
 import android.view.Gravity
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
+import com.example.foodstabook.R
+import com.example.foodstabook.model.RetrofitInstance
 import com.example.foodstabook.databinding.ActivitySuggestionMainBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import com.example.foodstabook.activity.MainActivity
 
 class SuggestionMainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySuggestionMainBinding
+    @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySuggestionMainBinding.inflate(layoutInflater)
@@ -137,10 +142,10 @@ class SuggestionMainActivity : AppCompatActivity() {
                         instructionsBuilder.append("")
                 }
                 if (responseBody != null) {
-                    titleSwitcher.setText(responseBody.recipes[0].title)
+                    titleSwitcher.setText(Html.fromHtml(responseBody.recipes[0].title, 0))
                 }
                 if (responseBody != null) {
-                    summarySwitcher.setText(responseBody.recipes[0].summary)
+                    summarySwitcher.setText(Html.fromHtml(responseBody.recipes[0].summary, 0))
                 }
                 ingredientsTitleCardSwitcher.setText("INGREDIENTS:")
                 ingredientsSwitcher.setText(ingredientsBuilder)
@@ -157,7 +162,7 @@ class SuggestionMainActivity : AppCompatActivity() {
             ingredientsTitleCardSwitcher.setText("INGREDIENTS:")
             ingredientsSwitcher.setText("A lot of:\nSweat\nTears\nSleepless Nights")
             instructionsTitleCardSwitcher.setText("INSTRUCTIONS:")
-            instructionSwitcher.setText("This is might take a while...")
+            instructionSwitcher.setText("This might take a while...")
             imageSwitcher.setImageResource(R.drawable.red_question_mark)
             binding.scrollView.smoothScrollTo(0,0)
         }

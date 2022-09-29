@@ -288,4 +288,5 @@ Instructions:\n
 7. Serve
     </string>
     <string name="title_activity_newsfeed">Newsfeed</string>
+    <string name="title_activity_news_feed_screen">NewsFeedScreen</string>
 </resources>

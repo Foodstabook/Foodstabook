@@ -26,5 +26,9 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this@MainActivity,signin::class.java))
         })
 
+        setContent {
+            NewsfeedScreen()
+        }
+
     }
 }

@@ -1,4 +1,4 @@
-package com.example.foodstabook
+package com.example.foodstabook.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,8 +6,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import com.example.foodstabook.R
 import com.example.foodstabook.databinding.ActivitySettingBinding
-import com.example.foodstabook.activity.MainActivity
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_setting.*
 import kotlinx.android.synthetic.main.delete_dialog.view.*

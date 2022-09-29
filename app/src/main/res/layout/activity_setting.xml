@@ -4,14 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SettingActivity"><![CDATA[
-    android:padding="32dp"
-    tools:context=".SecondActivity">
-
-
-
-
-    ]]>
+    tools:context=".activity.SettingActivity">
 
     <TextView
         android:id="@+id/tvUserEmail"

@@ -1,4 +1,4 @@
-package com.example.foodstabook
+package com.example.foodstabook.model
 
 class User(username: String, email: String, age: String, email1: String, age1: String) {
     var username: String? = null

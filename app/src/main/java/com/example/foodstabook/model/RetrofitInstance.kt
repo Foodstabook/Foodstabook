@@ -1,6 +1,5 @@
-package com.example.foodstabook
+package com.example.foodstabook.model
 
-import com.squareup.moshi.Moshi
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 

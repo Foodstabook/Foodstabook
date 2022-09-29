@@ -4,8 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+
 import com.example.foodstabook.*
-import com.example.foodstabook.activity.MainActivity
 import com.example.foodstabook.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -19,8 +19,7 @@ class MainActivity : AppCompatActivity() {
         //To force change the title of the activity
         title = "Main Menu"
 
-        val button:Button = findViewById(R.id.profileButton)
-        button.setOnClickListener {
+        binding.profileButton.setOnClickListener {
             val intent = Intent(this@MainActivity, ProfileActivity::class.java)
             startActivity(intent)
         }
@@ -31,9 +30,12 @@ class MainActivity : AppCompatActivity() {
         goToSignIn()
         goToSignUp()
         goToSettings()
+        goToNewsfeed()
         goHome()
 
     }
+
+
 
     private fun goToResetPassword(){
         binding.resetPasswordButton.setOnClickListener{
@@ -80,6 +82,13 @@ class MainActivity : AppCompatActivity() {
     private fun goToSettings(){
         binding.settingsButton.setOnClickListener{
             val intent = Intent(this, SettingActivity::class.java)
+            startActivity(intent)
+        }
+    }
+
+    private fun goToNewsfeed(){
+        binding.newsfeedButton.setOnClickListener{
+            val intent = Intent(this, NewsfeedActivity::class.java)
             startActivity(intent)
         }
     }

@@ -1,10 +1,7 @@
 package com.example.foodstabook.screens
 
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Home
-import androidx.compose.material.icons.filled.List
-import androidx.compose.material.icons.filled.Person
-import androidx.compose.material.icons.filled.Search
+import androidx.compose.material.icons.filled.*
 import androidx.compose.ui.graphics.vector.ImageVector
 
 sealed class BottomBarScreen(
@@ -30,7 +27,7 @@ sealed class BottomBarScreen(
     object Post: BottomBarScreen(
         route = "post",
         title = "Post",
-        icon = Icons.Default.List
+        icon = Icons.Default.Add
     )
 }
 

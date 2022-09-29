@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHost
 import androidx.navigation.NavHostController
 import com.example.foodstabook.activity.ProfileActivity
+import com.example.foodstabook.activity.SuggestionMainActivity
 import com.example.foodstabook.screens.BottomBarScreen
 
 @Composable

@@ -16,7 +16,6 @@
         android:theme="@style/Theme.Foodstabook"
         tools:targetApi="31">
         <activity
-<<<<<<< HEAD
             android:name=".NewsFeedScreen"
             android:exported="false"
             android:label="@string/title_activity_news_feed_screen"
@@ -31,10 +30,7 @@
             android:label="@string/title_activity_newsfeed"
             android:theme="@style/Theme.Foodstabook" />
         <activity
-            android:name=".UserAccount"
-=======
             android:name=".activity.UserAccount"
->>>>>>> origin/Retrospective2-Spencer
             android:exported="false" />
         <activity
             android:name=".activity.SuggestionMainActivity"
@@ -49,16 +45,12 @@
             android:name=".activity.ProfileActivity"
             android:exported="false" />
         <activity
-<<<<<<< HEAD
             android:name=".SignInActivity"
-            android:exported="false" />
-        <activity
-            android:name=".SignUpActivity"
             android:exported="false" />
         <activity
             android:name=".SettingActivity"
             android:exported="false" />
-=======
+        <activity
             android:name=".activity.SignUpActivity"
             android:exported="false"/>
         <activity
@@ -66,7 +58,6 @@
             android:exported="false"/>
         <activity android:name=".activity.NewsfeedActivity"
             android:exported="false"/>
->>>>>>> origin/Retrospective2-Spencer
         <activity
             android:name=".activity.MainActivity"
             android:exported="true">

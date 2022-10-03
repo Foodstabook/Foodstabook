@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1815738142/Foodstabook.iml" filepath="$PROJECT_DIR$/.idea/modules/1815738142/Foodstabook.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Foodstabook.app.iml" filepath="$PROJECT_DIR$/.idea/modules/Foodstabook.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Foodstabook.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/Foodstabook.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Foodstabook.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Foodstabook.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Foodstabook.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/Foodstabook.app.unitTest.iml" />
     </modules>
   </component>
 </project>

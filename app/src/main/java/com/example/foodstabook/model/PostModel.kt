@@ -5,9 +5,9 @@ import java.text.SimpleDateFormat
 data class PostModel(
     val postId: String,
     val postAuthor: String,
-    val postImage: Int,
+    val postImage: List<Int>,
     val postDate: SimpleDateFormat,
     var postDescription: String,
     var postLikes: Int,
-    var postComments: List<String>
+    var postComments: List<CommentsModel>
 )

@@ -12,6 +12,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:itemCount="5"
-        tools:listitem="@layout/post_card" />
+        tools:listitem="@layout/comment_card" />
 
 </LinearLayout>

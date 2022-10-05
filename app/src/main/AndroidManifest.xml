@@ -29,14 +29,18 @@
             android:exported="false" />
         <activity
             android:name=".activity.ProfileActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".activity.SignUpActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".activity.SettingActivity"
-            android:exported="false"/>
-        <activity android:name=".activity.NewsfeedActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.NewsfeedActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.CommentsActivity"
             android:exported="false"/>
         <activity
             android:name=".activity.MainActivity"

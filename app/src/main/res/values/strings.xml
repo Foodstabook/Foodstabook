@@ -1,4 +1,6 @@
 <resources>
+    <string name="resizable_text_read_more">more</string>
+    <string name="resizable_text_read_less">less</string>
     <string name="app_name">Foodstabook</string>
     <string name="profile_name">profile_name</string>
     <string name="profile_email">profile_email</string>
@@ -287,4 +289,5 @@ Instructions:\n
 6. Remove the cinnamon stick and spoon the curry inside the bread.\n
 7. Serve
     </string>
+    <string name="title_activity_main2">MainActivity2</string>
 </resources>

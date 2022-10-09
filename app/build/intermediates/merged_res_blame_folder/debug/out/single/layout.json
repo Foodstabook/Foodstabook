@@ -1,0 +1,38 @@
+[
+    {
+        "merged": "com.example.foodstabook.app-mergeDebugResources-36:/layout/activity_sign_in.xml",
+        "source": "com.example.foodstabook.app-main-39:/layout/activity_sign_in.xml"
+    },
+    {
+        "merged": "com.example.foodstabook.app-mergeDebugResources-36:/layout/activity_profile.xml",
+        "source": "com.example.foodstabook.app-main-39:/layout/activity_profile.xml"
+    },
+    {
+        "merged": "com.example.foodstabook.app-mergeDebugResources-36:/layout/activity_reset_password.xml",
+        "source": "com.example.foodstabook.app-main-39:/layout/activity_reset_password.xml"
+    },
+    {
+        "merged": "com.example.foodstabook.app-mergeDebugResources-36:/layout/activity_main.xml",
+        "source": "com.example.foodstabook.app-main-39:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.example.foodstabook.app-mergeDebugResources-36:/layout/activity_suggestion_main.xml",
+        "source": "com.example.foodstabook.app-main-39:/layout/activity_suggestion_main.xml"
+    },
+    {
+        "merged": "com.example.foodstabook.app-mergeDebugResources-36:/layout/activity_sign_up.xml",
+        "source": "com.example.foodstabook.app-main-39:/layout/activity_sign_up.xml"
+    },
+    {
+        "merged": "com.example.foodstabook.app-mergeDebugResources-36:/layout/activity_user_account.xml",
+        "source": "com.example.foodstabook.app-main-39:/layout/activity_user_account.xml"
+    },
+    {
+        "merged": "com.example.foodstabook.app-mergeDebugResources-36:/layout/activity_setting.xml",
+        "source": "com.example.foodstabook.app-main-39:/layout/activity_setting.xml"
+    },
+    {
+        "merged": "com.example.foodstabook.app-mergeDebugResources-36:/layout/delete_dialog.xml",
+        "source": "com.example.foodstabook.app-main-39:/layout/delete_dialog.xml"
+    }
+]

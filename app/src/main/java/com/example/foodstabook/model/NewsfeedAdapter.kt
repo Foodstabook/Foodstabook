@@ -1,22 +1,18 @@
 package com.example.foodstabook.model
 
-import android.content.Intent
-import android.view.GestureDetector
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Button
-import androidx.core.content.ContextCompat.startActivity
+import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.foodstabook.R
-import com.example.foodstabook.activity.CommentsActivity
 import com.ms.square.android.expandabletextview.ExpandableTextView
 
-private const val selectedPosition = -1
-
-class NewsfeedAdapter(private val mList: List<PostModel>) : RecyclerView.Adapter<NewsfeedAdapter.ViewHolder>() {
+class NewsfeedAdapter(private var mList: List<PostModel>,
+private val listener: OnViewCommentsClickListener) : RecyclerView.Adapter<NewsfeedAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -39,6 +35,7 @@ class NewsfeedAdapter(private val mList: List<PostModel>) : RecyclerView.Adapter
             holder.postRight.visibility = View.INVISIBLE
         }
         holder.postAuthor.text = post.postAuthor
+        holder.authorIcon.setImageResource(post.authorIcon)
         holder.postImage.setImageResource(post.postImage[0])
         holder.likes.text = postLikes
         holder.postDescription.text = (post.postDescription)
@@ -62,7 +59,7 @@ class NewsfeedAdapter(private val mList: List<PostModel>) : RecyclerView.Adapter
                     holder.postRight.visibility = View.INVISIBLE
             }
         }
-        holder.postImage.setOnClickListener(){
+        holder.postImage.setOnClickListener {
             if ((System.currentTimeMillis() - doubleClickLastTime) < 250) {
                 doubleClickLastTime = 0
                 if(liked){
@@ -82,23 +79,36 @@ class NewsfeedAdapter(private val mList: List<PostModel>) : RecyclerView.Adapter
                 doubleClickLastTime = System.currentTimeMillis()
             }
         }
-
-        holder.viewComments.setOnClickListener{
-            //TODO Switch to comments view on click
-        }
     }
 
     override fun getItemCount(): Int {
         return mList.size
     }
 
-    class ViewHolder(postView: View) : RecyclerView.ViewHolder(postView) {
+    inner class ViewHolder(postView: View) : RecyclerView.ViewHolder(postView), View.OnClickListener {
         var postAuthor: TextView = postView.findViewById(R.id.postAuthor)
+        var authorIcon: ImageView = postView.findViewById(R.id.authorIcon)
         var postImage: ImageButton = postView.findViewById(R.id.postImage)
         var likes: TextView = postView.findViewById(R.id.likes)
         var postDescription: ExpandableTextView = postView.findViewById(R.id.postDescription)
         val viewComments: Button = postView.findViewById(R.id.viewCommentsButton)
         val postLeft: ImageButton = postView.findViewById(R.id.postImageLeft)
         val postRight: ImageButton = postView.findViewById(R.id.postImageRight)
+
+        init{
+            viewComments.setOnClickListener(this)
+        }
+
+        override fun onClick(v: View?) {
+            val position = absoluteAdapterPosition
+            if(position != RecyclerView.NO_POSITION)
+                listener.onViewCommentsClick(position)
+        }
+    }
+
+    interface OnViewCommentsClickListener{
+        fun onViewCommentsClick(position: Int){
+        }
     }
 }
+

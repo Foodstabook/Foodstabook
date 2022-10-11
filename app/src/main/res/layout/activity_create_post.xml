@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.MainActivity">
+
+
+    <TextView
+        android:id="@+id/hashtagtext"
+        android:layout_width="154dp"
+        android:layout_height="42dp"
+        android:text="Hashtags :"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="28dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.077"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titletext"
+        app:layout_constraintVertical_bias="0.031"
+        tools:ignore="MissingConstraints" />
+
+    <RatingBar
+        android:id="@+id/rbRating"
+        android:layout_width="237dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:numStars="5"
+        android:progressTint="@android:color/holo_orange_dark"
+        android:scaleX="0.6"
+        android:scaleY="0.6"
+        android:stepSize="0.25"
+        app:layout_constraintStart_toEndOf="@+id/Rating"
+        app:layout_constraintTop_toBottomOf="@+id/palace"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/palace"
+        android:layout_width="215dp"
+        android:layout_height="42dp"
+        android:ems="10"
+        android:minHeight="48dp"
+        android:textColorHint="@color/black"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.571"
+        app:layout_constraintStart_toEndOf="@+id/palacetext"
+        app:layout_constraintTop_toBottomOf="@+id/hashtags"
+        app:layout_constraintVertical_bias="0.039" />
+
+    <TextView
+        android:id="@+id/Rating"
+        android:layout_width="126dp"
+        android:layout_height="44dp"
+        android:text="Rating :"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="28dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.077"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/palacetext"
+        app:layout_constraintVertical_bias="0.029"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/titletext"
+        android:layout_width="148dp"
+        android:layout_height="42dp"
+        android:text="Title:"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="28dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.076"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.047"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/title"
+        android:layout_width="215dp"
+        android:layout_height="42dp"
+        android:ems="10"
+        android:minHeight="48dp"
+        android:textColorHint="@color/black"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.357"
+        app:layout_constraintStart_toEndOf="@+id/titletext"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.047" />
+
+    <TextView
+        android:id="@+id/palacetext"
+        android:layout_width="133dp"
+        android:layout_height="42dp"
+        android:text="Palace :"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="28dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.075"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hashtagtext"
+        app:layout_constraintVertical_bias="0.041"
+        tools:ignore="MissingConstraints" />
+
+
+    <EditText
+        android:id="@+id/hashtags"
+        android:layout_width="215dp"
+        android:layout_height="42dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:minHeight="48dp"
+        android:textColorHint="@color/black"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toEndOf="@+id/hashtagtext"
+        app:layout_constraintTop_toBottomOf="@+id/title"
+        app:layout_constraintVertical_bias="0.031" />
+
+    <Button
+        android:id="@+id/btnopengallery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="64dp"
+        android:backgroundTint="#ffccbc"
+        android:text="Open gallery"
+        android:textColor="#D84315"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnCancelpost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#ffccbc"
+        android:text="Cancel"
+        android:textColor="#D84315"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.783"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Rating"
+        app:layout_constraintVertical_bias="0.971" />
+
+    <Button
+        android:id="@+id/btnpost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#ffccbc"
+        android:text="post"
+        android:textColor="#D84315"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnCancelpost"
+        app:layout_constraintHorizontal_bias="0.598"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Rating"
+        app:layout_constraintVertical_bias="0.971" />
+
+    <EditText
+        android:id="@+id/description"
+        android:layout_width="374dp"
+        android:layout_height="107dp"
+        android:ems="10"
+        android:gravity="start"
+        android:hint="Write your post here..."
+        android:minHeight="48dp"
+        android:textColorHint="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.788" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

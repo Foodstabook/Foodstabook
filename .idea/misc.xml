@@ -20,7 +20,11 @@
         <entry key="..\:/Users/runti/Desktop/Foodstabook/app/src/main/res/layout/activity_suggestion_main.xml" value="0.14722222222222223" />
         <entry key="..\:/Users/runti/Desktop/Foodstabook/app/src/main/res/layout/activity_user_account.xml" value="0.14722222222222223" />
         <entry key="..\:/Users/runti/Desktop/Foodstabook/app/src/main/res/layout/delete_dialog.xml" value="0.14722222222222223" />
+        <entry key="app/src/main/res/layout/activity_create_post.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_profile.xml" value="0.43259887695312504" />
+        <entry key="app/src/main/res/layout/activity_reset_password.xml" value="0.15070921985815602" />
+        <entry key="app/src/main/res/layout/activity_setting.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_user_profile.xml" value="0.2717391304347826" />
         <entry key="app/src/main/res/layout/activity_userprofile.xml" value="0.25" />
         <entry key="app/src/main/res/layout/content_user_profile.xml" value="0.2717391304347826" />

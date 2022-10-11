@@ -31,6 +31,7 @@ class MainActivity : AppCompatActivity() {
         goToSignIn()
         goToSignUp()
         goToSettings()
+        goToCreatePost()
         goHome()
 
     }
@@ -80,6 +81,13 @@ class MainActivity : AppCompatActivity() {
     private fun goToSettings(){
         binding.settingsButton.setOnClickListener{
             val intent = Intent(this, SettingActivity::class.java)
+            startActivity(intent)
+        }
+    }
+
+    private fun goToCreatePost(){
+        binding.btnPost.setOnClickListener {
+            val intent = Intent(this, CreatePostActivity::class.java)
             startActivity(intent)
         }
     }

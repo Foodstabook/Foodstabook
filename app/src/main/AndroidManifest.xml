@@ -16,6 +16,9 @@
         android:theme="@style/Theme.Foodstabook"
         tools:targetApi="31">
         <activity
+            android:name=".CreatePostActivity"
+            android:exported="false" />
+        <activity
             android:name=".UserAccount"
             android:exported="false" />
         <activity
@@ -29,16 +32,16 @@
             android:exported="false" />
         <activity
             android:name=".activity.ProfileActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".SignInActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".SignUpActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".SettingActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".activity.MainActivity"
             android:exported="true">

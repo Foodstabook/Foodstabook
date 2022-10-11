@@ -289,4 +289,6 @@ Instructions:\n
     </string>
     <string name="title_activity_newsfeed">Newsfeed</string>
     <string name="title_activity_news_feed_screen">NewsFeedScreen</string>
+    <string name="home">Home</string>
+    <string name="profile">Profile</string>
 </resources>

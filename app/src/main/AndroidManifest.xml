@@ -16,20 +16,6 @@
         android:theme="@style/Theme.Foodstabook"
         tools:targetApi="31">
         <activity
-            android:name=".NewsFeedScreen"
-            android:exported="false"
-            android:label="@string/title_activity_news_feed_screen"
-            android:theme="@style/Theme.Foodstabook">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".Newsfeed"
-            android:exported="false"
-            android:label="@string/title_activity_newsfeed"
-            android:theme="@style/Theme.Foodstabook" />
-        <activity
             android:name=".activity.UserAccount"
             android:exported="false" />
         <activity
@@ -46,9 +32,6 @@
             android:exported="false" />
         <activity
             android:name=".SignInActivity"
-            android:exported="false" />
-        <activity
-            android:name=".SettingActivity"
             android:exported="false" />
         <activity
             android:name=".activity.SignUpActivity"

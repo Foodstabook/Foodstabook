@@ -1,9 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: com.google.accompanist:accompanist-appcompat-theme:0.25.1@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/6e376acf8e953ebf58d34de0fba3c385/transformed/accompanist-appcompat-theme-0.25.1/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/6e376acf8e953ebf58d34de0fba3c385/transformed/accompanist-appcompat-theme-0.25.1/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/6e376acf8e953ebf58d34de0fba3c385/transformed/accompanist-appcompat-theme-0.25.1/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/bdc547c30158839efc9a477ecc56b7b9/transformed/accompanist-appcompat-theme-0.25.1/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/bdc547c30158839efc9a477ecc56b7b9/transformed/accompanist-appcompat-theme-0.25.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/bdc547c30158839efc9a477ecc56b7b9/transformed/accompanist-appcompat-theme-0.25.1/res" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.accompanist/accompanist-appcompat-theme/0.25.1/9ddd2f2b8ff979a7d3a3b98a90031149dc5261d9/accompanist-appcompat-theme-0.25.1-javadoc.jar!/" />

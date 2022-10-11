@@ -1,4 +1,4 @@
-package com.example.foodstabook.activity
+package com.example.foodstabook.activity;
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

@@ -1,8 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: com.google.firebase:firebase-auth:21.0.8@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/290458d9034b300fa31f4c0738268a7a/transformed/firebase-auth-21.0.8/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/290458d9034b300fa31f4c0738268a7a/transformed/firebase-auth-21.0.8/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/c5b32587383a0283abea18986cfddbe2/transformed/firebase-auth-21.0.8/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/c5b32587383a0283abea18986cfddbe2/transformed/firebase-auth-21.0.8/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/c5b32587383a0283abea18986cfddbe2/transformed/firebase-auth-21.0.8/res" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.firebase/firebase-auth/21.0.8/703aad7119bb895e0584605065f2c154d9b98c80/firebase-auth-21.0.8-javadoc.jar!/" />

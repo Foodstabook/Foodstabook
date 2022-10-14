@@ -34,8 +34,7 @@ class CommentsActivity:AppCompatActivity() {
 
     private fun returnToNewsfeed(){
         binding.backToNewsfeed.setOnClickListener{
-            val intent = Intent(this, NewsfeedActivity::class.java)
-            startActivity(intent)
+            finish()
         }
     }
 }

@@ -17,8 +17,7 @@ class UserAccount : AppCompatActivity() {
 
     private fun goHome(){
         binding.logo.setOnClickListener{
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+            finish()
         }
     }
 }

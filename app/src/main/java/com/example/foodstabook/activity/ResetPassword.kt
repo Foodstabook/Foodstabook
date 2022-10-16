@@ -37,12 +37,12 @@ class ResetPassword : AppCompatActivity() {
                     }
                 }
             }
+        goHome()
         }
 
     private fun goHome(){
         binding.logo.setOnClickListener{
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+            finish()
         }
     }
 }

@@ -31,8 +31,6 @@ class MainActivity : AppCompatActivity() {
         goToSignUp()
         goToSettings()
         goToNewsfeed()
-        goHome()
-
     }
 
 
@@ -54,13 +52,6 @@ class MainActivity : AppCompatActivity() {
     private fun goToUserAccount(){
         binding.userAccountButton.setOnClickListener{
             val intent = Intent(this, UserAccount::class.java)
-            startActivity(intent)
-        }
-    }
-
-    private fun goHome(){
-        binding.logo.setOnClickListener{
-            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
     }

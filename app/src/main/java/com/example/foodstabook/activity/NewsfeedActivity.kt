@@ -4,13 +4,11 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.foodstabook.R
 import com.example.foodstabook.databinding.ActivityNewsfeedBinding
 import com.example.foodstabook.model.CommentsModel
 import com.example.foodstabook.model.NewsfeedAdapter
 import com.example.foodstabook.model.PostModel
-import java.io.Serializable
 import java.text.SimpleDateFormat
 
 
@@ -61,7 +59,7 @@ class NewsfeedActivity : AppCompatActivity(), NewsfeedAdapter.OnViewCommentsClic
         }
 
     private fun generateCommentsList1(): ArrayList<CommentsModel>{
-        var comments = ArrayList<CommentsModel>()
+        val comments = ArrayList<CommentsModel>()
         comments.add(CommentsModel(R.drawable.default_profile_photo, "TestCommenter1","Wow!"))
         comments.add(CommentsModel(R.drawable.default_profile_photo,"TestCommenter2", "Looks tasty!"))
         comments.add(CommentsModel(R.drawable.default_profile_photo,"TestCommenter3", "Not my cup of tea..."))
@@ -70,7 +68,7 @@ class NewsfeedActivity : AppCompatActivity(), NewsfeedAdapter.OnViewCommentsClic
     }
 
     private fun generateCommentsList2(): ArrayList<CommentsModel>{
-        var comments = ArrayList<CommentsModel>()
+        val comments = ArrayList<CommentsModel>()
         comments.add(CommentsModel(R.drawable.default_profile_photo, "TestCommenter5","Wow!"))
         comments.add(CommentsModel(R.drawable.default_profile_photo,"TestCommenter6", "Looks tasty!"))
         comments.add(CommentsModel(R.drawable.default_profile_photo,"TestCommenter7", "Not my cup of tea..."))
@@ -80,7 +78,7 @@ class NewsfeedActivity : AppCompatActivity(), NewsfeedAdapter.OnViewCommentsClic
     }
 
     private fun generateCommentsList3(): ArrayList<CommentsModel>{
-        var comments = ArrayList<CommentsModel>()
+        val comments = ArrayList<CommentsModel>()
         comments.add(CommentsModel(R.drawable.default_profile_photo, "TestCommenter10","Wow!"))
         comments.add(CommentsModel(R.drawable.default_profile_photo,"TestCommenter11", "Looks tasty!"))
         comments.add(CommentsModel(R.drawable.default_profile_photo,"TestCommenter12", "Not my cup of tea..."))
@@ -91,14 +89,14 @@ class NewsfeedActivity : AppCompatActivity(), NewsfeedAdapter.OnViewCommentsClic
     }
 
     private fun generateCommentsList4(): ArrayList<CommentsModel>{
-        var comments = ArrayList<CommentsModel>()
+        val comments = ArrayList<CommentsModel>()
         comments.add(CommentsModel(R.drawable.default_profile_photo, "TestCommenter16","Wow!"))
         comments.add(CommentsModel(R.drawable.default_profile_photo,"TestCommenter17", "Looks tasty!"))
         return comments
     }
 
     override fun onViewCommentsClick(position: Int) {
-        var clickedPost = postList[position]
+        val clickedPost = postList[position]
         val intent = Intent(this, CommentsActivity::class.java)
         intent.putExtra("clickedPost", clickedPost)
         startActivity(intent)

@@ -1,10 +1,9 @@
-package com.example.foodstabook
+package com.example.foodstabook.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.foodstabook.databinding.ActivityUserAccountBinding
-import com.example.foodstabook.activity.MainActivity
 
 class UserAccount : AppCompatActivity() {
     private lateinit var binding: ActivityUserAccountBinding
@@ -18,8 +17,7 @@ class UserAccount : AppCompatActivity() {
 
     private fun goHome(){
         binding.logo.setOnClickListener{
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+            finish()
         }
     }
 }

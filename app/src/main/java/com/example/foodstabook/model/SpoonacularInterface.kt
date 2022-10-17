@@ -1,4 +1,4 @@
-package com.example.foodstabook
+package com.example.foodstabook.model
 
 import retrofit2.Response
 import retrofit2.http.GET

@@ -1,9 +1,8 @@
-package com.example.foodstabook
+package com.example.foodstabook.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.foodstabook.activity.MainActivity
 import com.example.foodstabook.databinding.ActivitySignInBinding
 
 class LoginPage : AppCompatActivity() {
@@ -17,9 +16,8 @@ class LoginPage : AppCompatActivity() {
     }
 
     private fun goHome(){
-        binding.logo.setOnClickListener{
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+        binding.smallLogo.setOnClickListener{
+            finish()
         }
     }
 }

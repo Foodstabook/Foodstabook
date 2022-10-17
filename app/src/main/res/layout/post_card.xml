@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/postView">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/authorIcon"
+        android:layout_width="90dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="-10dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/postAuthor"
+        android:layout_width="158dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="-7dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif-black"
+        android:textColor="@android:color/black"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/authorIcon"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/postImageLeft"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/back_arrow"
+        android:elevation="2dp"
+        android:scaleType="fitCenter"
+        android:layout_marginStart="10dp"
+        android:alpha="0.8"
+        app:layout_constraintTop_toTopOf="@+id/postImage"
+        app:layout_constraintBottom_toBottomOf="@id/postImage"
+        app:layout_constraintStart_toStartOf="@id/postImage"/>
+
+    <ImageButton
+        android:id="@+id/postImageRight"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/forward_arrow"
+        android:elevation="2dp"
+        android:scaleType="fitCenter"
+        android:layout_marginEnd="10dp"
+        android:alpha="0.8"
+        app:layout_constraintTop_toTopOf="@+id/postImage"
+        app:layout_constraintBottom_toBottomOf="@id/postImage"
+        app:layout_constraintEnd_toEndOf="@id/postImage"/>
+
+    <ImageButton
+        android:id="@+id/postImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="-12dp"
+        tools:layout_editor_absoluteY="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/authorIcon"/>
+
+    <TextView
+        android:id="@+id/likes"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="283dp"
+        android:layout_marginBottom="142dp"
+        android:text="Likes"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/postImage"/>
+
+    <TextView
+        android:id="@+id/collapsedDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:ellipsize="end"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:maxLines="2"
+        android:includeFontPadding="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/likes" />
+
+    <TextView
+        android:id="@+id/expandedDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:ellipsize="end"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:visibility="gone"
+        android:includeFontPadding="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/likes"
+        app:layout_constraintBottom_toTopOf="@+id/viewCommentsButton"/>
+
+    <ImageView
+        android:id="@+id/expandArrow"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:scaleType="centerCrop"
+        android:background="@null"
+        android:layout_marginRight="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/collapsedDescription"
+        app:layout_constraintTop_toBottomOf="@id/collapsedDescription"
+        app:layout_constraintBottom_toTopOf="@id/viewCommentsButton"/>
+
+    <ImageView
+        android:id="@+id/collapseArrow"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:scaleType="centerCrop"
+        android:background="@null"
+        android:layout_marginRight="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/expandedDescription"
+        app:layout_constraintTop_toBottomOf="@id/expandedDescription"
+        app:layout_constraintBottom_toTopOf="@id/viewCommentsButton"/>
+
+    <Button
+        android:id="@+id/viewCommentsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:background="@android:color/transparent"
+        android:gravity="start|center_vertical"
+        android:textColor="#808080"
+        android:textSize="16sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/expandedDescription"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

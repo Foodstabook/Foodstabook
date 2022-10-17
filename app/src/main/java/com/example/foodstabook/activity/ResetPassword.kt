@@ -1,4 +1,4 @@
-package com.example.foodstabook
+package com.example.foodstabook.activity
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,8 +8,6 @@ import com.example.foodstabook.databinding.ActivityResetPasswordBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-import com.example.foodstabook.activity.MainActivity
-
 
 
 class ResetPassword : AppCompatActivity() {
@@ -22,11 +20,11 @@ class ResetPassword : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
             auth = Firebase.auth
             super.onCreate(savedInstanceState)
-            binding = ActivityResetPasswordBinding.inflate(layoutInflater);
-            setContentView(binding.root);
+            binding = ActivityResetPasswordBinding.inflate(layoutInflater)
+            setContentView(binding.root)
 
             binding.btnResetPassword.setOnClickListener {
-                val emailAddress = binding.edtResetEmail.getText().toString()
+                val emailAddress = binding.edtResetEmail.text.toString()
 
                 Firebase.auth.sendPasswordResetEmail(emailAddress).addOnCompleteListener { task ->
                     if (task.isSuccessful) {
@@ -39,12 +37,12 @@ class ResetPassword : AppCompatActivity() {
                     }
                 }
             }
+        goHome()
         }
 
     private fun goHome(){
         binding.logo.setOnClickListener{
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+            finish()
         }
     }
 }

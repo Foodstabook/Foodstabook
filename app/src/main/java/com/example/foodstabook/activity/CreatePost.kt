@@ -32,7 +32,7 @@ class CreatePost : AppCompatActivity() {
         functions = Firebase.functions
 
         val actionbar = supportActionBar
-        actionbar!!.title = "Post"
+        actionbar!!.title = "Create Post"
         actionbar.setDisplayHomeAsUpEnabled(true)
 
         //Rating Bar change value

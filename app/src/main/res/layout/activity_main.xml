@@ -111,7 +111,7 @@
         app:srcCompat="@drawable/foodstabook_logo4" />
 
     <Button
-        android:id="@+id/CreatePost"
+        android:id="@+id/create_post_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Post"

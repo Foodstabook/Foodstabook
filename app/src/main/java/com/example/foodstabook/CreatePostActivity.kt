@@ -8,8 +8,11 @@ import com.example.foodstabook.databinding.ActivityCreatePostBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.example.foodstabook.activity.MainActivity
+import com.google.android.gms.tasks.Task
 import com.google.firebase.database.*
 import com.google.firebase.database.ktx.database
+import com.google.firebase.functions.FirebaseFunctions
+import com.google.firebase.functions.ktx.functions
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_create_post.*
 
@@ -19,6 +22,9 @@ class CreatePostActivity : AppCompatActivity() {
     private lateinit var db:FirebaseFirestore
     private lateinit var referance: DatabaseReference
 
+    //cloud function
+    private lateinit var functions: FirebaseFunctions
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCreatePostBinding.inflate(layoutInflater)
@@ -26,6 +32,7 @@ class CreatePostActivity : AppCompatActivity() {
         user = FirebaseAuth.getInstance()
         db = FirebaseFirestore.getInstance()
         referance = Firebase.database.reference
+        functions = Firebase.functions
 
         val actionbar = supportActionBar
         actionbar!!.title = "Post"

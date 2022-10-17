@@ -8,7 +8,6 @@ data class Post(
     var place: String? = "",
     var rating: Int = 0,
     var description: String? = "",
-    //var stars: MutableMap<String, Boolean> = HashMap()
 ) {
 
     fun toMap(): Map<String, Any?> {

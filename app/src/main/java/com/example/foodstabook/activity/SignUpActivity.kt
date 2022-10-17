@@ -53,7 +53,7 @@ class SignUpActivity : AppCompatActivity() {
                                         Toast.makeText(this, "User added to database", Toast.LENGTH_LONG).show()
                                     }
                                 }
-                            // Everyting worked so send user to the sign-in page
+                            // Everything worked so send user to the sign-in page
                             val intent = Intent(this, LoginPage::class.java)
                             startActivity(intent)
 
@@ -68,6 +68,7 @@ class SignUpActivity : AppCompatActivity() {
                 Toast.makeText(this, "Please agree to the terms and conditions by checking the box", Toast.LENGTH_LONG).show()
             }
         }
+        goHome()
     }
 
     private fun inputValidation(userName: String?, email: String?, password: String?, age: String?): Boolean {
@@ -97,5 +98,11 @@ class SignUpActivity : AppCompatActivity() {
             return false;
         }
         return true
+    }
+
+    private fun goHome(){
+        binding.logo.setOnClickListener{
+            finish()
+        }
     }
 }

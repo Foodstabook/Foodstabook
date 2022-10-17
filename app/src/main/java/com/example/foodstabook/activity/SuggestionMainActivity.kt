@@ -1,6 +1,5 @@
 package com.example.foodstabook.activity
 
-import android.content.Intent
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
@@ -13,8 +12,8 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.example.foodstabook.R
-import com.example.foodstabook.model.RetrofitInstance
 import com.example.foodstabook.databinding.ActivitySuggestionMainBinding
+import com.example.foodstabook.model.RetrofitInstance
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

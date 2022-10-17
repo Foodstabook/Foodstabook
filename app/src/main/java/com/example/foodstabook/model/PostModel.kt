@@ -12,6 +12,7 @@ data class PostModel(
     val postImage: List<Int>,
     val postDate: SimpleDateFormat,
     var postDescription: String,
+    var postTags: List<String>,
     var postLikes: Int,
     var postComments: List<CommentsModel>
 ) : Parcelable

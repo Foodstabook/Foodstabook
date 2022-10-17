@@ -1,6 +1,6 @@
 package com.example.foodstabook.activity
 
-import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
@@ -19,8 +19,13 @@ class CommentsActivity:AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityCommentsBinding.inflate(layoutInflater)
         val view = binding.root
-        val post = intent.getParcelableExtra<PostModel>("clickedPost")
+        val post = if (Build.VERSION.SDK_INT >= 33) {
+            intent.getParcelableExtra("clickedPost", PostModel::class.java)
+        } else {
+            intent.getParcelableExtra("clickedPost")
+        }
         setContentView(view)
+        title = "Comments"
 
         if (post != null) {
             for (i in 1..post.postComments.size)

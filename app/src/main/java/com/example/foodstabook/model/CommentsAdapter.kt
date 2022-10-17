@@ -1,30 +1,36 @@
 package com.example.foodstabook.model
 
-import android.view.GestureDetector
+import android.graphics.Typeface
+import android.text.SpannableStringBuilder
+import android.text.Spanned
+import android.text.style.ForegroundColorSpan
+import android.text.style.StyleSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.compose.ui.graphics.Color
 import androidx.recyclerview.widget.RecyclerView
 import com.example.foodstabook.R
-import com.ms.square.android.expandabletextview.ExpandableTextView
-import kotlinx.android.synthetic.main.comment_card.view.*
+import java.lang.reflect.Type
+
 
 class CommentsAdapter(private val mList: List<CommentsModel>) : RecyclerView.Adapter<CommentsAdapter.ViewHolder>() {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CommentsAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.comment_card, parent, false)
 
-        return CommentsAdapter.ViewHolder(view)
+        return ViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: CommentsAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val comment = mList[position]
+        val commentBody = SpannableStringBuilder(comment.commentAuthor + " " + comment.commentBody)
+        commentBody.setSpan(StyleSpan(Typeface.BOLD), 0, comment.commentAuthor.length,
+            Spanned.SPAN_INCLUSIVE_INCLUSIVE)
 
-        holder.commentBody.text = comment.commentAuthor + " " + comment.commentBody
+        holder.commentBody.text = commentBody
     }
 
     override fun getItemCount(): Int {

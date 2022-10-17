@@ -11,6 +11,34 @@
     <string name="wip_summary">Hi, thank you for using Foodstabook.
     Currently tailored food suggestions aren\'t working, so please check on this feature again at
     a later date!</string>
+    <string name="post_description_1">
+    This is an example of a long description:\n
+    Here are some of my favorite dishes from my recent travels:\n
+    1. Borscht: Borscht is a really simple dish but it\'s super tasty! The beets, onions, and cabbage are kind of sweet, but the
+    vinegar and tomato give it a tart, savory flavor as well. I personally prefer it with sour cream, but I know some people
+    don\'t like it.\n
+    2. Blueberry Crumble: I\'ve always been a big fan of dessert and blueberries are one of my favorite fruits, so of course I
+    would love blueberry crumbles! The breading is delicious but the real treat is the filling, it\'s to die for.\n
+    3. Bunny Chow: Bunny chow is a South African dish where they hollow out a loaf of bread and fill it with curry and salad.
+    I adore curry and I\'m a big fan of bread as well, so for me this dish is a combo of two of my favorite foods. Not many places
+    serve it outside of Africa, but if you ever see it on the menu I\'d highly recommend it!\n
+    4. Falafel: Falafel is a deep-fried ball or patty-shaped fritter in Middle Eastern cuisine made from ground chickpeas,
+    broad beans, or both. It\'s a great snack!
+    </string>
+    <string name="post_description_2">
+        This is an example of a medium length description:\n
+        Here are a few dish recommendations for the next time you can\'t decide what to eat!\n
+        1. Tikka Masala: Pretty easy to make at home and it\'s healthy. Goes great with pita bread.\n
+        2. Ochazuke: This is more of a snack or appetizer than a full meal, but it has a really unique taste.\n
+        3. Kimchi-jjigae: A bit spicy, but it has such a rich flavor.
+    </string>
+    <string name="post_description_3">
+        This is an example of a short description:\n
+        Went to Mexico recently, the Shrimp al Mojo de Ajo out here is insanely good!
+    </string>
+    <string name="post_description_4">
+        French food is as good as they say, but Paris is just okay :(
+    </string>
     <string name="shrimp_al_mojo_de_ajo_instructions">
         Ingredients:\n
 ▢ 1 tablespoon smoked paprika\n

@@ -20,11 +20,11 @@ class ResetPassword : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
             auth = Firebase.auth
             super.onCreate(savedInstanceState)
-            binding = ActivityResetPasswordBinding.inflate(layoutInflater);
-            setContentView(binding.root);
+            binding = ActivityResetPasswordBinding.inflate(layoutInflater)
+            setContentView(binding.root)
 
             binding.btnResetPassword.setOnClickListener {
-                val emailAddress = binding.edtResetEmail.getText().toString()
+                val emailAddress = binding.edtResetEmail.text.toString()
 
                 Firebase.auth.sendPasswordResetEmail(emailAddress).addOnCompleteListener { task ->
                     if (task.isSuccessful) {

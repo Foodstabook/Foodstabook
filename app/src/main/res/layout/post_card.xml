@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:id="@+id/postView">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/authorIcon"
@@ -86,39 +87,60 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/postImage"/>
 
-    <com.ms.square.android.expandabletextview.ExpandableTextView
-        android:id="@+id/postDescription"
+    <TextView
+        android:id="@+id/collapsedDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginEnd="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
         android:ellipsize="end"
-        app:collapseDrawable="@drawable/purple_up_arrow"
-        app:expandDrawable="@drawable/purple_down_arrow"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:maxLines="2"
+        android:includeFontPadding="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/likes" />
+
+    <TextView
+        android:id="@+id/expandedDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:ellipsize="end"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:visibility="gone"
+        android:includeFontPadding="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/likes"
-        app:maxCollapsedLines="2">
+        app:layout_constraintBottom_toTopOf="@+id/viewCommentsButton"/>
 
-        <TextView
-            android:id="@id/expandable_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="12dp"
-            android:layout_marginRight="12dp"
-            android:ellipsize="end"
-            android:textColor="@android:color/black"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+    <ImageView
+        android:id="@+id/expandArrow"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:scaleType="centerCrop"
+        android:background="@null"
+        android:layout_marginRight="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/collapsedDescription"
+        app:layout_constraintTop_toBottomOf="@id/collapsedDescription"
+        app:layout_constraintBottom_toTopOf="@id/viewCommentsButton"/>
 
-        <ImageButton
-            android:id="@id/expand_collapse"
-            android:layout_width="18dp"
-            android:layout_height="15dp"
-            android:layout_gravity="end|bottom"
-            android:scaleType="centerCrop"
-            android:background="@null"/>
-    </com.ms.square.android.expandabletextview.ExpandableTextView>
+    <ImageView
+        android:id="@+id/collapseArrow"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:scaleType="centerCrop"
+        android:background="@null"
+        android:layout_marginRight="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/expandedDescription"
+        app:layout_constraintTop_toBottomOf="@id/expandedDescription"
+        app:layout_constraintBottom_toTopOf="@id/viewCommentsButton"/>
 
     <Button
         android:id="@+id/viewCommentsButton"
@@ -131,6 +153,6 @@
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/postDescription"/>
+        app:layout_constraintTop_toBottomOf="@id/expandedDescription"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

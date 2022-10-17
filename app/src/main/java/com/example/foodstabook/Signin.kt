@@ -8,6 +8,8 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import com.example.foodstabook.R
+import com.example.foodstabook.activity.MainActivity
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
 
@@ -16,7 +18,7 @@ class signin : AppCompatActivity() {
     val mAuth  = FirebaseAuth.getInstance()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_signin)
+        setContentView(R.layout.activity_sign_in)
 
 
         val login = findViewById<Button>(R.id.btnlogin) as Button

@@ -266,6 +266,46 @@ fun Profile(navController: NavHostController){
         ) {
             Text("Profile", color = Color.Black)
         }
+        Button(
+            onClick = {
+                mContext.startActivity(Intent(mContext, SignUpActivity::class.java))
+            },
+            colors = ButtonDefaults.buttonColors(backgroundColor = Color.Green),
+        ) {
+            Text("Sign Up", color = Color.Black)
+        }
+        Button(
+            onClick = {
+                mContext.startActivity(Intent(mContext, LoginPage::class.java))
+            },
+            colors = ButtonDefaults.buttonColors(backgroundColor = Color.Green),
+        ) {
+            Text("Login", color = Color.Black)
+        }
+        Button(
+            onClick = {
+                mContext.startActivity(Intent(mContext, ResetPassword::class.java))
+            },
+            colors = ButtonDefaults.buttonColors(backgroundColor = Color.Green),
+        ) {
+            Text("Reset Password", color = Color.Black)
+        }
+        Button(
+            onClick = {
+                mContext.startActivity(Intent(mContext, SettingActivity::class.java))
+            },
+            colors = ButtonDefaults.buttonColors(backgroundColor = Color.Green),
+        ) {
+            Text("Settings", color = Color.Black)
+        }
+        Button(
+            onClick = {
+                mContext.startActivity(Intent(mContext, UserAccount::class.java))
+            },
+            colors = ButtonDefaults.buttonColors(backgroundColor = Color.Green),
+        ) {
+            Text("User Account", color = Color.Black)
+        }
     }
 }
 

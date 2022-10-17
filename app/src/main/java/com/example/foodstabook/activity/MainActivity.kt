@@ -311,12 +311,21 @@ fun Profile(navController: NavHostController){
 
 @Composable
 fun Post(navController: NavHostController){
+    val mContext = LocalContext.current
     Column (modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally){
         Text(text = "Post",
             fontWeight = FontWeight.ExtraBold
         )
+        Button(
+                onClick = {
+                    mContext.startActivity(Intent(mContext, CreatePost::class.java))
+                },
+        colors = ButtonDefaults.buttonColors(backgroundColor = Color.Green),
+        ) {
+        Text("Food Suggestion", color = Color.Black)
+    }
     }
 }
 

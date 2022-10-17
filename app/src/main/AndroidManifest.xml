@@ -16,6 +16,9 @@
         android:theme="@style/Theme.Foodstabook"
         tools:targetApi="31">
         <activity
+            android:name=".CreatePost"
+            android:exported="false" />
+        <activity
             android:name=".activity.UserAccount"
             android:exported="false" />
         <activity
@@ -41,7 +44,7 @@
             android:exported="false" />
         <activity
             android:name=".activity.CommentsActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".activity.MainActivity"
             android:exported="true">

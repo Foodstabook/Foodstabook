@@ -1,10 +1,7 @@
 package com.example.foodstabook.activity
 
-import android.content.Intent
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.widget.Toast
-import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import com.example.foodstabook.databinding.ActivityProfileBinding
 import com.google.firebase.database.DatabaseReference
@@ -88,8 +85,7 @@ class ProfileActivity : AppCompatActivity() {
 
     private fun goHome(){
         binding.logo.setOnClickListener{
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+            finish()
         }
     }
 }

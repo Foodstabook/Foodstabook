@@ -16,29 +16,35 @@
         android:theme="@style/Theme.Foodstabook"
         tools:targetApi="31">
         <activity
-            android:name=".UserAccount"
+            android:name=".activity.CreatePost"
             android:exported="false" />
         <activity
-            android:name=".SuggestionMainActivity"
+            android:name=".activity.UserAccount"
             android:exported="false" />
         <activity
-            android:name=".ResetPassword"
+            android:name=".activity.SuggestionMainActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginPage"
+            android:name=".activity.ResetPassword"
+            android:exported="false" />
+        <activity
+            android:name=".activity.LoginPage"
             android:exported="false" />
         <activity
             android:name=".activity.ProfileActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
-            android:name=".SignInActivity"
-            android:exported="false"/>
+            android:name=".activity.SignUpActivity"
+            android:exported="false" />
         <activity
-            android:name=".SignUpActivity"
-            android:exported="false"/>
+            android:name=".activity.SettingActivity"
+            android:exported="false" />
         <activity
-            android:name=".SettingActivity"
-            android:exported="false"/>
+            android:name=".activity.NewsfeedActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.CommentsActivity"
+            android:exported="false" />
         <activity
             android:name=".activity.MainActivity"
             android:exported="true">

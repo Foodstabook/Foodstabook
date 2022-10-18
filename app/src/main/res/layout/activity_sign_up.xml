@@ -75,7 +75,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Password"
-        android:inputType="text"
+        android:inputType="textPassword"
         android:textColorHint="@color/black"
         android:textSize="28dp"
         android:textStyle="bold"

@@ -47,83 +47,6 @@ class MainActivity : AppCompatActivity() {
         //To force change the title of the activity
         title = "Main Menu"
 
-        binding.profileButton.setOnClickListener {
-            val intent = Intent(this@MainActivity, ProfileActivity::class.java)
-            startActivity(intent)
-        }
-
-        goToResetPassword()
-        goToFoodSuggestion()
-        goToUserAccount()
-        goToSignIn()
-        goToSignUp()
-        goToSettings()
-        goToNewsfeed()
-        goToPost()
-        goHome()
-        //NewsfeedScreen()
-    }
-
-    private fun goToResetPassword() {
-        binding.resetPasswordButton.setOnClickListener {
-            val intent = Intent(this, ResetPassword::class.java)
-            startActivity(intent)
-        }
-    }
-
-    private fun goToFoodSuggestion() {
-        binding.foodSuggestionButton.setOnClickListener {
-            val intent = Intent(this, SuggestionMainActivity::class.java)
-            startActivity(intent)
-        }
-    }
-
-    private fun goToUserAccount() {
-        binding.userAccountButton.setOnClickListener {
-            val intent = Intent(this, UserAccount::class.java)
-            startActivity(intent)
-        }
-    }
-
-    private fun goHome() {
-        binding.logo.setOnClickListener {
-            finish()
-        }
-    }
-
-    private fun goToSignIn() {
-        binding.signInButton.setOnClickListener {
-            val intent = Intent(this, LoginPage::class.java)
-            startActivity(intent)
-        }
-    }
-
-    private fun goToSignUp() {
-        binding.signUpButton.setOnClickListener {
-            val intent = Intent(this, SignUpActivity::class.java)
-            startActivity(intent)
-        }
-    }
-
-    private fun goToSettings() {
-        binding.settingsButton.setOnClickListener {
-            val intent = Intent(this, SettingActivity::class.java)
-            startActivity(intent)
-        }
-    }
-
-    private fun goToNewsfeed() {
-        binding.newsfeedButton.setOnClickListener {
-            val intent = Intent(this, NewsfeedActivity::class.java)
-            startActivity(intent)
-        }
-    }
-
-    private fun goToPost() {
-        binding.createPostButton.setOnClickListener{
-            val intent = Intent(this, CreatePost::class.java)
-            startActivity(intent)
-        }
     }
 
     //Create Scaffold Composable functions
@@ -348,6 +271,14 @@ class MainActivity : AppCompatActivity() {
                 text = "Post",
                 fontWeight = FontWeight.ExtraBold
             )
+        }
+        Button(
+            onClick = {
+                mContext.startActivity(Intent(mContext, CreatePost::class.java))
+            },
+            colors = ButtonDefaults.buttonColors(backgroundColor = Color.Green),
+        ) {
+            Text("Create Post", color = Color.Black)
         }
     }
 

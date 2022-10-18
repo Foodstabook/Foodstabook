@@ -73,7 +73,7 @@ class CreatePost : AppCompatActivity() {
     private fun CreatePost2(uid: String, username: String) {
         val title = binding.title.text.toString()
         val hastags = binding.hashtags.text.toString()
-        val place = binding.palace.text.toString()
+        val place = binding.place.text.toString()
         val rating = binding.rbRating.getRating()
         val description = binding.description.text.toString()
 

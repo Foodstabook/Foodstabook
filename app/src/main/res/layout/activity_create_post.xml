@@ -35,11 +35,11 @@
         android:scaleY="0.6"
         android:stepSize="0.25"
         app:layout_constraintStart_toEndOf="@+id/Rating"
-        app:layout_constraintTop_toBottomOf="@+id/palace"
+        app:layout_constraintTop_toBottomOf="@+id/place"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/palace"
+        android:id="@+id/place"
         android:layout_width="215dp"
         android:layout_height="42dp"
         android:ems="10"
@@ -50,7 +50,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.571"
-        app:layout_constraintStart_toEndOf="@+id/palacetext"
+        app:layout_constraintStart_toEndOf="@+id/placetext"
         app:layout_constraintTop_toBottomOf="@+id/hashtags"
         app:layout_constraintVertical_bias="0.039" />
 
@@ -67,7 +67,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.077"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/palacetext"
+        app:layout_constraintTop_toBottomOf="@+id/placetext"
         app:layout_constraintVertical_bias="0.029"
         tools:ignore="MissingConstraints" />
 
@@ -105,10 +105,10 @@
         app:layout_constraintVertical_bias="0.047" />
 
     <TextView
-        android:id="@+id/palacetext"
+        android:id="@+id/placetext"
         android:layout_width="133dp"
         android:layout_height="42dp"
-        android:text="Palace :"
+        android:text="Place :"
         android:textColor="@color/black"
         android:textColorHint="@color/black"
         android:textSize="28dp"

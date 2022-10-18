@@ -330,7 +330,7 @@ fun Profile(navController: NavHostController){
 fun Post(navController: NavHostController){
     AndroidView(
         factory = {
-            View.inflate(it, R.layout.activity_profile, null)
+            View.inflate(it, R.layout.activity_create_post, null)
         },
         modifier = Modifier.fillMaxSize()
     )

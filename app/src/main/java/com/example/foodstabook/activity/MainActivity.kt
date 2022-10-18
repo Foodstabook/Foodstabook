@@ -272,14 +272,6 @@ class MainActivity : AppCompatActivity() {
                 fontWeight = FontWeight.ExtraBold
             )
         }
-        Button(
-            onClick = {
-                mContext.startActivity(Intent(mContext, CreatePost::class.java))
-            },
-            colors = ButtonDefaults.buttonColors(backgroundColor = Color.Green),
-        ) {
-            Text("Create Post", color = Color.Black)
-        }
     }
 
     @Composable

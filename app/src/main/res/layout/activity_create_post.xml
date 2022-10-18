@@ -51,10 +51,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.571"
-        app:layout_constraintVertical_bias="0.039" />
-        //app:layout_constraintStart_toEndOf="@+id/palacetext"
-        //app:layout_constraintTop_toBottomOf="@+id/hashtags"
-
+        app:layout_constraintVertical_bias="0.039"
+        app:layout_constraintStart_toEndOf="@+id/palacetext"
+        app:layout_constraintTop_toBottomOf="@+id/hashtags"
+    />
 
     <TextView
         android:id="@+id/Rating"
@@ -145,7 +145,7 @@
         android:id="@+id/btnopengallery"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="64dp"
+        android:layout_marginBottom="200dp"
         android:backgroundTint="#ffccbc"
         android:text="Open gallery"
         android:textColor="#D84315"
@@ -166,10 +166,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.783"
+        app:layout_constraintHorizontal_bias="0.728"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Rating"
-        app:layout_constraintVertical_bias="0.971" />
+        app:layout_constraintVertical_bias="0.715" />
 
     <Button
         android:id="@+id/btnpost"
@@ -182,10 +182,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnCancelpost"
-        app:layout_constraintHorizontal_bias="0.598"
+        app:layout_constraintHorizontal_bias="0.635"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Rating"
-        app:layout_constraintVertical_bias="0.971" />
+        app:layout_constraintVertical_bias="0.715" />
 
     <EditText
         android:id="@+id/description"
@@ -200,9 +200,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.432"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.788" />
+        app:layout_constraintVertical_bias="0.464" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

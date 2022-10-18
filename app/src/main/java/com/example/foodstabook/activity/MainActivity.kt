@@ -4,12 +4,14 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.*
+import com.example.foodstabook.R
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Home
@@ -23,6 +25,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.viewinterop.AndroidView
 import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavHostController
@@ -230,6 +233,13 @@ fun BottomNavGraph(navController: NavHostController) {
 
 @Composable
 fun Home(navController: NavHostController){
+    /*AndroidView(
+        factory = {
+            View.inflate(it, R.layout.activity_newsfeed, null)
+        },
+        modifier = Modifier.fillMaxSize()
+    )*/
+
     val mContext = LocalContext.current
     Column (modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
@@ -251,6 +261,13 @@ fun Home(navController: NavHostController){
 
 @Composable
 fun Profile(navController: NavHostController){
+    /*AndroidView(
+        factory = {
+            View.inflate(it, R.layout.activity_profile, null)
+        },
+        modifier = Modifier.fillMaxSize()
+    )*/
+
     val mContext = LocalContext.current
     Column (modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
@@ -311,17 +328,31 @@ fun Profile(navController: NavHostController){
 
 @Composable
 fun Post(navController: NavHostController){
-    Column (modifier = Modifier.fillMaxSize(),
+    AndroidView(
+        factory = {
+            View.inflate(it, R.layout.activity_profile, null)
+        },
+        modifier = Modifier.fillMaxSize()
+    )
+
+    /*Column (modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally){
         Text(text = "Post",
             fontWeight = FontWeight.ExtraBold
         )
-    }
+    }*/
 }
 
 @Composable
 fun FoodSuggestion(navController: NavHostController){
+    /*AndroidView(
+        factory = {
+            View.inflate(it, R.layout.activity_suggestion_main, null)
+        },
+        modifier = Modifier.fillMaxSize()
+    )*/
+
     val mContext = LocalContext.current
     Column (modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,

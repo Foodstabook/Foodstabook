@@ -21,6 +21,10 @@ class ResetPassword : AppCompatActivity() {
             auth = Firebase.auth
             super.onCreate(savedInstanceState)
             binding = ActivityResetPasswordBinding.inflate(layoutInflater)
+            // Bind composable to view
+            binding.composeViewResetPassword.apply {
+
+            }
             setContentView(binding.root)
 
             binding.btnResetPassword.setOnClickListener {

@@ -4,7 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< HEAD
     tools:context=".activity.CreatePost">
+=======
+    tools:context=".activity.MainActivity">
+
+>>>>>>> Retrospective2_Tram2
 
     <TextView
         android:id="@+id/hashtagtext"
@@ -35,11 +40,19 @@
         android:scaleY="0.6"
         android:stepSize="0.25"
         app:layout_constraintStart_toEndOf="@+id/Rating"
+<<<<<<< HEAD
         app:layout_constraintTop_toBottomOf="@+id/place"
         tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/place"
+=======
+        app:layout_constraintTop_toBottomOf="@+id/palace"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/palace"
+>>>>>>> Retrospective2_Tram2
         android:layout_width="215dp"
         android:layout_height="42dp"
         android:ems="10"
@@ -50,9 +63,16 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.571"
+<<<<<<< HEAD
         app:layout_constraintStart_toEndOf="@+id/placetext"
         app:layout_constraintTop_toBottomOf="@+id/hashtags"
         app:layout_constraintVertical_bias="0.039" />
+=======
+        app:layout_constraintVertical_bias="0.039"
+        app:layout_constraintStart_toEndOf="@+id/palacetext"
+        app:layout_constraintTop_toBottomOf="@+id/hashtags"
+    />
+>>>>>>> Retrospective2_Tram2
 
     <TextView
         android:id="@+id/Rating"
@@ -67,7 +87,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.077"
         app:layout_constraintStart_toStartOf="parent"
+<<<<<<< HEAD
         app:layout_constraintTop_toBottomOf="@+id/placetext"
+=======
+        app:layout_constraintTop_toBottomOf="@+id/palacetext"
+>>>>>>> Retrospective2_Tram2
         app:layout_constraintVertical_bias="0.029"
         tools:ignore="MissingConstraints" />
 
@@ -105,10 +129,17 @@
         app:layout_constraintVertical_bias="0.047" />
 
     <TextView
+<<<<<<< HEAD
         android:id="@+id/placetext"
         android:layout_width="133dp"
         android:layout_height="42dp"
         android:text="Place :"
+=======
+        android:id="@+id/palacetext"
+        android:layout_width="133dp"
+        android:layout_height="42dp"
+        android:text="Palace :"
+>>>>>>> Retrospective2_Tram2
         android:textColor="@color/black"
         android:textColorHint="@color/black"
         android:textSize="28dp"
@@ -143,7 +174,11 @@
         android:id="@+id/btnopengallery"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:layout_marginBottom="64dp"
+=======
+        android:layout_marginBottom="200dp"
+>>>>>>> Retrospective2_Tram2
         android:backgroundTint="#ffccbc"
         android:text="Open gallery"
         android:textColor="#D84315"
@@ -164,10 +199,17 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+<<<<<<< HEAD
         app:layout_constraintHorizontal_bias="0.783"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Rating"
         app:layout_constraintVertical_bias="0.971" />
+=======
+        app:layout_constraintHorizontal_bias="0.728"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Rating"
+        app:layout_constraintVertical_bias="0.715" />
+>>>>>>> Retrospective2_Tram2
 
     <Button
         android:id="@+id/btnpost"
@@ -180,10 +222,17 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnCancelpost"
+<<<<<<< HEAD
         app:layout_constraintHorizontal_bias="0.598"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Rating"
         app:layout_constraintVertical_bias="0.971" />
+=======
+        app:layout_constraintHorizontal_bias="0.635"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Rating"
+        app:layout_constraintVertical_bias="0.715" />
+>>>>>>> Retrospective2_Tram2
 
     <EditText
         android:id="@+id/description"
@@ -198,9 +247,16 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+<<<<<<< HEAD
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.788" />
+=======
+        app:layout_constraintHorizontal_bias="0.432"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.464" />
+>>>>>>> Retrospective2_Tram2
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

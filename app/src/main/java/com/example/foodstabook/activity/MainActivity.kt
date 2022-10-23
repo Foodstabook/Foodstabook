@@ -4,12 +4,14 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.*
+import com.example.foodstabook.R
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Home
@@ -23,6 +25,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.viewinterop.AndroidView
 import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavHostController
@@ -188,6 +191,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+<<<<<<< HEAD
     @Composable
     fun Profile(navController: NavHostController) {
         val mContext = LocalContext.current
@@ -195,6 +199,32 @@ class MainActivity : AppCompatActivity() {
             modifier = Modifier.fillMaxSize(),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
+=======
+}
+
+@Composable
+fun Home(navController: NavHostController){
+    /*AndroidView(
+        factory = {
+            View.inflate(it, R.layout.activity_newsfeed, null)
+        },
+        modifier = Modifier.fillMaxSize()
+    )*/
+
+    val mContext = LocalContext.current
+    Column (modifier = Modifier.fillMaxSize(),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally) {
+        Text(
+            text = "Home",
+            fontWeight = FontWeight.ExtraBold
+        )
+        Button(
+            onClick = {
+                mContext.startActivity(Intent(mContext, NewsfeedActivity::class.java))
+            },
+            colors = ButtonDefaults.buttonColors(backgroundColor = Color.Green),
+>>>>>>> Retrospective2_Tram2
         ) {
             Text(
                 text = "Profile",
@@ -259,6 +289,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+<<<<<<< HEAD
     @Composable
     fun Post(navController: NavHostController) {
         val mContext = LocalContext.current
@@ -266,6 +297,29 @@ class MainActivity : AppCompatActivity() {
             modifier = Modifier.fillMaxSize(),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
+=======
+@Composable
+fun Profile(navController: NavHostController){
+    /*AndroidView(
+        factory = {
+            View.inflate(it, R.layout.activity_profile, null)
+        },
+        modifier = Modifier.fillMaxSize()
+    )*/
+
+    val mContext = LocalContext.current
+    Column (modifier = Modifier.fillMaxSize(),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally){
+        Text(text = "Profile",
+            fontWeight = FontWeight.ExtraBold
+        )
+        Button(
+            onClick = {
+                mContext.startActivity(Intent(mContext, ProfileActivity::class.java))
+            },
+            colors = ButtonDefaults.buttonColors(backgroundColor = Color.Green),
+>>>>>>> Retrospective2_Tram2
         ) {
             Text(
                 text = "Post",
@@ -274,6 +328,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+<<<<<<< HEAD
     @Composable
     fun FoodSuggestion(navController: NavHostController) {
         val mContext = LocalContext.current
@@ -281,6 +336,47 @@ class MainActivity : AppCompatActivity() {
             modifier = Modifier.fillMaxSize(),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
+=======
+@Composable
+fun Post(navController: NavHostController){
+    AndroidView(
+        factory = {
+            View.inflate(it, R.layout.activity_create_post, null)
+        },
+        modifier = Modifier.fillMaxSize()
+    )
+
+    /*Column (modifier = Modifier.fillMaxSize(),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally){
+        Text(text = "Post",
+            fontWeight = FontWeight.ExtraBold
+        )
+    }*/
+}
+
+@Composable
+fun FoodSuggestion(navController: NavHostController){
+    /*AndroidView(
+        factory = {
+            View.inflate(it, R.layout.activity_suggestion_main, null)
+        },
+        modifier = Modifier.fillMaxSize()
+    )*/
+
+    val mContext = LocalContext.current
+    Column (modifier = Modifier.fillMaxSize(),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally){
+        Text(text = "Food Suggestion",
+            fontWeight = FontWeight.ExtraBold
+        )
+        Button(
+            onClick = {
+                mContext.startActivity(Intent(mContext, SuggestionMainActivity::class.java))
+            },
+            colors = ButtonDefaults.buttonColors(backgroundColor = Color.Green),
+>>>>>>> Retrospective2_Tram2
         ) {
             Text(
                 text = "Food Suggestion",

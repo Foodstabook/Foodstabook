@@ -73,6 +73,7 @@ class CreatePost : AppCompatActivity() {
     private fun CreatePost2(uid: String, username: String) {
         val title = binding.title.text.toString()
         val hastags = binding.hashtags.text.toString()
+        val hashtagList = hastags.split(",").toTypedArray()
         val place = binding.place.text.toString()
         val rating = binding.rbRating.getRating()
         val description = binding.description.text.toString()
@@ -85,6 +86,10 @@ class CreatePost : AppCompatActivity() {
         posts["Description"] = description
         posts["UID"] = uid
         posts["Username"] = username
+
+        for ((index, h) in hashtagList.withIndex()) {
+            posts["Hashtag$index"] = h
+        }
 
         db.collection("Post").add(posts).addOnSuccessListener {
             Toast.makeText(this, "Post Success", Toast.LENGTH_SHORT).show()

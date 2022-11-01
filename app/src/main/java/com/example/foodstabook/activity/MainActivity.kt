@@ -168,29 +168,8 @@ fun BottomNavGraph(navController: NavHostController) {
 
 @Composable
 fun Home(navController: NavHostController){
-    /*AndroidView(
-        factory = {
-            View.inflate(it, R.layout.activity_newsfeed, null)
-        },
-        modifier = Modifier.fillMaxSize()
-    )*/
-
-    val mContext = LocalContext.current
-    Column (modifier = Modifier.fillMaxSize(),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally) {
-        Text(
-            text = "Home",
-            fontWeight = FontWeight.ExtraBold
-        )
-        Button(
-            onClick = {
-                mContext.startActivity(Intent(mContext, NewsfeedActivity::class.java))
-            },
-            colors = ButtonDefaults.buttonColors(backgroundColor = Color.Green),
-        ) {
-            Text("Newsfeed", color = Color.Black)
-        }
+    ConstraintLayout {
+        newsfeedPreview()
     }
 }
 
@@ -284,7 +263,7 @@ fun Post(navController: NavHostController){
 fun FoodSuggestion(navController: NavHostController){
     ConstraintLayout() {
 
-        buildRecipe()
+        recipeBuilder()
     }
     /*val mContext = LocalContext.current
     Column (modifier = Modifier.fillMaxSize(),

@@ -47,7 +47,7 @@ val ingredientsText = mutableStateOf("")
 val instructionsTitleText = mutableStateOf("")
 val instructionsText = mutableStateOf("")
 val recipeImageUrl = mutableStateOf("")
-class SuggestionMainActivity : AppCompatActivity() {
+class FoodSuggestionScreen : AppCompatActivity() {
 
     private lateinit var binding: ActivitySuggestionMainBinding
 
@@ -55,7 +55,7 @@ class SuggestionMainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            buildRecipe()
+            recipeBuilder()
         }
     }
 }
@@ -252,7 +252,7 @@ fun recipeBuilder() {
 @RequiresApi(Build.VERSION_CODES.N)
 @Preview(showBackground = true)
 @Composable
-fun buildRecipe() {
+fun recipePreview() {
     MaterialTheme {
         recipeBuilder()
     }

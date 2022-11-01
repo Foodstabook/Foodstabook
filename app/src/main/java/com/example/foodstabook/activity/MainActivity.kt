@@ -2,14 +2,13 @@ package com.example.foodstabook.activity
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.RowScope
-import androidx.compose.foundation.layout.fillMaxSize
+import androidx.annotation.RequiresApi
+import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import com.example.foodstabook.R
 import androidx.compose.material.icons.Icons
@@ -26,6 +25,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.viewinterop.AndroidView
+import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavHostController
@@ -37,6 +37,7 @@ import com.example.foodstabook.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+    @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -53,6 +54,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 //Create Scaffold Composable functions
+@RequiresApi(Build.VERSION_CODES.N)
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
 fun Scaffold() {
@@ -60,7 +62,9 @@ fun Scaffold() {
     Scaffold(
         bottomBar = { BottomBar(navController = navController) }
     ) {
-        BottomNavGraph(navController = navController)
+        Box(modifier = Modifier.padding(it)) {
+            BottomNavGraph(navController = navController)
+        }
     }
 }
 
@@ -139,6 +143,7 @@ fun RowScope.AddItem(
 }
 
 //Set up Navigation Route
+@RequiresApi(Build.VERSION_CODES.N)
 @Composable
 fun BottomNavGraph(navController: NavHostController) {
     NavHost(
@@ -274,16 +279,14 @@ fun Post(navController: NavHostController){
     }*/
 }
 
+@RequiresApi(Build.VERSION_CODES.N)
 @Composable
 fun FoodSuggestion(navController: NavHostController){
-    /*AndroidView(
-        factory = {
-            View.inflate(it, R.layout.activity_suggestion_main, null)
-        },
-        modifier = Modifier.fillMaxSize()
-    )*/
+    ConstraintLayout() {
 
-    val mContext = LocalContext.current
+        buildRecipe()
+    }
+    /*val mContext = LocalContext.current
     Column (modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally){
@@ -298,5 +301,5 @@ fun FoodSuggestion(navController: NavHostController){
         ) {
             Text("Food Suggestion", color = Color.Black)
         }
-    }
+    }*/
 }

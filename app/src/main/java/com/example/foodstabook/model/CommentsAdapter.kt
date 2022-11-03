@@ -29,8 +29,8 @@ class CommentsAdapter(private val mList: List<CommentsModel>) : RecyclerView.Ada
         val commentBody = SpannableStringBuilder(comment.commentAuthor + " " + comment.commentBody)
         commentBody.setSpan(StyleSpan(Typeface.BOLD), 0, comment.commentAuthor.length,
             Spanned.SPAN_INCLUSIVE_INCLUSIVE)
-
         holder.commentBody.text = commentBody
+        holder.authorIcon.setImageResource(comment.authorIcon)
     }
 
     override fun getItemCount(): Int {

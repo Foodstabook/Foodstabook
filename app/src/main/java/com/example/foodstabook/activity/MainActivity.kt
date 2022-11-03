@@ -40,6 +40,7 @@ class MainActivity : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        supportActionBar?.hide()
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContent {
@@ -110,7 +111,7 @@ fun BottomBar(navController: NavHostController){
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentDestination = navBackStackEntry?.destination
 
-    BottomNavigation {
+    BottomNavigation(backgroundColor = Color.White) {
         screens.forEach { bottomBarItem ->
             AddItem(screen = bottomBarItem, currentDestination = currentDestination, navController = navController)
         }
@@ -148,7 +149,7 @@ fun RowScope.AddItem(
 fun BottomNavGraph(navController: NavHostController) {
     NavHost(
         navController = navController,
-        startDestination = "profile"
+        startDestination = "profile",
     ) {
         composable(route = "home") {
             Home(navController= navController)
@@ -168,29 +169,8 @@ fun BottomNavGraph(navController: NavHostController) {
 
 @Composable
 fun Home(navController: NavHostController){
-    /*AndroidView(
-        factory = {
-            View.inflate(it, R.layout.activity_newsfeed, null)
-        },
-        modifier = Modifier.fillMaxSize()
-    )*/
-
-    val mContext = LocalContext.current
-    Column (modifier = Modifier.fillMaxSize(),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally) {
-        Text(
-            text = "Home",
-            fontWeight = FontWeight.ExtraBold
-        )
-        Button(
-            onClick = {
-                mContext.startActivity(Intent(mContext, NewsfeedActivity::class.java))
-            },
-            colors = ButtonDefaults.buttonColors(backgroundColor = Color.Green),
-        ) {
-            Text("Newsfeed", color = Color.Black)
-        }
+    ConstraintLayout {
+        newsfeedPreview()
     }
 }
 
@@ -284,7 +264,7 @@ fun Post(navController: NavHostController){
 fun FoodSuggestion(navController: NavHostController){
     ConstraintLayout() {
 
-        buildRecipe()
+        recipeBuilder()
     }
     /*val mContext = LocalContext.current
     Column (modifier = Modifier.fillMaxSize(),

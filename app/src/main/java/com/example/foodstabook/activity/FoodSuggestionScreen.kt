@@ -17,9 +17,6 @@ import com.example.foodstabook.R
 import com.example.foodstabook.databinding.ActivitySuggestionMainBinding
 import com.example.foodstabook.model.RetrofitInstance
 import kotlinx.android.synthetic.main.activity_reset_password.view.*
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
@@ -27,6 +24,7 @@ import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Text
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color.Companion.Black
@@ -38,6 +36,7 @@ import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
 import coil.compose.rememberAsyncImagePainter
+import kotlinx.coroutines.launch
 
 
 val titleText = mutableStateOf("")
@@ -47,7 +46,7 @@ val ingredientsText = mutableStateOf("")
 val instructionsTitleText = mutableStateOf("")
 val instructionsText = mutableStateOf("")
 val recipeImageUrl = mutableStateOf("")
-class SuggestionMainActivity : AppCompatActivity() {
+class FoodSuggestionScreen : AppCompatActivity() {
 
     private lateinit var binding: ActivitySuggestionMainBinding
 
@@ -55,7 +54,7 @@ class SuggestionMainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            buildRecipe()
+            recipeBuilder()
         }
     }
 }
@@ -72,6 +71,7 @@ fun recipeBuilder() {
     val ingredients by ingredientsText
     val instructionsTitle by instructionsTitleText
     val instructions by instructionsText
+    val coroutineScope = rememberCoroutineScope()
 
     Column() {
         ConstraintLayout(modifier = Modifier.fillMaxSize()) {
@@ -161,7 +161,8 @@ fun recipeBuilder() {
 
                     Button(
                         onClick = {
-                            CoroutineScope(Dispatchers.Main).launch {
+                            coroutineScope.launch {
+                                scrollState.animateScrollTo(0)
                                 val ingredientsBuilder = StringBuilder()
                                 val instructionsBuilder = StringBuilder()
                                 val response = RetrofitInstance.spoonacularApi.getRandomRecipe(
@@ -208,7 +209,8 @@ fun recipeBuilder() {
                                 0xFFe69500
                             )
                         ),
-                        modifier = Modifier.size(width = 125.dp, height = 75.dp)
+                        modifier = Modifier
+                            .size(width = 125.dp, height = 75.dp)
                             .padding(bottom = 6.dp)
                     )
                     {
@@ -221,20 +223,24 @@ fun recipeBuilder() {
                 }
                 Button(
                     onClick = {
-                        titleText.value = context.getString(R.string.wip_title)
-                        summaryText.value = context.getString(R.string.wip_summary)
-                        ingredientsTitleText.value = "INGREDIENTS:"
-                        ingredientsText.value = "A lot of:\nSweat\nTears\nSleepless Nights"
-                        instructionsTitleText.value = "INSTRUCTIONS:"
-                        instructionsText.value = "This might take a while..."
-                        recipeImageUrl.value = ""
+                        coroutineScope.launch {
+                            titleText.value = context.getString(R.string.wip_title)
+                            summaryText.value = context.getString(R.string.wip_summary)
+                            ingredientsTitleText.value = "INGREDIENTS:"
+                            ingredientsText.value = "A lot of:\nSweat\nTears\nSleepless Nights"
+                            instructionsTitleText.value = "INSTRUCTIONS:"
+                            instructionsText.value = "This might take a while..."
+                            recipeImageUrl.value = ""
+                            scrollState.animateScrollTo(0)
+                        }
                     },
                     colors = ButtonDefaults.buttonColors(
                         backgroundColor = androidx.compose.ui.graphics.Color(
                             0xFFe69500
                         )
                     ),
-                    modifier = Modifier.size(width = 125.dp, height = 75.dp)
+                    modifier = Modifier
+                        .size(width = 125.dp, height = 75.dp)
                         .padding(bottom = 6.dp)
                 )
                 {
@@ -252,7 +258,7 @@ fun recipeBuilder() {
 @RequiresApi(Build.VERSION_CODES.N)
 @Preview(showBackground = true)
 @Composable
-fun buildRecipe() {
+fun recipePreview() {
     MaterialTheme {
         recipeBuilder()
     }

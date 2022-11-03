@@ -40,6 +40,7 @@ class MainActivity : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        supportActionBar?.hide()
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContent {
@@ -110,7 +111,7 @@ fun BottomBar(navController: NavHostController){
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentDestination = navBackStackEntry?.destination
 
-    BottomNavigation {
+    BottomNavigation(backgroundColor = Color.White) {
         screens.forEach { bottomBarItem ->
             AddItem(screen = bottomBarItem, currentDestination = currentDestination, navController = navController)
         }
@@ -148,7 +149,7 @@ fun RowScope.AddItem(
 fun BottomNavGraph(navController: NavHostController) {
     NavHost(
         navController = navController,
-        startDestination = "profile"
+        startDestination = "profile",
     ) {
         composable(route = "home") {
             Home(navController= navController)

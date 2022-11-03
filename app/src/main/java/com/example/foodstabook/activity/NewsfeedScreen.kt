@@ -26,10 +26,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.foodstabook.R
-import com.example.foodstabook.activity.ui.theme.PostCard
-import com.example.foodstabook.activity.ui.theme.postPreview
+import com.example.foodstabook.model.PostCard
 import com.example.foodstabook.databinding.ActivityNewsfeedBinding
 import com.example.foodstabook.model.CommentsModel
 import com.example.foodstabook.model.NewsfeedAdapter
@@ -100,53 +98,53 @@ class NewsfeedActivity : AppCompatActivity(), NewsfeedAdapter.OnViewCommentsClic
 }
 
 fun generatePostList(context: Context) {
-    postList.add(PostModel("1", "testing1", R.drawable.default_profile_photo, imageList.slice(0..3), SimpleDateFormat("26-01-2022", Locale.US),
+    postList.add(PostModel("1", "testing1", R.drawable.foodstabook_logo4, "A Smorgasbord of Suggestions", imageList.slice(0..3), SimpleDateFormat("26-01-2022", Locale.US),
         context.getString(R.string.post_description_1), generateTagsList1(), 100, generateCommentsList1()))
 
-    postList.add(PostModel("2", "testing2", R.drawable.default_profile_photo, imageList.slice(4..6), SimpleDateFormat("27-01-2022", Locale.US),
+    postList.add(PostModel("2", "testing2", R.drawable.foodstabook_logo4, "Some of My Favorite Dishes from My Recent Trip to Asia:", imageList.slice(4..6), SimpleDateFormat("27-01-2022", Locale.US),
         context.getString(R.string.post_description_2), generateTagsList2(), 64, generateCommentsList2()))
 
-    postList.add(PostModel("3", "testing3", R.drawable.default_profile_photo, imageList.slice(7..7), SimpleDateFormat("28-01-2022", Locale.US),
+    postList.add(PostModel("3", "testing3", R.drawable.foodstabook_logo4, "Authentic Shrimp al Mojo de Ajo!", imageList.slice(7..7), SimpleDateFormat("28-01-2022", Locale.US),
         context.getString(R.string.post_description_3), generateTagsList3(), 41, generateCommentsList3()))
 
-    postList.add(PostModel("4", "testing4", R.drawable.default_profile_photo, imageList.slice(8..9), SimpleDateFormat("29-01-2022", Locale.US),
+    postList.add(PostModel("4", "testing4", R.drawable.foodstabook_logo4, "French Cuisine: Some Classics",imageList.slice(8..9), SimpleDateFormat("29-01-2022", Locale.US),
         context.getString(R.string.post_description_4), generateTagsList4(),250, generateCommentsList4()))
 }
 
 private fun generateCommentsList1(): ArrayList<CommentsModel>{
     val comments = ArrayList<CommentsModel>()
-    comments.add(CommentsModel(R.drawable.default_profile_photo, "TestCommenter1","Wow!"))
-    comments.add(CommentsModel(R.drawable.default_profile_photo,"TestCommenter2", "Looks tasty!"))
-    comments.add(CommentsModel(R.drawable.default_profile_photo,"TestCommenter3", "Not my cup of tea..."))
-    comments.add(CommentsModel(R.drawable.default_profile_photo,"TestCommenter4", ":3"))
+    comments.add(CommentsModel(R.drawable.foodstabook_logo4, "TestCommenter1","Wow!"))
+    comments.add(CommentsModel(R.drawable.foodstabook_logo4,"TestCommenter2", "Looks tasty!"))
+    comments.add(CommentsModel(R.drawable.foodstabook_logo4,"TestCommenter3", "Not my cup of tea..."))
+    comments.add(CommentsModel(R.drawable.foodstabook_logo4,"TestCommenter4", ":3"))
     return comments
 }
 
 private fun generateCommentsList2(): ArrayList<CommentsModel>{
     val comments = ArrayList<CommentsModel>()
-    comments.add(CommentsModel(R.drawable.default_profile_photo, "TestCommenter5","Wow!"))
-    comments.add(CommentsModel(R.drawable.default_profile_photo,"TestCommenter6", "Looks tasty!"))
-    comments.add(CommentsModel(R.drawable.default_profile_photo,"TestCommenter7", "Not my cup of tea..."))
-    comments.add(CommentsModel(R.drawable.default_profile_photo,"TestCommenter8", ":3"))
-    comments.add(CommentsModel(R.drawable.default_profile_photo,"TestCommenter9", "Nice!"))
+    comments.add(CommentsModel(R.drawable.foodstabook_logo4, "TestCommenter5","Wow!"))
+    comments.add(CommentsModel(R.drawable.foodstabook_logo4,"TestCommenter6", "Looks tasty!"))
+    comments.add(CommentsModel(R.drawable.foodstabook_logo4,"TestCommenter7", "Not my cup of tea..."))
+    comments.add(CommentsModel(R.drawable.foodstabook_logo4,"TestCommenter8", ":3"))
+    comments.add(CommentsModel(R.drawable.foodstabook_logo4,"TestCommenter9", "Nice!"))
     return comments
 }
 
 private fun generateCommentsList3(): ArrayList<CommentsModel>{
     val comments = ArrayList<CommentsModel>()
-    comments.add(CommentsModel(R.drawable.default_profile_photo, "TestCommenter10","Wow!"))
-    comments.add(CommentsModel(R.drawable.default_profile_photo,"TestCommenter11", "Looks tasty!"))
-    comments.add(CommentsModel(R.drawable.default_profile_photo,"TestCommenter12", "Not my cup of tea..."))
-    comments.add(CommentsModel(R.drawable.default_profile_photo,"TestCommenter13", ":3"))
-    comments.add(CommentsModel(R.drawable.default_profile_photo,"TestCommenter14", "Nice!"))
-    comments.add(CommentsModel(R.drawable.default_profile_photo,"TestCommenter15", "Wish I could have eaten that!"))
+    comments.add(CommentsModel(R.drawable.foodstabook_logo4, "TestCommenter10","Wow!"))
+    comments.add(CommentsModel(R.drawable.foodstabook_logo4,"TestCommenter11", "Looks tasty!"))
+    comments.add(CommentsModel(R.drawable.foodstabook_logo4,"TestCommenter12", "Not my cup of tea..."))
+    comments.add(CommentsModel(R.drawable.foodstabook_logo4,"TestCommenter13", ":3"))
+    comments.add(CommentsModel(R.drawable.foodstabook_logo4,"TestCommenter14", "Nice!"))
+    comments.add(CommentsModel(R.drawable.foodstabook_logo4,"TestCommenter15", "Wish I could have eaten that!"))
     return comments
 }
 
 private fun generateCommentsList4(): ArrayList<CommentsModel>{
     val comments = ArrayList<CommentsModel>()
-    comments.add(CommentsModel(R.drawable.default_profile_photo, "TestCommenter16","Wow!"))
-    comments.add(CommentsModel(R.drawable.default_profile_photo,"TestCommenter17", "Looks tasty!"))
+    comments.add(CommentsModel(R.drawable.foodstabook_logo4, "TestCommenter16","Wow!"))
+    comments.add(CommentsModel(R.drawable.foodstabook_logo4,"TestCommenter17", "Looks tasty!"))
     return comments
 }
 
@@ -221,7 +219,8 @@ fun lazyNewsfeed(posts: List<PostModel>) {
                     }
             )
         }
-        LazyColumn() {
+        LazyColumn(modifier = Modifier.fillMaxWidth(1f),
+        verticalArrangement = Arrangement.spacedBy(12.dp)) {
             items(posts) { post ->
                 PostCard(post)
             }

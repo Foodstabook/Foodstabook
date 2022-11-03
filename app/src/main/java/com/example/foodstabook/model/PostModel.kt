@@ -9,6 +9,7 @@ data class PostModel(
     val postId: String,
     var postAuthor: String,
     var authorIcon: Int,
+    var postTitle: String,
     val postImage: List<Int>,
     val postDate: SimpleDateFormat,
     var postDescription: String,

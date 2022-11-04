@@ -8,9 +8,6 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
-import androidx.compose.material.MaterialTheme
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.foodstabook.R
@@ -20,16 +17,16 @@ import kotlinx.android.synthetic.main.activity_reset_password.view.*
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.Button
-import androidx.compose.material.ButtonDefaults
-import androidx.compose.material.Text
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.material.*
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Color.Companion.Black
+import androidx.compose.ui.graphics.Color.Companion.White
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -41,9 +38,7 @@ import kotlinx.coroutines.launch
 
 val titleText = mutableStateOf("")
 val summaryText = mutableStateOf("")
-val ingredientsTitleText = mutableStateOf("")
 val ingredientsText = mutableStateOf("")
-val instructionsTitleText = mutableStateOf("")
 val instructionsText = mutableStateOf("")
 val recipeImageUrl = mutableStateOf("")
 class FoodSuggestionScreen : AppCompatActivity() {
@@ -54,96 +49,131 @@ class FoodSuggestionScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            recipeBuilder()
+            RecipeBuilder()
         }
     }
 }
 
 @RequiresApi(Build.VERSION_CODES.N)
 @Composable
-fun recipeBuilder() {
+fun RecipeBuilder() {
     val context = LocalContext.current
     val scrollState = rememberScrollState()
     val url by recipeImageUrl
     val title by titleText
     val summary by summaryText
-    val ingredientsTitle by ingredientsTitleText
     val ingredients by ingredientsText
-    val instructionsTitle by instructionsTitleText
     val instructions by instructionsText
+    val suggestionRequested = remember{mutableStateOf(false)}
     val coroutineScope = rememberCoroutineScope()
 
     Column() {
         ConstraintLayout(modifier = Modifier.fillMaxSize()) {
             val (buttons, recipeInfo) = createRefs()
-            Column(
-                modifier = Modifier
-                    .constrainAs(recipeInfo) {
-                        top.linkTo(parent.top)
-                        bottom.linkTo(buttons.top)
-                        start.linkTo(parent.start)
-                        end.linkTo(parent.end)
-                        height = Dimension.fillToConstraints
+            if(suggestionRequested.value) {
+                Column(
+                    modifier = Modifier
+                        .constrainAs(recipeInfo) {
+                            top.linkTo(parent.top)
+                            bottom.linkTo(buttons.top)
+                            start.linkTo(parent.start)
+                            end.linkTo(parent.end)
+                            height = Dimension.fillToConstraints
+                        }
+                        .verticalScroll(scrollState),
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.spacedBy(24.dp)
+                ) {
+                    Image(
+                        painter = rememberAsyncImagePainter(model = url),
+                        contentDescription = null,
+                        contentScale = ContentScale.Fit,
+                        modifier = Modifier.aspectRatio(1.35f)
+                            .fillMaxWidth(1f)
+                            .padding(horizontal = 8.dp)
+                    )
+                    Card(
+                        backgroundColor = Color(0xFFF8D247),
+                        modifier = Modifier.padding(horizontal = 12.dp),
+                        shape = RoundedCornerShape(24.dp),
+                        elevation = 10.dp
+                    ) {
+                        Column {
+                            Text(
+                                text = title,
+                                color = Black,
+                                fontSize = 24.sp,
+                                fontWeight = FontWeight.Bold,
+                                modifier = Modifier.align(Alignment.Start)
+                                    .padding(horizontal = 12.dp, vertical = 8.dp),
+                                textAlign = TextAlign.Start
+                            )
+                            Text(
+                                text = summary,
+                                color = Black,
+                                fontSize = 20.sp,
+                                modifier = Modifier.align(Alignment.Start)
+                                    .padding(horizontal = 12.dp, vertical = 8.dp),
+                                textAlign = TextAlign.Start
+                            )
+                        }
                     }
-                    .verticalScroll(scrollState),
-                horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.Center
-            ) {
-                Image(
-                    painter = rememberAsyncImagePainter(model = url),
-                    contentDescription = null,
-                    contentScale = ContentScale.Fit,
-                    modifier = Modifier
-                        .clip(RoundedCornerShape(16.dp))
-                        .size(350.dp, 350.dp)
-                )
-                Text(
-                    text = title,
-                    color = androidx.compose.ui.graphics.Color(0xFF9928CC),
-                    fontSize = 40.sp,
-                    textAlign = TextAlign.Center
-                )
-                Text(
-                    text = summary,
-                    color = Black,
-                    fontSize = 20.sp,
-                    modifier = Modifier
-                        .align(Alignment.Start)
-                        .padding(horizontal = 12.dp),
-                    textAlign = TextAlign.Start
-                )
-                Text(
-                    text = ingredientsTitle,
-                    color = androidx.compose.ui.graphics.Color(0xFF9928CC),
-                    fontSize = 30.sp,
-                    modifier = Modifier.padding(horizontal = 12.dp),
-                    textAlign = TextAlign.Center,
-                )
-                Text(
-                    text = ingredients,
-                    color = Black,
-                    fontSize = 20.sp,
-                    modifier = Modifier
-                        .align(Alignment.Start)
-                        .padding(horizontal = 12.dp),
-                    textAlign = TextAlign.Start
-                )
-                Text(
-                    text = instructionsTitle,
-                    color = androidx.compose.ui.graphics.Color(0xFF9928CC),
-                    fontSize = 30.sp,
-                    modifier = Modifier.padding(horizontal = 12.dp),
-                    textAlign = TextAlign.Center
-                )
-                Text(
-                    text = instructions,
-                    color = Black,
-                    fontSize = 20.sp,
-                    modifier = Modifier
-                        .align(Alignment.Start)
-                        .padding(horizontal = 12.dp),
-                    textAlign = TextAlign.Start
-                )
+                    Card(
+                        backgroundColor = Color(0xFFF8D247),
+                        modifier = Modifier
+                            .padding(horizontal = 12.dp)
+                            .fillMaxWidth(),
+                        shape = RoundedCornerShape(24.dp),
+                        elevation = 10.dp
+                    ) {
+                        Column {
+                            Text(
+                                text = "INGREDIENTS",
+                                color = Black,
+                                fontSize = 24.sp,
+                                fontWeight = FontWeight.Bold,
+                                modifier = Modifier.align(Alignment.Start)
+                                    .padding(horizontal = 12.dp, vertical = 8.dp),
+                                textAlign = TextAlign.Start,
+                            )
+                            Text(
+                                text = ingredients,
+                                color = Black,
+                                fontSize = 20.sp,
+                                modifier = Modifier.align(Alignment.Start)
+                                    .padding(horizontal = 12.dp, vertical = 8.dp),
+                                textAlign = TextAlign.Start
+                            )
+                        }
+                    }
+                    Card(
+                        backgroundColor = Color(0xFFF8D247),
+                        modifier = Modifier.padding(horizontal = 12.dp)
+                            .fillMaxWidth(),
+                        shape = RoundedCornerShape(24.dp),
+                        elevation = 10.dp
+                    ) {
+                        Column {
+                            Text(
+                                text = "INSTRUCTIONS",
+                                color = Black,
+                                fontSize = 24.sp,
+                                fontWeight = FontWeight.Bold,
+                                modifier = Modifier.align(Alignment.Start)
+                                .padding(horizontal = 12.dp, vertical = 8.dp),
+                                textAlign = TextAlign.Center
+                            )
+                            Text(
+                                text = instructions,
+                                color = Black,
+                                fontSize = 20.sp,
+                                modifier = Modifier.align(Alignment.Start)
+                                    .padding(horizontal = 12.dp, vertical = 8.dp),
+                                textAlign = TextAlign.Start
+                            )
+                        }
+                    }
+                }
             }
             Row(
                 horizontalArrangement = Arrangement.SpaceEvenly,
@@ -157,9 +187,9 @@ fun recipeBuilder() {
                         height = Dimension.fillToConstraints
                     },
             ) {
-                ConstraintLayout() {
+                ConstraintLayout {
 
-                    Button(
+                    Button(shape = RoundedCornerShape(24.dp),
                         onClick = {
                             coroutineScope.launch {
                                 scrollState.animateScrollTo(0)
@@ -200,53 +230,56 @@ fun recipeBuilder() {
                                 if (newImage != null) {
                                     recipeImageUrl.value = newImage
                                 }
+                                suggestionRequested.value = true
                             }
-                            ingredientsTitleText.value = "INGREDIENTS"
-                            instructionsTitleText.value = "INSTRUCTIONS"
+
                         },
                         colors = ButtonDefaults.buttonColors(
-                            backgroundColor = androidx.compose.ui.graphics.Color(
+                            backgroundColor = Color(
                                 0xFFe69500
                             )
                         ),
                         modifier = Modifier
-                            .size(width = 125.dp, height = 75.dp)
+                            .size(width = 175.dp, height = 60.dp)
                             .padding(bottom = 6.dp)
                     )
                     {
                         Text(
                             text = "Random",
-                            color = Black,
+                            color = White,
+                            fontSize = 20.sp,
+                            fontWeight = FontWeight.Bold,
                             textAlign = TextAlign.Center
                         )
                     }
                 }
-                Button(
+                Button(shape = RoundedCornerShape(24.dp),
                     onClick = {
                         coroutineScope.launch {
+                            scrollState.animateScrollTo(0)
                             titleText.value = context.getString(R.string.wip_title)
                             summaryText.value = context.getString(R.string.wip_summary)
-                            ingredientsTitleText.value = "INGREDIENTS:"
                             ingredientsText.value = "A lot of:\nSweat\nTears\nSleepless Nights"
-                            instructionsTitleText.value = "INSTRUCTIONS:"
                             instructionsText.value = "This might take a while..."
-                            recipeImageUrl.value = ""
-                            scrollState.animateScrollTo(0)
+                            recipeImageUrl.value = "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Question_mark_%28black%29.svg/1024px-Question_mark_%28black%29.svg.png"
+                            suggestionRequested.value = true
                         }
                     },
                     colors = ButtonDefaults.buttonColors(
-                        backgroundColor = androidx.compose.ui.graphics.Color(
+                        backgroundColor = Color(
                             0xFFe69500
                         )
                     ),
                     modifier = Modifier
-                        .size(width = 125.dp, height = 75.dp)
+                        .size(width = 175.dp, height = 60.dp)
                         .padding(bottom = 6.dp)
                 )
                 {
                     Text(
                         text = "Tailored",
-                        color = Black,
+                        color = White,
+                        fontSize = 20.sp,
+                        fontWeight = FontWeight.Bold,
                         textAlign = TextAlign.Center
                     )
                 }
@@ -258,9 +291,9 @@ fun recipeBuilder() {
 @RequiresApi(Build.VERSION_CODES.N)
 @Preview(showBackground = true)
 @Composable
-fun recipePreview() {
+fun RecipePreview() {
     MaterialTheme {
-        recipeBuilder()
+        RecipeBuilder()
     }
 }
 

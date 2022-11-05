@@ -94,7 +94,7 @@ fun PostCard(post: PostModel) {
             Box() {
                 Image(painter = painterResource(id = post.postImage[imagePosition.value]),
                     contentDescription = null,
-                    contentScale = ContentScale.FillWidth,
+                    contentScale = ContentScale.Crop,
                     modifier = Modifier
                         .align(Alignment.Center)
                         .fillMaxWidth()

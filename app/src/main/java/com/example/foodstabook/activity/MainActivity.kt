@@ -264,7 +264,7 @@ fun Post(navController: NavHostController){
 fun FoodSuggestion(navController: NavHostController){
     ConstraintLayout() {
 
-        recipeBuilder()
+        RecipeBuilder()
     }
     /*val mContext = LocalContext.current
     Column (modifier = Modifier.fillMaxSize(),

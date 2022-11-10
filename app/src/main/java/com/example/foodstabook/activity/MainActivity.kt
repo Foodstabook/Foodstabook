@@ -36,7 +36,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.foodstabook.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding:ActivityMainBinding
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -243,12 +243,12 @@ fun Profile(navController: NavHostController){
 
 @Composable
 fun Post(navController: NavHostController){
-    AndroidView(
-        factory = {
-            View.inflate(it, R.layout.activity_create_post, null)
-        },
-        modifier = Modifier.fillMaxSize()
-    )
+//    AndroidView(
+//        factory = {
+//            View.inflate(it, R.layout.activity_create_post, null)
+//        },
+//        modifier = Modifier.fillMaxSize()
+//    )
 
     /*Column (modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
@@ -257,6 +257,9 @@ fun Post(navController: NavHostController){
             fontWeight = FontWeight.ExtraBold
         )
     }*/
+    ConstraintLayout {
+        CreatePostPreview()
+    }
 }
 
 @RequiresApi(Build.VERSION_CODES.N)

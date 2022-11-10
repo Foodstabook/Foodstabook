@@ -262,10 +262,8 @@ fun Post(navController: NavHostController){
 @RequiresApi(Build.VERSION_CODES.N)
 @Composable
 fun FoodSuggestion(navController: NavHostController){
-    ConstraintLayout() {
 
         RecipeBuilder()
-    }
     /*val mContext = LocalContext.current
     Column (modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,

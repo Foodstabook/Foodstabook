@@ -12,14 +12,6 @@ internal data class ShimmerData(
     val drawBorder: Boolean = false
 )
 
-/**
- * Shimmer for rating items
- * @param colors colors that are displayed on brush
- * @param animationSpec [InfiniteRepeatableSpec] to set animation and repeat modes either repeat
- * or reverse.
- * @param drawBorder when set to true draws empty rating item above shimmer. This looks good
- * with empty items with borders with small stroke widths
- */
 @Immutable
 data class Shimmer(
     val colors: List<Color> = listOf(

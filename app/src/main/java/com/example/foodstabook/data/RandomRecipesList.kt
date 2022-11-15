@@ -1,5 +1,5 @@
 package com.example.foodstabook.data
 
-data class recipesList(
+data class RandomRecipesList(
     val recipes: List<Recipe>
 )

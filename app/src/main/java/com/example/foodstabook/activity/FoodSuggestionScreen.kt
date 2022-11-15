@@ -890,8 +890,17 @@ fun RecipeBuilder() {
                         for (element in doNotWants) {
                             element.isSelected.value = false
                         }
+                        for (element in diets){
+                            element.ORisSelected.value = false
+                            element.ANDisSelected.value = false
+                        }
+                        for (element in intolerances){
+                            element.isSelected.value = false
+                        }
                         selectedWantsList.clear()
                         selectedDoNotWantsList.clear()
+                        selectedDietsList.clear()
+                        selectedIntolerancesList.clear()
                     },
                     colors = ButtonDefaults.buttonColors(
                         backgroundColor = Color(

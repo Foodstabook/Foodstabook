@@ -10,6 +10,8 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- Required by older versions of Google Play services to create IID tokens -->
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
 
     <permission
         android:name="com.example.foodstabook.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
@@ -30,28 +32,34 @@
         android:testOnly="true"
         android:theme="@style/Theme.Foodstabook" >
         <activity
-            android:name="com.example.foodstabook.UserAccount"
+            android:name="com.example.foodstabook.activity.CreatePost"
             android:exported="false" />
         <activity
-            android:name="com.example.foodstabook.SuggestionMainActivity"
+            android:name="com.example.foodstabook.activity.UserAccount"
             android:exported="false" />
         <activity
-            android:name="com.example.foodstabook.ResetPassword"
+            android:name="com.example.foodstabook.activity.SuggestionMainActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.foodstabook.LoginPage"
+            android:name="com.example.foodstabook.activity.ResetPassword"
+            android:exported="false" />
+        <activity
+            android:name="com.example.foodstabook.activity.LoginPage"
             android:exported="false" />
         <activity
             android:name="com.example.foodstabook.activity.ProfileActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.foodstabook.SignInActivity"
+            android:name="com.example.foodstabook.activity.SignUpActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.foodstabook.SignUpActivity"
+            android:name="com.example.foodstabook.activity.SettingActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.foodstabook.SettingActivity"
+            android:name="com.example.foodstabook.activity.NewsfeedActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.foodstabook.activity.CommentsActivity"
             android:exported="false" />
         <activity
             android:name="com.example.foodstabook.activity.MainActivity"
@@ -68,22 +76,43 @@
             android:directBootAware="true"
             android:exported="false" >
             <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.database.ktx.FirebaseDatabaseKtxRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.firestore.ktx.FirebaseFirestoreKtxRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
                 android:name="com.google.firebase.components:com.google.firebase.auth.ktx.FirebaseAuthKtxRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.functions.ktx.FirebaseFunctionsKtxRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonKtxRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
             <meta-data
                 android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
             <meta-data
-                android:name="com.google.firebase.components:com.google.firebase.database.ktx.FirebaseDatabaseKtxRegistrar"
-                android:value="com.google.firebase.components.ComponentRegistrar" />
-            <meta-data
                 android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
             <meta-data
-                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonKtxRegistrar"
+                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.functions.FunctionsRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
         </service>
 
+        <activity
+            android:name="androidx.compose.ui.tooling.PreviewActivity"
+            android:exported="true" />
+        <activity
+            android:name="androidx.activity.ComponentActivity"
+            android:exported="true" />
         <activity
             android:name="com.google.firebase.auth.internal.GenericIdpActivity"
             android:excludeFromRecents="true"
@@ -121,6 +150,15 @@
             </intent-filter>
         </activity>
 
+        <receiver
+            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            </intent-filter>
+        </receiver>
+
         <provider
             android:name="com.google.firebase.provider.FirebaseInitProvider"
             android:authorities="com.example.foodstabook.firebaseinitprovider"
@@ -145,9 +183,26 @@
                 android:name="androidx.emoji2.text.EmojiCompatInitializer"
                 android:value="androidx.startup" />
             <meta-data
+                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+                android:value="androidx.startup" />
+            <meta-data
                 android:name="androidx.lifecycle.ProcessLifecycleInitializer"
                 android:value="androidx.startup" />
         </provider>
+
+        <receiver
+            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+            android:directBootAware="false"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="android.permission.DUMP" >
+            <intent-filter>
+                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

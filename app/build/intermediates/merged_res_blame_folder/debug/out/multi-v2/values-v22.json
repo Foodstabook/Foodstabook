@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.foodstabook.app-mergeDebugResources-35:/values-v22/values-v22.xml",
+            "outputFile": "com.example.foodstabook.app-mergeDebugResources-69:/values-v22/values-v22.xml",
             "map": [
                 {
                     "source": "/Users/johnbower/.gradle/caches/transforms-3/40757915f98b51fbb09f15c0a3fd3283/transformed/appcompat-1.5.1/res/values-v22/values-v22.xml",

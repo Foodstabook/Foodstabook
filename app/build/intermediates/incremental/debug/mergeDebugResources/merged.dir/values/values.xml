@@ -1457,11 +1457,19 @@
     <item name="action_bar_spinner" type="id"/>
     <item name="action_menu_divider" type="id"/>
     <item name="action_menu_presenter" type="id"/>
+    <item name="androidx_compose_ui_view_composition_context" type="id"/>
+    <item name="compose_view_saveable_id_tag" type="id"/>
+    <item name="consume_window_insets_tag" type="id"/>
+    <item name="expand_collapse" type="id"/>
+    <item name="expandable_text" type="id"/>
     <item name="fragment_container_view_tag" type="id"/>
     <item name="ghost_view" type="id"/>
     <item name="ghost_view_holder" type="id"/>
     <item name="glide_custom_view_target_tag" type="id"/>
+    <item name="hide_in_inspector_tag" type="id"/>
     <item name="home" type="id"/>
+    <item name="inspection_slot_table_set" type="id"/>
+    <item name="is_pooling_container_tag" type="id"/>
     <item name="item_touch_helper_previous_elevation" type="id"/>
     <item name="line1" type="id"/>
     <item name="line3" type="id"/>
@@ -1474,6 +1482,7 @@
     <item name="mtrl_internal_children_alpha_tag" type="id"/>
     <item name="mtrl_motion_snapshot_view" type="id"/>
     <item name="mtrl_view_tag_bottom_padding" type="id"/>
+    <item name="nav_controller_view_tag" type="id"/>
     <item name="navigation_bar_item_active_indicator_view" type="id"/>
     <item name="navigation_bar_item_icon_container" type="id"/>
     <item name="navigation_bar_item_icon_view" type="id"/>
@@ -1481,6 +1490,7 @@
     <item name="navigation_bar_item_large_label_view" type="id"/>
     <item name="navigation_bar_item_small_label_view" type="id"/>
     <item name="parent_matrix" type="id"/>
+    <item name="pooling_container_listener_holder_tag" type="id"/>
     <item name="progress_circular" type="id"/>
     <item name="progress_horizontal" type="id"/>
     <item name="row_index_key" type="id"/>
@@ -1527,6 +1537,7 @@
     <id name="view_tree_saved_state_registry_owner"/>
     <id name="view_tree_view_model_store_owner"/>
     <item name="visible_removing_fragment_view_tag" type="id"/>
+    <item name="wrapped_composition_tag" type="id"/>
     <integer name="abc_config_activityDefaultDur">220</integer>
     <integer name="abc_config_activityShortDur">150</integer>
     <integer name="app_bar_elevation_anim_duration">150</integer>
@@ -1733,6 +1744,8 @@ Instructions:\n
     </string>
     <string name="chip_text">Chip text</string>
     <string name="clear_text_end_icon_content_description">Clear text</string>
+    <string name="close_drawer">"Close navigation menu"</string>
+    <string name="close_sheet">"Close sheet"</string>
     <string msgid="2523291102206661146" name="common_google_play_services_enable_button">Enable</string>
     <string msgid="227660514972886228" name="common_google_play_services_enable_text"><ns2:g id="app_name">%1$s</ns2:g> won\'t work unless you enable Google Play services.</string>
     <string msgid="5122002158466380389" name="common_google_play_services_enable_title">Enable Google Play services</string>
@@ -1752,7 +1765,10 @@ Instructions:\n
     <string name="common_signin_button_text">Sign in</string>
     <string name="common_signin_button_text_long">Sign in with Google</string>
     <string name="copy_toast_msg">Link copied to clipboard</string>
+    <string name="default_error_message">"Invalid input"</string>
+    <string name="default_popup_window_title" ns1:ignore="ExtraTranslation">"Pop-Up Window"</string>
     <string name="default_web_client_id" translatable="false">953372665389-njitvgm28tks4gdd9arq6ni4l9h9ki5h.apps.googleusercontent.com</string>
+    <string name="dropdown_menu">"Dropdown menu"</string>
     <string name="error_icon_content_description">Error</string>
     <string name="exposed_dropdown_menu_content_description">Show dropdown menu</string>
     <string name="fab_transformation_scrim_behavior" translatable="false">com.google.android.material.transformation.FabTransformationScrimBehavior</string>
@@ -1794,6 +1810,8 @@ Instructions:\n
     <string name="google_storage_bucket" translatable="false">foodstabook-a34b4.appspot.com</string>
     <string name="hide_bottom_view_on_scroll_behavior" translatable="false">com.google.android.material.behavior.HideBottomViewOnScrollBehavior</string>
     <string description="Content description for an icon that appears in the title area of a dialog" name="icon_content_description">Dialog Icon</string>
+    <string name="in_progress">In progress</string>
+    <string name="indeterminate">Neither checked nor unchecked</string>
     <string name="item_view_role_description">Tab</string>
     <string name="kimchi_jjigae_instructions">
         Ingredients:\n
@@ -1895,6 +1913,8 @@ Instructions:\n
     <string description="a11y string to indicate this button changes the input mode to a text field [CHAR_LIMIT=NONE]" name="mtrl_picker_toggle_to_text_input_mode">Switch to text input mode</string>
     <string description="a11y string to indicate this button switches the user to choosing a year [CHAR_LIMIT=NONE]" name="mtrl_picker_toggle_to_year_selection">Tap to switch to selecting a year</string>
     <string description="Button text to indicate that the widget will save the user&apos;s selection [CHAR_LIMIT=16]" name="mtrl_timepicker_confirm">OK</string>
+    <string name="navigation_menu">"Navigation menu"</string>
+    <string name="not_selected">Not selected</string>
     <string name="ochazuke_instructions">
 Ingredients:\n
 ▢ 1 Japanese Salted Salmon (homemade or store bought) (or ½ fillet of salmon and a pinch of salt for 1 serving)\n
@@ -1916,15 +1936,47 @@ Instructions:\n
         5. Now, place the cooked rice in the serving bowl. Place the flaked salmon on the rice and sprinkle the rice crackers, nori, and sesame seeds on top. Serve with tsukemono (pickles), such as Pickled Cucumber, as a part of the meal.\n
         6. Pour the tea into the bowl to cover half the rice and top with the mitsuba and wasabi. Add the soy sauce, if you\'d like.
     </string>
+    <string name="off">Off</string>
+    <string name="on">On</string>
     <string name="password_toggle_content_description">Show password</string>
     <string name="path_password_eye" translatable="false">M12,4.5C7,4.5 2.73,7.61 1,12c1.73,4.39 6,7.5 11,7.5s9.27,-3.11 11,-7.5c-1.73,-4.39 -6,-7.5 -11,-7.5zM12,17c-2.76,0 -5,-2.24 -5,-5s2.24,-5 5,-5 5,2.24 5,5 -2.24,5 -5,5zM12,9c-1.66,0 -3,1.34 -3,3s1.34,3 3,3 3,-1.34 3,-3 -1.34,-3 -3,-3z</string>
     <string name="path_password_eye_mask_strike_through" translatable="false">M2,4.27 L19.73,22 L22.27,19.46 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
     <string name="path_password_eye_mask_visible" translatable="false">M2,4.27 L2,4.27 L4.54,1.73 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
     <string name="path_password_strike_through" translatable="false">M3.27,4.27 L19.74,20.74</string>
+    <string name="post_description_1">
+    This is an example of a long description:\n
+    Here are some of my favorite dishes from my recent travels:\n
+    1. Borscht: Borscht is a really simple dish but it\'s super tasty! The beets, onions, and cabbage are kind of sweet, but the
+    vinegar and tomato give it a tart, savory flavor as well. I personally prefer it with sour cream, but I know some people
+    don\'t like it.\n
+    2. Blueberry Crumble: I\'ve always been a big fan of dessert and blueberries are one of my favorite fruits, so of course I
+    would love blueberry crumbles! The breading is delicious but the real treat is the filling, it\'s to die for.\n
+    3. Bunny Chow: Bunny chow is a South African dish where they hollow out a loaf of bread and fill it with curry and salad.
+    I adore curry and I\'m a big fan of bread as well, so for me this dish is a combo of two of my favorite foods. Not many places
+    serve it outside of Africa, but if you ever see it on the menu I\'d highly recommend it!\n
+    4. Falafel: Falafel is a deep-fried ball or patty-shaped fritter in Middle Eastern cuisine made from ground chickpeas,
+    broad beans, or both. It\'s a great snack!
+    </string>
+    <string name="post_description_2">
+        This is an example of a medium length description:\n
+        Here are a few dish recommendations for the next time you can\'t decide what to eat!\n
+        1. Tikka Masala: Pretty easy to make at home and it\'s healthy. Goes great with pita bread.\n
+        2. Ochazuke: This is more of a snack or appetizer than a full meal, but it has a really unique taste.\n
+        3. Kimchi-jjigae: A bit spicy, but it has such a rich flavor.
+    </string>
+    <string name="post_description_3">
+        This is an example of a short description:\n
+        Went to Mexico recently, the Shrimp al Mojo de Ajo out here is insanely good!
+    </string>
+    <string name="post_description_4">
+        French food is as good as they say, but Paris is just okay :(
+    </string>
     <string name="profile_email">profile_email</string>
     <string name="profile_name">profile_name</string>
     <string name="project_id" translatable="false">foodstabook-a34b4</string>
     <string name="random_suggestion">Random</string>
+    <string name="range_end">"Range end"</string>
+    <string name="range_start">"Range start"</string>
     <string name="ratatouille_instructions">
         Ingredients (for 8 servings):\n
 VEGGIES:\n
@@ -1961,7 +2013,10 @@ HERB SEASONING:\n
 7. Serve while hot as a main dish or side. The ratatouille is also excellent the next day—cover with foil and reheat in a 350˚F (180˚C) oven for 15 minutes, or simply microwave to desired temperature.\n
 8. Enjoy!
     </string>
+    <string name="resizable_text_read_less">less</string>
+    <string name="resizable_text_read_more">more</string>
     <string name="search_menu_title">Search</string>
+    <string name="selected">Selected</string>
     <string name="shrimp_al_mojo_de_ajo_instructions">
         Ingredients:\n
 ▢ 1 tablespoon smoked paprika\n
@@ -1983,7 +2038,10 @@ Instructions:\n
 7. Enjoy with white rice, angel hair pasta, or tortillas.\n
     </string>
     <string name="status_bar_notification_info_overflow">999+</string>
+    <string name="tab">Tab</string>
     <string name="tailored_suggestion">Tailored</string>
+    <string name="template_percent"><ns2:g id="percentage">%1$d</ns2:g> percent.</string>
+    <string name="title_activity_main2">MainActivity2</string>
     <string name="vegetable_terrine_instructions">
         Ingredients:\n
         ▢ 2 medium beets (about 10 ounces), trimmed\n
@@ -5061,6 +5119,9 @@ Instructions:\n
     </style>
     <style name="CardView.Light">
         <item name="cardBackgroundColor">@color/cardview_light_background</item>
+    </style>
+    <style name="DialogWindowTheme">
+        <item name="android:windowClipToOutline">false</item>
     </style>
     <style name="EmptyTheme"/>
     <style name="MaterialAlertDialog.Material3" parent="MaterialAlertDialog.MaterialComponents">
@@ -8437,6 +8498,13 @@ Instructions:\n
         
         <attr format="reference" name="expandActivityOverflowButtonDrawable"/>
     </declare-styleable>
+    <declare-styleable name="ActivityNavigator">
+        <attr name="android:name"/>
+        <attr format="string" name="action"/>
+        <attr format="string" name="data"/>
+        <attr format="string" name="dataPattern"/>
+        <attr format="string" name="targetPackage"/>
+    </declare-styleable>
     <declare-styleable name="AlertDialog">
         <attr name="android:layout"/>
         <attr format="reference" name="buttonPanelSideLayout"/>
@@ -9046,6 +9114,23 @@ Instructions:\n
         <attr format="reference" name="listChoiceIndicatorMultipleAnimated"/>
 
     </declare-styleable>
+    <declare-styleable name="AppCompatThemeAdapterTheme">
+        
+        <attr name="windowActionBar"/>
+
+        <attr name="isLightTheme"/>
+
+        <attr name="colorPrimary"/>
+        <attr name="colorPrimaryDark"/>
+        <attr name="colorAccent"/>
+        <attr name="android:colorBackground"/>
+        <attr name="colorError"/>
+
+        <attr name="android:textColorPrimary"/>
+
+        <attr name="android:fontFamily"/>
+        <attr name="fontFamily"/>
+    </declare-styleable>
     <declare-styleable name="Badge">
     
     <attr format="dimension" name="badgeRadius"/>
@@ -9596,6 +9681,79 @@ Instructions:\n
         
         <attr format="float" name="lStar"/>
         <attr name="android:lStar"/>
+    </declare-styleable>
+    <declare-styleable name="ComposeThemeAdapterShapeAppearance">
+        <attr name="cornerSize"/>
+        <attr name="cornerSizeTopLeft"/>
+        <attr name="cornerSizeTopRight"/>
+        <attr name="cornerSizeBottomRight"/>
+        <attr name="cornerSizeBottomLeft"/>
+
+        <attr name="cornerFamily"/>
+    </declare-styleable>
+    <declare-styleable name="ComposeThemeAdapterTextAppearance">
+        <attr name="android:textColor"/>
+        <attr name="android:textSize"/>
+        <attr name="android:textStyle"/>
+        <attr name="android:textFontWeight"/>
+
+        <attr name="android:typeface"/>
+
+        <attr name="android:shadowColor"/>
+        <attr name="android:shadowDx"/>
+        <attr name="android:shadowDy"/>
+        <attr name="android:shadowRadius"/>
+
+        <attr name="lineHeight"/>
+        <attr name="android:lineHeight"/>
+
+        <attr name="android:letterSpacing"/>
+
+        <attr name="android:fontFeatureSettings"/>
+
+        <attr name="android:fontFamily"/>
+        <attr name="fontFamily"/>
+
+        
+        <attr name="android:fontVariationSettings"/>
+    </declare-styleable>
+    <declare-styleable name="ComposeThemeAdapterTheme">
+        <attr name="isMaterialTheme"/>
+
+        <attr name="colorPrimary"/>
+        <attr name="colorPrimaryVariant"/>
+        <attr name="colorOnPrimary"/>
+        <attr name="colorSecondary"/>
+        <attr name="colorSecondaryVariant"/>
+        <attr name="colorOnSecondary"/>
+        <attr name="colorSurface"/>
+        <attr name="colorOnSurface"/>
+        <attr name="android:colorBackground"/>
+        <attr name="colorOnBackground"/>
+        <attr name="colorError"/>
+        <attr name="colorOnError"/>
+
+        <attr name="fontFamily"/>
+        <attr name="android:fontFamily"/>
+        <attr name="textAppearanceBody1"/>
+        <attr name="textAppearanceBody2"/>
+        <attr name="textAppearanceButton"/>
+        <attr name="textAppearanceCaption"/>
+        <attr name="textAppearanceHeadline1"/>
+        <attr name="textAppearanceHeadline2"/>
+        <attr name="textAppearanceHeadline3"/>
+        <attr name="textAppearanceHeadline4"/>
+        <attr name="textAppearanceHeadline5"/>
+        <attr name="textAppearanceHeadline6"/>
+        <attr name="textAppearanceOverline"/>
+        <attr name="textAppearanceSubtitle1"/>
+        <attr name="textAppearanceSubtitle2"/>
+
+        <attr name="shapeAppearanceSmallComponent"/>
+        <attr name="shapeAppearanceMediumComponent"/>
+        <attr name="shapeAppearanceLargeComponent"/>
+
+        <attr name="isLightTheme"/>
     </declare-styleable>
     <declare-styleable name="CompoundButton">
         <attr name="android:button"/>
@@ -10347,6 +10505,7 @@ Instructions:\n
         
         <attr name="elevation"/>
     </declare-styleable>
+    <declare-styleable name="ExpandableTextView"><attr format="integer" name="maxCollapsedLines"/><attr format="integer" name="animDuration"/><attr format="float" name="animAlphaStart"/><attr format="reference" name="expandDrawable"/><attr format="reference" name="collapseDrawable"/></declare-styleable>
     <declare-styleable name="ExtendedFloatingActionButton">
     
     <attr name="elevation"/>
@@ -11343,6 +11502,40 @@ Instructions:\n
         <attr format="color" name="telltales_tailColor"/>
         <attr format="float" name="telltales_tailScale"/>
     </declare-styleable>
+    <declare-styleable name="NavAction">
+        <attr name="android:id"/>
+        <attr format="reference" name="destination"/>
+        <attr format="boolean" name="launchSingleTop"/>
+        <attr format="boolean" name="restoreState"/>
+        <attr format="reference" name="popUpTo"/>
+        <attr format="boolean" name="popUpToInclusive"/>
+        <attr format="boolean" name="popUpToSaveState"/>
+        <attr format="reference" name="enterAnim"/>
+        <attr format="reference" name="exitAnim"/>
+        <attr format="reference" name="popEnterAnim"/>
+        <attr format="reference" name="popExitAnim"/>
+    </declare-styleable>
+    <declare-styleable name="NavArgument">
+        <attr name="android:name"/>
+        <attr name="android:defaultValue"/>
+        <attr format="boolean" name="nullable"/>
+        <attr format="string" name="argType"/>
+    </declare-styleable>
+    <declare-styleable name="NavDeepLink">
+        <attr format="string" name="uri"/>
+        <attr format="string" name="action"/>
+        <attr format="string" name="mimeType"/>
+        <attr name="android:autoVerify"/>
+    </declare-styleable>
+    <declare-styleable name="NavGraphNavigator">
+        <attr format="reference" name="startDestination"/>
+    </declare-styleable>
+    <declare-styleable name="NavHost">
+        <attr format="reference" name="navGraph"/>
+    </declare-styleable>
+    <declare-styleable name="NavInclude">
+        <attr format="reference" name="graph"/>
+    </declare-styleable>
     <declare-styleable name="NavigationBarActiveIndicator">
     
     <attr name="android:color"/>
@@ -11481,6 +11674,11 @@ Instructions:\n
     
     <attr format="dimension" name="drawerLayoutCornerSize"/>
   </declare-styleable>
+    <declare-styleable name="Navigator">
+        <attr name="android:id"/>
+        <attr format="string" name="route"/>
+        <attr name="android:label"/>
+    </declare-styleable>
     <declare-styleable name="OnClick">
         <attr name="targetId"/>
         <attr name="clickAction">

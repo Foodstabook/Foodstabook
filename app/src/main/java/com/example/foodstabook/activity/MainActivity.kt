@@ -24,6 +24,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.navigation.NavDestination
@@ -55,6 +56,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 //Create Scaffold Composable functions
+@Preview
 @RequiresApi(Build.VERSION_CODES.N)
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
@@ -99,7 +101,6 @@ sealed class BottomBarItem(
 
 //Create BottomNavigationBar Composable function in which
 // you click each object then it switch to the selected activity
-
 @Composable
 fun BottomBar(navController: NavHostController){
     val screens = listOf(
@@ -166,7 +167,6 @@ fun BottomNavGraph(navController: NavHostController) {
     }
 
 }
-
 @Composable
 fun Home(navController: NavHostController){
     ConstraintLayout {
@@ -176,87 +176,13 @@ fun Home(navController: NavHostController){
 
 @Composable
 fun Profile(navController: NavHostController){
-    /*AndroidView(
-        factory = {
-            View.inflate(it, R.layout.activity_profile, null)
-        },
-        modifier = Modifier.fillMaxSize()
-    )*/
-
-    val mContext = LocalContext.current
-    Column (modifier = Modifier.fillMaxSize(),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally){
-        Text(text = "Profile",
-            fontWeight = FontWeight.ExtraBold
-        )
-        Button(
-            onClick = {
-                mContext.startActivity(Intent(mContext, ProfileActivity::class.java))
-            },
-            colors = ButtonDefaults.buttonColors(backgroundColor = Color.Green),
-        ) {
-            Text("Profile", color = Color.Black)
-        }
-        Button(
-            onClick = {
-                mContext.startActivity(Intent(mContext, SignUpActivity::class.java))
-            },
-            colors = ButtonDefaults.buttonColors(backgroundColor = Color.Green),
-        ) {
-            Text("Sign Up", color = Color.Black)
-        }
-        Button(
-            onClick = {
-                mContext.startActivity(Intent(mContext, LoginPage::class.java))
-            },
-            colors = ButtonDefaults.buttonColors(backgroundColor = Color.Green),
-        ) {
-            Text("Login", color = Color.Black)
-        }
-        Button(
-            onClick = {
-                mContext.startActivity(Intent(mContext, ResetPassword::class.java))
-            },
-            colors = ButtonDefaults.buttonColors(backgroundColor = Color.Green),
-        ) {
-            Text("Reset Password", color = Color.Black)
-        }
-        Button(
-            onClick = {
-                mContext.startActivity(Intent(mContext, SettingActivity::class.java))
-            },
-            colors = ButtonDefaults.buttonColors(backgroundColor = Color.Green),
-        ) {
-            Text("Settings", color = Color.Black)
-        }
-        Button(
-            onClick = {
-                mContext.startActivity(Intent(mContext, UserAccount::class.java))
-            },
-            colors = ButtonDefaults.buttonColors(backgroundColor = Color.Green),
-        ) {
-            Text("User Account", color = Color.Black)
-        }
+    ConstraintLayout {
+        ProfileScreen()
     }
 }
 
 @Composable
 fun Post(navController: NavHostController){
-//    AndroidView(
-//        factory = {
-//            View.inflate(it, R.layout.activity_create_post, null)
-//        },
-//        modifier = Modifier.fillMaxSize()
-//    )
-
-    /*Column (modifier = Modifier.fillMaxSize(),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally){
-        Text(text = "Post",
-            fontWeight = FontWeight.ExtraBold
-        )
-    }*/
     ConstraintLayout {
         CreatePostPreview()
     }
@@ -269,20 +195,4 @@ fun FoodSuggestion(navController: NavHostController){
 
         RecipeBuilder()
     }
-    /*val mContext = LocalContext.current
-    Column (modifier = Modifier.fillMaxSize(),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally){
-        Text(text = "Food Suggestion",
-            fontWeight = FontWeight.ExtraBold
-        )
-        Button(
-            onClick = {
-                mContext.startActivity(Intent(mContext, SuggestionMainActivity::class.java))
-            },
-            colors = ButtonDefaults.buttonColors(backgroundColor = Color.Green),
-        ) {
-            Text("Food Suggestion", color = Color.Black)
-        }
-    }*/
 }

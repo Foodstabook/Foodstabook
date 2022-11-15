@@ -2,7 +2,9 @@ package com.example.foodstabook.activity
 
 import android.annotation.SuppressLint
 import android.content.ContentValues.TAG
+import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
@@ -20,15 +22,12 @@ import androidx.compose.ui.focus.FocusDirection
 import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalFocusManager
-import androidx.compose.ui.res.imageResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.foodstabook.R
 import com.example.foodstabook.activity.ui.theme.FoodstabookTheme
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
@@ -36,12 +35,11 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ktx.database
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
-import kotlin.math.roundToInt
-
 
 private lateinit var user: FirebaseAuth
 private lateinit var db: FirebaseFirestore
 private lateinit var reference: DatabaseReference
+
 
 class CreatePost : ComponentActivity() {
 
@@ -57,14 +55,12 @@ class CreatePost : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-
                     Post()
                 }
             }
         }
     }
 }
-
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @OptIn(ExperimentalComposeUiApi::class)
@@ -78,25 +74,23 @@ private fun Post() {
     var description by remember { mutableStateOf("") }
     val uid = user.currentUser!!.uid
 
-    var rating: Float by remember { mutableStateOf(0f) }
-    var ratingRound = (rating * 10.0).roundToInt() / 10.0
-
-    val imageBackground = ImageBitmap.imageResource(id = R.drawable.star_background)
-    val imageForeground = ImageBitmap.imageResource(id = R.drawable.star_foreground)
-
+    var rating1: Int by remember { mutableStateOf(0) }
 
     val (focusTitle,focusHashtags,focusPlace,focusDescription) = remember { FocusRequester.createRefs() }
     val focusManager = LocalFocusManager.current
 
     val maxChar = 20;
-    val maxCharD = 50;
+    val maxCharHashtag = 30;
+    val maxCharD = 100;
 
     Scaffold(){
+        val mContext = LocalContext.current
         Column (
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(horizontal = 15.dp),
         ){
+
             OutlinedTextField(value = title, label = {Text(text = "Title")},
                 onValueChange = {
                     title = it.take(maxChar)
@@ -113,8 +107,8 @@ private fun Post() {
 
             OutlinedTextField(value = hashtags, label = {Text(text = "Hashtag")},
                 onValueChange = {
-                    hashtags = it.take(maxChar)
-                    if (it.length > maxChar){
+                    hashtags = it.take(maxCharHashtag)
+                    if (it.length > maxCharHashtag){
                         focusManager.moveFocus(FocusDirection.Down) } },
                 modifier = Modifier
                     .fillMaxWidth()
@@ -139,20 +133,10 @@ private fun Post() {
             )
             Spacer(modifier = Modifier.height(8.dp))
 
-            RatingBar(
-                rating = rating,
-                space = 2.dp,
-                imageEmpty = imageBackground,
-                imageFilled = imageForeground,
-                animationEnabled = false,
-                gestureEnabled = true,
-                itemSize = 35.dp
-            ) {
-                rating = it
-            }
 
+            var rating = RatingBar(ratingNum = rating1)
             Text(
-                "Rating: $ratingRound",
+                "Rating: $rating",
                 fontSize = 16.sp,
                 color = Color(0xFFEF6C00)
             )
@@ -173,12 +157,13 @@ private fun Post() {
                 keyboardActions = KeyboardActions(onDone = {focusManager.clearFocus()})
             )
 
-            Spacer(modifier = Modifier.height(150.dp))
-            btnPost(title,hashtags,place,description,ratingRound,uid)
+            Spacer(modifier = Modifier.height(100.dp))
+            btnImage()
+            Spacer(modifier = Modifier.height(8.dp))
+            btnPost(title, hashtags, place, description, rating, uid)
             Spacer(modifier = Modifier.height(8.dp))
             btnCancel()
-            Spacer(modifier = Modifier.height(8.dp))
-            btnShow()
+
         }
     }
 }
@@ -189,42 +174,43 @@ fun btnPost(
     hashtags: String,
     place: String,
     description: String,
-    ratingRound: Double,
+    rating: Int,
     uid: String
 ) {
     val mContext = LocalContext.current
     Button(
         onClick = {
-            reference = FirebaseDatabase.getInstance().getReference("users")
-            reference.child(uid).get().addOnSuccessListener {
-                if(it.exists()){
-                    val username = it.child("username").value.toString()
-                    val posts: MutableMap<String, Any> = HashMap()
-                    posts["Title"] = title
-                    posts["Place"] = place
-                    posts["Rating"] = ratingRound
-                    posts["Description"] = description
-                    val hashtagList = hashtags.split(",").toTypedArray()
-                    posts["UID"] =  uid
+            if (inputValidation(title, hashtags, place, description, rating,mContext)) {
+                reference = FirebaseDatabase.getInstance().getReference("users")
+                reference.child(uid).get().addOnSuccessListener {
+                    if (it.exists()) {
+                        val username = it.child("username").value.toString()
+                        val posts: MutableMap<String, Any> = HashMap()
+                        posts["Title"] = title
+                        posts["Place"] = place
+                        posts["Rating"] = rating
+                        posts["Description"] = description
+                        val hashtagList = hashtags.split(",").toTypedArray()
+                        posts["UID"] = uid
 
-                    for ((index, h) in hashtagList.withIndex()) {
-                        posts["Hashtag$index"] = h
-                    }
-                    posts["Username"] = username
+                        for ((index, h) in hashtagList.withIndex()) {
+                            posts["Hashtag$index"] = h
+                        }
+                        posts["Username"] = username
 
-                    db.collection("Test").add(posts).addOnSuccessListener {
-                        Toast.makeText(mContext, "Post Success", Toast.LENGTH_SHORT).show()
-                        mContext.startActivity(Intent(mContext, MainActivity::class.java))
-                    }.addOnFailureListener {
-                        Toast.makeText(mContext, "Post Failure.", Toast.LENGTH_SHORT).show()
+                        db.collection("Test").add(posts).addOnSuccessListener {
+                            Toast.makeText(mContext, "Post Success", Toast.LENGTH_SHORT).show()
+                            mContext.startActivity(Intent(mContext, MainActivity::class.java))
+                        }.addOnFailureListener {
+                            Toast.makeText(mContext, "Post Failure.", Toast.LENGTH_SHORT).show()
+                        }
+                    } else {
+                        Log.d(TAG, "User don't exist")
                     }
-                }else{
-                    Log.d(TAG,"User don't exist")
+                }.addOnFailureListener {
+                    Log.d(TAG, "Fail")
                 }
-            }.addOnFailureListener{
-                Log.d(TAG,"Fail")
-            }
-        },
+            } },
         enabled = true,
         modifier = Modifier.fillMaxWidth(),
         shape = RoundedCornerShape(16.dp),
@@ -251,20 +237,66 @@ fun btnCancel() {
 }
 
 @Composable
-fun btnShow() {
+fun btnImage() {
     val mContext = LocalContext.current
     Button(
         onClick = {
-            var uid = user.currentUser?.uid.toString()
-            Toast.makeText(mContext, "$uid", Toast.LENGTH_SHORT).show()
+
         },
         enabled = true,
         modifier = Modifier.fillMaxWidth(),
         shape = RoundedCornerShape(16.dp),
         colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xFFEF6C00))
     ) {
-        Text(text = "Show", color = Color.White, fontSize = 16.sp)
+        Text(text = "Image", color = Color.White, fontSize = 16.sp)
     }
+}
+
+fun inputValidation(
+    title: String,
+    hashtags: String,
+    place: String,
+    description: String,
+    rating: Int,
+    mContext: Context
+): Boolean  {
+    if (title == null || "".equals(title)) {
+        Toast.makeText(mContext, "Please enter Title", Toast.LENGTH_LONG).show()
+        return false;
+    } else if(title.length>20){
+        Toast.makeText(mContext, "Title no more than 20 characters.", Toast.LENGTH_LONG).show()
+        return false;
+    }
+
+    if (hashtags == null || "".equals(hashtags)) {
+        Toast.makeText(mContext, "Please enter Hashtag", Toast.LENGTH_LONG).show()
+        return false;
+    }else if(hashtags.length>30){
+        Toast.makeText(mContext, "Hashtag no more than 20 characters.", Toast.LENGTH_LONG).show()
+        return false;
+    }
+
+    if (place == null || "".equals(place)) {
+        Toast.makeText(mContext, "Please enter Place", Toast.LENGTH_LONG).show()
+        return false;
+    }else if(place.length>20){
+        Toast.makeText(mContext, "Place no more than 20 characters.", Toast.LENGTH_LONG).show()
+        return false;
+    }
+
+    if (rating <= 0) {
+        Toast.makeText(mContext, "Please Rate", Toast.LENGTH_LONG).show()
+        return false;
+    }
+
+    if (description == null || "".equals(description) ) {
+        Toast.makeText(mContext, "Please enter Description", Toast.LENGTH_LONG).show()
+        return false;
+    }else if(description.length>100){
+        Toast.makeText(mContext, "Description no more than 100 characters.", Toast.LENGTH_LONG).show()
+        return false;
+    }
+    return true
 }
 
 @Preview(showBackground = true)
@@ -274,3 +306,4 @@ fun CreatePostPreview() {
         Post()
     }
 }
+

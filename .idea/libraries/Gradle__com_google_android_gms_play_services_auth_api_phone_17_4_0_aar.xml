@@ -3,7 +3,8 @@
     <CLASSES>
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/4c0db53664fee6fb44f163e727748bbb/transformed/play-services-auth-api-phone-17.4.0/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/787407715be51c8b15345cebf7f5dee6/transformed/play-services-auth-api-phone-17.4.0/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/cda374d5251d6af45fa59a5a7eef477d/transformed/play-services-auth-api-phone-17.4.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/787407715be51c8b15345cebf7f5dee6/transformed/play-services-auth-api-phone-17.4.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/787407715be51c8b15345cebf7f5dee6/transformed/play-services-auth-api-phone-17.4.0/AndroidManifest.xml" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/2b748609d7ce08ed6ec6f593c43f9f0c/transformed/play-services-auth-api-phone-17.4.0/AndroidManifest.xml" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/2b748609d7ce08ed6ec6f593c43f9f0c/transformed/play-services-auth-api-phone-17.4.0/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/2b748609d7ce08ed6ec6f593c43f9f0c/transformed/play-services-auth-api-phone-17.4.0/res" />

@@ -11,4 +11,12 @@ object RetrofitInstance {
             .build()
             .create(SpoonacularInterface::class.java)
     }
+
+    val cloudFunctionsApi: cloudFunctionsInterface by lazy{
+        Retrofit.Builder()
+            .baseUrl("https://us-central1-foodstabook-a34b4.cloudfunctions.net/")
+            .addConverterFactory(MoshiConverterFactory.create())
+            .build()
+            .create(SpoonacularInterface::class.java)
+    }
 }

@@ -170,7 +170,7 @@ fun lazyNewsfeed(posts: List<PostModel>) {
             singleLine = true,
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text,
                     imeAction = ImeAction.Search),
-                keyboardActions = KeyboardActions(onSearch = {}) ,
+                keyboardActions = KeyboardActions(onSearch = {textState.value = TextFieldValue("SEARCH WOULD HAPPEN HERE")}) ,
                 colors = TextFieldDefaults.textFieldColors(backgroundColor = Color.White,
                 focusedIndicatorColor = Color.Transparent,
                 unfocusedIndicatorColor = Color.Transparent)

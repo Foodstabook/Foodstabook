@@ -1,13 +1,17 @@
 package com.example.foodstabook.activity
 
+import android.content.ContentValues.TAG
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.compose.setContent
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.compose.compiler.plugins.kotlin.EmptyFunctionMetrics.name
+import androidx.compose.compiler.plugins.kotlin.lower.includeFileNameInExceptionTrace
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -15,6 +19,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.*
+import androidx.compose.material.MaterialTheme.colors
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
@@ -29,6 +34,8 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.graphics.Color
 import com.example.foodstabook.R
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 @Composable
 fun ProfileScreen(
@@ -40,12 +47,14 @@ fun ProfileScreen(
         Toast.makeText(LocalContext.current, notification.value, Toast.LENGTH_LONG).show()
         notification.value = ""
     }
-    var name by rememberSaveable { mutableStateOf("default name") }
-    var username by rememberSaveable { mutableStateOf("default username") }
-    var user_email by rememberSaveable { mutableStateOf("default user's email") }
+    val user = Firebase.auth.currentUser
+    var name by rememberSaveable { mutableStateOf(user?.displayName) }
+    var email by rememberSaveable { mutableStateOf(user?.email) }
     var bio by rememberSaveable { mutableStateOf("default bio") }
     Column(
-        modifier = Modifier.verticalScroll(rememberScrollState()).padding(8.dp),
+        modifier = Modifier
+            .verticalScroll(rememberScrollState())
+            .padding(15.dp),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -68,75 +77,79 @@ fun ProfileScreen(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(start = 4.dp, end = 4.dp),
-            verticalAlignment = Alignment.CenterVertically
+            horizontalArrangement = Arrangement.Center
+
         ) {
-            Text(text = "Name", modifier = Modifier.width(100.dp))
-            TextField(
-                value = name,
-                onValueChange = { name = it },
-                colors = TextFieldDefaults.textFieldColors(
-                    backgroundColor = Color.Transparent,
-                    textColor = Color.Black
+            //Text(text = "Name", modifier = Modifier.width(100.dp))
+            name?.let {
+                OutlinedTextField(
+                    value = it,
+                    onValueChange = { name = it },
+                    colors = TextFieldDefaults.textFieldColors(
+                        backgroundColor = Color.Transparent,
+                        textColor = Color.Black
+                    ),
+                    label = { Text(text = "Name")}
                 )
-            )
+            }
         }
+
+//        Row(
+//            modifier = Modifier
+//                .fillMaxWidth()
+//                .padding(start = 4.dp, end = 4.dp),
+//            verticalAlignment = Alignment.CenterVertically
+//        ) {
+//            Text(text = "Username", modifier = Modifier.width(100.dp))
+//            TextField(
+//                value = username,
+//                onValueChange = { username = it },
+//                colors = TextFieldDefaults.textFieldColors(
+//                    backgroundColor = Color.Transparent,
+//                    textColor = Color.Black
+//                )
+//            )
+//        }
 
         Row(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(start = 4.dp, end = 4.dp),
-            verticalAlignment = Alignment.CenterVertically
+            horizontalArrangement = Arrangement.Center
         ) {
-            Text(text = "Username", modifier = Modifier.width(100.dp))
-            TextField(
-                value = username,
-                onValueChange = { username = it },
-                colors = TextFieldDefaults.textFieldColors(
-                    backgroundColor = Color.Transparent,
-                    textColor = Color.Black
+            email?.let {
+                OutlinedTextField(
+                    value = email!!,
+                    onValueChange = { email = it },
+                    colors = TextFieldDefaults.textFieldColors(
+                        backgroundColor = Color.Transparent,
+                        textColor = Color.Black
+                    ),
+                    label = { Text(text = "Email")}
                 )
-            )
-        }
-
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(start = 4.dp, end = 4.dp),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Text(text = "Email", modifier = Modifier.width(100.dp))
-            TextField(
-                value = user_email,
-                onValueChange = { user_email = it },
-                colors = TextFieldDefaults.textFieldColors(
-                    backgroundColor = Color.Transparent,
-                    textColor = Color.Black
-                )
-            )
+            }
         }
 
         Row(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(8.dp),
-            verticalAlignment = Alignment.Top
+            horizontalArrangement = Arrangement.Center
         ) {
-            Text(
-                text = "Bio", modifier = Modifier
-                    .width(100.dp)
-                    .padding(top = 8.dp)
-            )
-            TextField(
+            OutlinedTextField(
                 value = bio,
                 onValueChange = { bio = it },
                 colors = TextFieldDefaults.textFieldColors(
                     backgroundColor = Color.Transparent,
                     textColor = Color.Black
                 ),
+                label = { Text(text = "Bio")},
                 singleLine = false,
                 modifier = Modifier.height(150.dp)
             )
         }
+
+        Spacer(modifier = Modifier.height(8.dp))
 
         Button(
             onClick = {

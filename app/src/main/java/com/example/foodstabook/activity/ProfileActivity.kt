@@ -1,18 +1,26 @@
 package com.example.foodstabook.activity
 
+import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.foodstabook.databinding.ActivityProfileBinding
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-
+import android.content.Context
 
 class ProfileActivity : AppCompatActivity() {
 
-
     private lateinit var binding : ActivityProfileBinding
     private lateinit var database : DatabaseReference
+
+
+    //Creates the SharedPreferences Holder
+    lateinit var sharedPreferences: SharedPreferences
+    var PREFS_KEY = "prefs"
+    var EMAIL_KEY = "email"
+    var loggedEmail = ""
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,8 +28,12 @@ class ProfileActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         binding = ActivityProfileBinding.inflate(layoutInflater)
-//        setContentView(R.layout.activity_profile)
         setContentView(binding.root)
+
+
+        sharedPreferences = getSharedPreferences(PREFS_KEY, Context.MODE_PRIVATE)
+        loggedEmail = sharedPreferences.getString(EMAIL_KEY, null)!!
+        Toast.makeText(this,"Welcome \n$loggedEmail",Toast.LENGTH_SHORT).show()
 
 
         binding.buttonSearch.setOnClickListener{
@@ -47,6 +59,19 @@ class ProfileActivity : AppCompatActivity() {
         binding.buttonClear.setOnClickListener{
             binding.textSearchUsernameProfile.setText("")
         }
+
+        //This will clear our
+        binding.buttonProfileLogOut.setOnClickListener{
+
+            val editor: SharedPreferences.Editor = sharedPreferences.edit()
+            editor.clear()
+            editor.apply()
+            val i = Intent(this@ProfileActivity, LoginPage::class.java)
+            startActivity(i)
+
+            finish()
+        }
+
         goHome()
     }
 

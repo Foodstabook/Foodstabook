@@ -191,8 +191,5 @@ fun Post(navController: NavHostController){
 @RequiresApi(Build.VERSION_CODES.N)
 @Composable
 fun FoodSuggestion(navController: NavHostController){
-    ConstraintLayout() {
-
         RecipeBuilder()
-    }
 }

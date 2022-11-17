@@ -16,13 +16,27 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material.MaterialTheme
+import androidx.compose.foundation.text.KeyboardActions
+import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material.*
+import androidx.compose.material.MaterialTheme.colors
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Clear
+import androidx.compose.material.icons.filled.Search
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableState
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.input.ImeAction
+import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
@@ -37,65 +51,11 @@ import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
 
+private var textInput: MutableState<String> = mutableStateOf("Search")
 private var postList = ArrayList<PostModel>()
 private val imageList = listOf(R.drawable.borscht, R.drawable.blueberry_crumble, R.drawable.bunny_chow,
     R.drawable.falafel, R.drawable.chicken_tikka_masala, R.drawable.ochazuke, R.drawable.kimchi_jjigae,
     R.drawable.shrimp_al_mojo_de_ajo, R.drawable.vegetable_terrine, R.drawable.ratatouille)
-class NewsfeedActivity : AppCompatActivity(), NewsfeedAdapter.OnViewCommentsClickListener {
-    private lateinit var binding: ActivityNewsfeedBinding
-    private val adapter = NewsfeedAdapter(postList, this)
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContent{
-            lazyNewsfeed(posts = postList)
-        }
-    }
-
-    override fun onViewCommentsClick(position: Int) {
-        val clickedPost = postList[position]
-        val intent = Intent(this, CommentsActivity::class.java)
-        intent.putExtra("clickedPost", clickedPost)
-        startActivity(intent)
-    }
-
-    fun goHome(){
-        binding.logo.setOnClickListener{
-            finish()
-        }
-    }
-
-    private fun goToProfile(){
-        binding.profileImage.setOnClickListener{
-            val intent = Intent(this, ProfileActivity::class.java)
-            startActivity(intent)
-        }
-    }
-
-    override fun onPause() {
-        super.onPause()
-        search_bar.clearFocus()
-    }
-
-    override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
-        if (ev != null) {
-            if(ev.action == MotionEvent.ACTION_DOWN){
-                val focus = currentFocus
-                if(focus is EditText ){
-                    var outRect = Rect()
-                    focus.getGlobalVisibleRect(outRect)
-                    if(!outRect.contains(ev.rawX.toInt(), ev.rawY.toInt())){
-                        focus.clearFocus()
-                        val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-                        imm.hideSoftInputFromWindow(focus.windowToken, 0)
-                    }
-                }
-            }
-
-        }
-        return super.dispatchTouchEvent(ev)
-    }
-
-}
 
 fun generatePostList(context: Context) {
     postList.add(PostModel("1", "testing1", R.drawable.foodstabook_logo4, "A Smorgasbord of Suggestions", imageList.slice(0..3), SimpleDateFormat("26-01-2022", Locale.US),
@@ -199,13 +159,21 @@ fun lazyNewsfeed(posts: List<PostModel>) {
             horizontalArrangement = Arrangement.SpaceBetween,
             modifier = Modifier.fillMaxWidth()
         ) {
-            AndroidView(
-                factory = { xmlContext ->
-                    SearchView(xmlContext).apply {
-                        queryHint = "Search"
-                    }
-                },
-                modifier = Modifier.padding(end = 50.dp)
+            val textState = remember { mutableStateOf(TextFieldValue("")) }
+            TextField(value = textState.value,
+                onValueChange = { textState.value = it},
+            placeholder = {Text(text = "Search")},
+            leadingIcon = {Icon(imageVector = Icons.Default.Search, contentDescription = "Search Icon")},
+                trailingIcon = {Icon(imageVector = Icons.Default.Clear, contentDescription = "Clear Icon",
+                    modifier = Modifier.clickable { textState.value = TextFieldValue("")})},
+                modifier = Modifier.weight(1f),
+            singleLine = true,
+                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text,
+                    imeAction = ImeAction.Search),
+                keyboardActions = KeyboardActions(onSearch = {textState.value = TextFieldValue("SEARCH WOULD HAPPEN HERE")}) ,
+                colors = TextFieldDefaults.textFieldColors(backgroundColor = Color.White,
+                focusedIndicatorColor = Color.Transparent,
+                unfocusedIndicatorColor = Color.Transparent)
             )
             Image(painter = painterResource(id = R.drawable.default_profile_photo),
                 contentDescription = null,

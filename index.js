@@ -101,5 +101,3 @@ exports.callSearchLatestPosts = functions.https.onCall((data, context) => {
         return results;
     });
 });
-
-

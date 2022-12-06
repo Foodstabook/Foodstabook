@@ -177,7 +177,7 @@ fun Home(navController: NavHostController){
 @Composable
 fun Profile(navController: NavHostController){
     ConstraintLayout {
-        ProfileScreen()
+        ProfilePreview()
     }
 }
 

@@ -49,6 +49,8 @@ import com.example.foodstabook.model.DietsSelectionModel
 import com.example.foodstabook.model.PreferencesSelectionModel
 import com.example.foodstabook.model.QuickSelectionModel
 import kotlinx.coroutines.launch
+import nl.dionsegijn.konfetti.compose.KonfettiView
+import nl.dionsegijn.konfetti.core.Party
 import retrofit2.Response
 
 
@@ -82,6 +84,8 @@ private val quickSelectedItem: SnapshotStateList<QuickSelectionModel> =
     mutableStateListOf()
 private var recipeList: List<Result>? = listOf()
 private val recipeListPosition: MutableState<Int> = mutableStateOf(0)
+
+
 class FoodSuggestionScreen : AppCompatActivity() {
 
     private lateinit var binding: ActivitySuggestionMainBinding
@@ -194,6 +198,7 @@ fun RecipeBuilder() {
                         false,
                         "6a802448b4a34e4daaeb8be9bfb8d399"
                     )
+
                     displayRandomSuggestion(response)
                 }
             }
@@ -1985,4 +1990,5 @@ private fun generateQuickSelection(): List<QuickSelectionModel> {
         )
     )
     return quickSelect.toList().sortedBy { it.title }
+
 }

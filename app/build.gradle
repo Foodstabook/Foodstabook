@@ -54,6 +54,8 @@ android {
 }
 
 dependencies {
+    //Party Confetti Effect
+    implementation 'nl.dionsegijn:konfetti-compose:2.0.2'
     //Retrofit
     implementation "com.squareup.retrofit2:retrofit:2.9.0"
     implementation "com.squareup.retrofit2:converter-moshi:2.9.0"

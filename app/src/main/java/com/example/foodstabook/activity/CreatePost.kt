@@ -36,7 +36,7 @@ import com.google.firebase.database.ktx.database
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 
-private lateinit var user: FirebaseAuth
+lateinit var user: FirebaseAuth
 private lateinit var db: FirebaseFirestore
 private lateinit var reference: DatabaseReference
 

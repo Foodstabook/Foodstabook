@@ -21,10 +21,11 @@ class LoginPage : AppCompatActivity() {
     var PREFS_KEY = "prefs"
     var EMAIL_KEY = "email"
     var PWD_KEY = "pwd"
+    var UID_KEY = "uid"
 
     var loggedEmail = ""
     var loggedPwd = ""
-
+    var loggedUid = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -36,14 +37,20 @@ class LoginPage : AppCompatActivity() {
         sharedPreferences = getSharedPreferences(PREFS_KEY, Context.MODE_PRIVATE)
         loggedEmail = sharedPreferences.getString(EMAIL_KEY, "").toString()
         loggedPwd = sharedPreferences.getString(PWD_KEY, "").toString()
+        loggedUid = sharedPreferences.getString(UID_KEY, "").toString()
 
 
         user = FirebaseAuth.getInstance()
         goHome()
 
         binding.btnlogin.setOnClickListener{
-            UserLogin()
+            userLogin()
         }
+        //TODO: When user press enter it will login
+//        binding.passwordinput.setOnEditorActionListener {
+//            userLogin()
+//
+//        }
 
         binding.btnforgotpass.setOnClickListener{
             val intent = Intent(this, ResetPassword::class.java)
@@ -54,6 +61,7 @@ class LoginPage : AppCompatActivity() {
             val intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)
         }
+
     }
 
     override fun onStart() {
@@ -77,7 +85,7 @@ class LoginPage : AppCompatActivity() {
         }
     }
 
-    private  fun UserLogin(){
+    private  fun userLogin(){
         val email = binding.emailinput.text.toString()
         val password = binding.passwordinput.text.toString()
 
@@ -93,12 +101,11 @@ class LoginPage : AppCompatActivity() {
                         val editor: SharedPreferences.Editor = sharedPreferences.edit()
                         editor.putString(EMAIL_KEY, email)
                         editor.putString(PWD_KEY, password)
-
+                        editor.putString(UID_KEY, user.uid)
                         editor.apply()
 
-                        Toast.makeText(this,
-                            "Sign in successfully",
-                            Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "Sign in successfully"+user.uid, Toast.LENGTH_SHORT).show()
+
                         startActivity(Intent(this, MainActivity::class.java))
                         finish()
                     }else{

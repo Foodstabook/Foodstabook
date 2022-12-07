@@ -1,22 +1,16 @@
 package com.example.foodstabook.activity
 
 import android.os.Build
-import android.os.Bundle
 import android.text.Html
-import androidx.activity.compose.setContent
 import androidx.annotation.RequiresApi
-import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.foodstabook.R
-import com.example.foodstabook.databinding.ActivitySuggestionMainBinding
-import com.example.foodstabook.model.RetrofitInstance
 import kotlinx.android.synthetic.main.activity_reset_password.view.*
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyHorizontalGrid
-import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.runtime.*
@@ -45,13 +39,11 @@ import androidx.compose.ui.platform.LocalConfiguration
 import com.example.foodstabook.data.Recipe
 import com.example.foodstabook.data.Result
 import com.example.foodstabook.data.TailoredRecipesList
-import com.example.foodstabook.model.DietsSelectionModel
-import com.example.foodstabook.model.PreferencesSelectionModel
-import com.example.foodstabook.model.QuickSelectionModel
+import com.example.foodstabook.model.*
 import kotlinx.coroutines.launch
 import retrofit2.Response
 
-
+//values that must be remembered even if the user decomposes this screen
 private val screenState: MutableState<Int> = mutableStateOf(0)
 private val titleText: MutableState<String> = mutableStateOf("")
 private val summaryText: MutableState<String> = mutableStateOf("")
@@ -82,19 +74,8 @@ private val quickSelectedItem: SnapshotStateList<QuickSelectionModel> =
     mutableStateListOf()
 private var recipeList: List<Result>? = listOf()
 private val recipeListPosition: MutableState<Int> = mutableStateOf(0)
-class FoodSuggestionScreen : AppCompatActivity() {
 
-    private lateinit var binding: ActivitySuggestionMainBinding
-
-    @RequiresApi(Build.VERSION_CODES.N)
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContent {
-            RecipeBuilder()
-        }
-    }
-}
-
+//Function for taking user's input and recommending them recipes based on said input
 @OptIn(ExperimentalMaterialApi::class)
 @RequiresApi(Build.VERSION_CODES.N)
 @Composable
@@ -119,75 +100,76 @@ fun RecipeBuilder() {
     val quickSelectRequest = remember{mutableStateOf(false)}
     val coroutineScope = rememberCoroutineScope()
 
-    // Initial Screen
-    if (state == 0) {
-        Column(
-            verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally,
-            modifier = Modifier.fillMaxSize()
-        ) {
-            Image(
-                painter = painterResource(id = R.drawable.cooking), contentDescription = null,
-                contentScale = ContentScale.FillWidth, modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(horizontal = 8.dp)
-            )
-            Row(
-                horizontalArrangement = Arrangement.SpaceEvenly,
-                verticalAlignment = Alignment.Bottom,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .offset(y = 16.dp)
+    // Initial Screen Where user chooses between random or tailored recipe suggestion
+    when (state) {
+        0 -> {
+            Column(
+                verticalArrangement = Arrangement.Center,
+                horizontalAlignment = Alignment.CenterHorizontally,
+                modifier = Modifier.fillMaxSize()
             ) {
-                Button(
-                    shape = RoundedCornerShape(24.dp),
-                    onClick = {
-                        screenState.value = -1
-                        suggestionListRequest.value = true
-                    },
-                    colors = ButtonDefaults.buttonColors(
-                        backgroundColor = Color(0xFFe69500)
-                    ),
-                    modifier = Modifier
-                        .size(width = 185.dp, height = 60.dp)
-                        .padding(bottom = 6.dp)
+                Image(
+                    painter = painterResource(id = R.drawable.cooking), contentDescription = null,
+                    contentScale = ContentScale.FillWidth, modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 8.dp)
                 )
-                {
-                    Text(
-                        text = "Surprise me!",
-                        color = White,
-                        fontSize = 18.sp,
-                        fontWeight = FontWeight.Bold,
-                        textAlign = TextAlign.Center
-                    )
-                }
-                Button(
-                    shape = RoundedCornerShape(24.dp),
-                    onClick = { screenState.value = 1 },
-                    colors = ButtonDefaults.buttonColors(
-                        backgroundColor = Color(0xFFe69500)
-                    ),
+                Row(
+                    horizontalArrangement = Arrangement.SpaceEvenly,
+                    verticalAlignment = Alignment.Bottom,
                     modifier = Modifier
-                        .size(width = 185.dp, height = 60.dp)
-                        .padding(bottom = 6.dp)
-                )
-                {
-                    Text(
-                        text = "Let Me Choose!",
-                        color = White,
-                        fontSize = 18.sp,
-                        fontWeight = FontWeight.Bold,
-                        textAlign = TextAlign.Center
+                        .fillMaxWidth()
+                        .offset(y = 16.dp)
+                ) {
+                    Button(
+                        shape = RoundedCornerShape(24.dp),
+                        onClick = {
+                            screenState.value = -1
+                            suggestionListRequest.value = true
+                        },
+                        colors = ButtonDefaults.buttonColors(
+                            backgroundColor = Color(0xFFe69500)
+                        ),
+                        modifier = Modifier
+                            .size(width = 185.dp, height = 60.dp)
+                            .padding(bottom = 6.dp)
                     )
+                    {
+                        Text(
+                            text = "Surprise me!",
+                            color = White,
+                            fontSize = 18.sp,
+                            fontWeight = FontWeight.Bold,
+                            textAlign = TextAlign.Center
+                        )
+                    }
+                    Button(
+                        shape = RoundedCornerShape(24.dp),
+                        onClick = { screenState.value = 1 },
+                        colors = ButtonDefaults.buttonColors(
+                            backgroundColor = Color(0xFFe69500)
+                        ),
+                        modifier = Modifier
+                            .size(width = 185.dp, height = 60.dp)
+                            .padding(bottom = 6.dp)
+                    )
+                    {
+                        Text(
+                            text = "Let Me Choose!",
+                            color = White,
+                            fontSize = 18.sp,
+                            fontWeight = FontWeight.Bold,
+                            textAlign = TextAlign.Center
+                        )
+                    }
                 }
             }
         }
-    }
 
-    // Random Food Suggestions
-    if (state == -1) {
+
+    // Random Food Suggestion Screen
+    -1 -> {
         if (suggestionListRequest.value) {
-            LaunchedEffect(key1 = suggestionListRequest.value) {
                 coroutineScope.launch {
                     scrollState.animateScrollTo(0)
                     val response = RetrofitInstance.spoonacularApi.getRandomRecipe(
@@ -196,10 +178,9 @@ fun RecipeBuilder() {
                     )
                     displayRandomSuggestion(response)
                 }
-            }
             suggestionListRequest.value = false
         }
-        Column() {
+        Column {
             Text(
                 text = "<",
                 modifier = Modifier
@@ -219,107 +200,9 @@ fun RecipeBuilder() {
                             end.linkTo(parent.end)
                             height = Dimension.fillToConstraints
                         }
-                        .verticalScroll(scrollState),
-                    horizontalAlignment = Alignment.CenterHorizontally,
-                    verticalArrangement = Arrangement.spacedBy(24.dp)
+                        .verticalScroll(scrollState)
                 ) {
-                    Image(
-                        painter = rememberAsyncImagePainter(model = url),
-                        contentDescription = null,
-                        contentScale = ContentScale.Fit,
-                        modifier = Modifier
-                            .aspectRatio(1.35f)
-                            .fillMaxWidth(1f)
-                            .padding(horizontal = 8.dp)
-                    )
-                    Card(
-                        backgroundColor = Color(0xFFF8D247),
-                        modifier = Modifier.padding(horizontal = 12.dp),
-                        shape = RoundedCornerShape(24.dp),
-                        elevation = 10.dp
-                    ) {
-                        Column {
-                            Text(
-                                text = title,
-                                color = Black,
-                                fontSize = 24.sp,
-                                fontWeight = FontWeight.Bold,
-                                modifier = Modifier
-                                    .align(Alignment.Start)
-                                    .padding(horizontal = 12.dp, vertical = 8.dp),
-                                textAlign = TextAlign.Start
-                            )
-                            Text(
-                                text = summary,
-                                color = Black,
-                                fontSize = 20.sp,
-                                modifier = Modifier
-                                    .align(Alignment.Start)
-                                    .padding(horizontal = 12.dp, vertical = 8.dp),
-                                textAlign = TextAlign.Start
-                            )
-                        }
-                    }
-                    Card(
-                        backgroundColor = Color(0xFFF8D247),
-                        modifier = Modifier
-                            .padding(horizontal = 12.dp)
-                            .fillMaxWidth(),
-                        shape = RoundedCornerShape(24.dp),
-                        elevation = 10.dp
-                    ) {
-                        Column {
-                            Text(
-                                text = "INGREDIENTS",
-                                color = Black,
-                                fontSize = 24.sp,
-                                fontWeight = FontWeight.Bold,
-                                modifier = Modifier
-                                    .align(Alignment.Start)
-                                    .padding(horizontal = 12.dp, vertical = 8.dp),
-                                textAlign = TextAlign.Start,
-                            )
-                            Text(
-                                text = ingredients,
-                                color = Black,
-                                fontSize = 20.sp,
-                                modifier = Modifier
-                                    .align(Alignment.Start)
-                                    .padding(horizontal = 12.dp, vertical = 8.dp),
-                                textAlign = TextAlign.Start
-                            )
-                        }
-                    }
-                    Card(
-                        backgroundColor = Color(0xFFF8D247),
-                        modifier = Modifier
-                            .padding(horizontal = 12.dp)
-                            .fillMaxWidth(),
-                        shape = RoundedCornerShape(24.dp),
-                        elevation = 10.dp
-                    ) {
-                        Column {
-                            Text(
-                                text = "INSTRUCTIONS",
-                                color = Black,
-                                fontSize = 24.sp,
-                                fontWeight = FontWeight.Bold,
-                                modifier = Modifier
-                                    .align(Alignment.Start)
-                                    .padding(horizontal = 12.dp, vertical = 8.dp),
-                                textAlign = TextAlign.Center
-                            )
-                            Text(
-                                text = instructions,
-                                color = Black,
-                                fontSize = 20.sp,
-                                modifier = Modifier
-                                    .align(Alignment.Start)
-                                    .padding(horizontal = 12.dp, vertical = 8.dp),
-                                textAlign = TextAlign.Start
-                            )
-                        }
-                    }
+                    RecipeCard(url = url, title = title, summary = summary, ingredients = ingredients, instructions = instructions)
                 }
                 Row(
                     horizontalArrangement = Arrangement.Center,
@@ -363,7 +246,7 @@ fun RecipeBuilder() {
         }
     }
     // Quick Select/Selected Preferences Screen
-    if (state == 1) {
+    1 -> {
         Column(modifier = Modifier.fillMaxSize()) {
             Text(
                 text = "<",
@@ -373,7 +256,8 @@ fun RecipeBuilder() {
                     .offset(8.dp),
                 fontSize = 32.sp
             )
-            Column(modifier = Modifier.verticalScroll(scrollState)
+            Column(modifier = Modifier
+                .verticalScroll(scrollState)
                 .weight(1f)) {
                 Row(
                     horizontalArrangement = Arrangement.SpaceBetween,
@@ -390,7 +274,8 @@ fun RecipeBuilder() {
                     )
                     Text(
                         text = "+ Filter",
-                        modifier = Modifier.offset(x = (-8).dp)
+                        modifier = Modifier
+                            .offset(x = (-8).dp)
                             .clickable { screenState.value = 2 },
                         fontSize = 24.sp,
                         color = DarkGray,
@@ -420,16 +305,22 @@ fun RecipeBuilder() {
                                     painter = painterResource(id = quickSelectFilter[item].image),
                                     contentDescription = null,
                                     contentScale = ContentScale.Crop,
-                                    modifier = Modifier.requiredHeight(130.dp)
+                                    modifier = Modifier
+                                        .requiredHeight(130.dp)
                                         .requiredWidth(150.dp)
                                 )
-                                Box(modifier = Modifier.matchParentSize()
-                                    .background(Brush.verticalGradient(
-                                        colors = listOf(Color.Transparent, DarkGray))))
+                                Box(modifier = Modifier
+                                    .matchParentSize()
+                                    .background(
+                                        Brush.verticalGradient(
+                                            colors = listOf(Color.Transparent, DarkGray)
+                                        )
+                                    ))
                                 Text(
                                     text = quickSelectFilter[item].title,
                                     textAlign = TextAlign.Center,
-                                    modifier = Modifier.align(Alignment.Center)
+                                    modifier = Modifier
+                                        .align(Alignment.Center)
                                         .requiredWidth(150.dp),
                                     fontWeight = FontWeight.Black,
                                     fontSize = 24.sp,
@@ -764,7 +655,7 @@ fun RecipeBuilder() {
         }
     }
     // Quick Search Filter Screen
-    if (state == 2){
+    2 ->{
         val grayScale = ColorMatrix()
         Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
             Row(
@@ -843,17 +734,23 @@ fun RecipeBuilder() {
                                     painter = painterResource(id = quickSelect[item].image),
                                     contentDescription = null,
                                     contentScale = ContentScale.Crop,
-                                    modifier = Modifier.requiredWidth(180.dp)
+                                    modifier = Modifier
+                                        .requiredWidth(180.dp)
                                         .requiredHeight(200.dp),
                                     colorFilter = ColorFilter.colorMatrix(grayScale)
                                 )
-                                Box(modifier = Modifier.matchParentSize()
-                                    .background(Brush.verticalGradient(
-                                        colors = listOf(Color.Transparent, DarkGray))))
+                                Box(modifier = Modifier
+                                    .matchParentSize()
+                                    .background(
+                                        Brush.verticalGradient(
+                                            colors = listOf(Color.Transparent, DarkGray)
+                                        )
+                                    ))
                                 Text(
                                     text = quickSelect[item].title,
                                     textAlign = TextAlign.Center,
-                                    modifier = Modifier.align(Alignment.Center)
+                                    modifier = Modifier
+                                        .align(Alignment.Center)
                                         .requiredWidth(180.dp),
                                     fontWeight = FontWeight.Black,
                                     fontSize = 32.sp,
@@ -866,8 +763,8 @@ fun RecipeBuilder() {
             }
         }
     }
-    // Detailed Preference Selection Screen
-    if (state == 3) {
+    // Preference Selection Screen
+    3 -> {
         Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
             Row(
                 verticalAlignment = Alignment.CenterVertically,
@@ -922,7 +819,8 @@ fun RecipeBuilder() {
                     )
                 }
             }
-            Column(modifier = Modifier.verticalScroll(scrollState)
+            Column(modifier = Modifier
+                .verticalScroll(scrollState)
                 .weight(1f)) {
                 Text(
                     text = "Preferences ",
@@ -1033,7 +931,7 @@ fun RecipeBuilder() {
                     }
                 }
                 //Do Not Wants Selection
-                Column() {
+                Column {
 
                     Row(
                         verticalAlignment = Alignment.CenterVertically,
@@ -1128,7 +1026,7 @@ fun RecipeBuilder() {
                     }
                 }
                 //Diets Selection
-                Column() {
+                Column {
 
                     Row(
                         verticalAlignment = Alignment.CenterVertically,
@@ -1232,7 +1130,7 @@ fun RecipeBuilder() {
                     }
                 }
                 //Intolerances Selection
-                Column() {
+                Column {
 
                     Row(
                         verticalAlignment = Alignment.CenterVertically,
@@ -1360,7 +1258,7 @@ fun RecipeBuilder() {
         }
     }
     //Tailored Food Suggestion Screen
-    if (state == 4) {
+    4 -> {
         if (suggestionListRequest.value) {
             val wantsBuilder = StringBuilder()
             val doNotWantsBuilder = StringBuilder()
@@ -1492,15 +1390,20 @@ fun RecipeBuilder() {
             )
         }
         else{
-            Column() {
+            Column {
                 Text(
                     text = "<",
                     modifier = Modifier
-                        .clickable { suggestionListRequest.value = false
+                        .clickable {
+                            coroutineScope.launch {
+                                scrollState.scrollTo(0)
+                            }
+                            suggestionListRequest.value = false
                             screenState.value = 1
                             quickSelectedItem.clear()
                             quickSelectRequest.value = false
-                            noRecipeResults.value = false }
+                            noRecipeResults.value = false
+                        }
                         .align(Alignment.Start)
                         .offset(8.dp),
                     fontSize = 32.sp
@@ -1517,106 +1420,8 @@ fun RecipeBuilder() {
                                 height = Dimension.fillToConstraints
                             }
                             .verticalScroll(scrollState),
-                        horizontalAlignment = Alignment.CenterHorizontally,
-                        verticalArrangement = Arrangement.spacedBy(24.dp)
                     ) {
-                        Image(
-                            painter = rememberAsyncImagePainter(model = url),
-                            contentDescription = null,
-                            contentScale = ContentScale.Fit,
-                            modifier = Modifier
-                                .aspectRatio(1.35f)
-                                .fillMaxWidth(1f)
-                                .padding(horizontal = 8.dp)
-                        )
-                        Card(
-                            backgroundColor = Color(0xFFF8D247),
-                            modifier = Modifier.padding(horizontal = 12.dp),
-                            shape = RoundedCornerShape(24.dp),
-                            elevation = 10.dp
-                        ) {
-                            Column {
-                                Text(
-                                    text = title,
-                                    color = Black,
-                                    fontSize = 24.sp,
-                                    fontWeight = FontWeight.Bold,
-                                    modifier = Modifier
-                                        .align(Alignment.Start)
-                                        .padding(horizontal = 12.dp, vertical = 8.dp),
-                                    textAlign = TextAlign.Start
-                                )
-                                Text(
-                                    text = summary,
-                                    color = Black,
-                                    fontSize = 20.sp,
-                                    modifier = Modifier
-                                        .align(Alignment.Start)
-                                        .padding(horizontal = 12.dp, vertical = 8.dp),
-                                    textAlign = TextAlign.Start
-                                )
-                            }
-                        }
-                        Card(
-                            backgroundColor = Color(0xFFF8D247),
-                            modifier = Modifier
-                                .padding(horizontal = 12.dp)
-                                .fillMaxWidth(),
-                            shape = RoundedCornerShape(24.dp),
-                            elevation = 10.dp
-                        ) {
-                            Column {
-                                Text(
-                                    text = "INGREDIENTS",
-                                    color = Black,
-                                    fontSize = 24.sp,
-                                    fontWeight = FontWeight.Bold,
-                                    modifier = Modifier
-                                        .align(Alignment.Start)
-                                        .padding(horizontal = 12.dp, vertical = 8.dp),
-                                    textAlign = TextAlign.Start,
-                                )
-                                Text(
-                                    text = ingredients,
-                                    color = Black,
-                                    fontSize = 20.sp,
-                                    modifier = Modifier
-                                        .align(Alignment.Start)
-                                        .padding(horizontal = 12.dp, vertical = 8.dp),
-                                    textAlign = TextAlign.Start
-                                )
-                            }
-                        }
-                        Card(
-                            backgroundColor = Color(0xFFF8D247),
-                            modifier = Modifier
-                                .padding(horizontal = 12.dp)
-                                .fillMaxWidth(),
-                            shape = RoundedCornerShape(24.dp),
-                            elevation = 10.dp
-                        ) {
-                            Column {
-                                Text(
-                                    text = "INSTRUCTIONS",
-                                    color = Black,
-                                    fontSize = 24.sp,
-                                    fontWeight = FontWeight.Bold,
-                                    modifier = Modifier
-                                        .align(Alignment.Start)
-                                        .padding(horizontal = 12.dp, vertical = 8.dp),
-                                    textAlign = TextAlign.Center
-                                )
-                                Text(
-                                    text = instructions,
-                                    color = Black,
-                                    fontSize = 20.sp,
-                                    modifier = Modifier
-                                        .align(Alignment.Start)
-                                        .padding(horizontal = 12.dp, vertical = 8.dp),
-                                    textAlign = TextAlign.Start
-                                )
-                            }
-                        }
+                        RecipeCard(url = url, title = title, summary = summary, ingredients = ingredients, instructions = instructions)
                     }
                     Row(
                         horizontalArrangement = Arrangement.Center,
@@ -1664,6 +1469,113 @@ fun RecipeBuilder() {
         }
     }
 }
+}
+
+@Composable
+fun RecipeCard(url: String, title: String, summary: String, ingredients: String, instructions: String){
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.spacedBy(24.dp)
+    ) {
+        Image(
+            painter = rememberAsyncImagePainter(model = url),
+            contentDescription = null,
+            contentScale = ContentScale.Fit,
+            modifier = Modifier
+                .aspectRatio(1.35f)
+                .fillMaxWidth(1f)
+                .padding(horizontal = 8.dp)
+        )
+        Card(
+            backgroundColor = Color(0xFFF8D247),
+            modifier = Modifier.padding(horizontal = 12.dp),
+            shape = RoundedCornerShape(24.dp),
+            elevation = 10.dp
+        ) {
+            Column {
+                Text(
+                    text = title,
+                    color = Black,
+                    fontSize = 24.sp,
+                    fontWeight = FontWeight.Bold,
+                    modifier = Modifier
+                        .align(Alignment.Start)
+                        .padding(horizontal = 12.dp, vertical = 8.dp),
+                    textAlign = TextAlign.Start
+                )
+                Text(
+                    text = summary,
+                    color = Black,
+                    fontSize = 20.sp,
+                    modifier = Modifier
+                        .align(Alignment.Start)
+                        .padding(horizontal = 12.dp, vertical = 8.dp),
+                    textAlign = TextAlign.Start
+                )
+            }
+        }
+        Card(
+            backgroundColor = Color(0xFFF8D247),
+            modifier = Modifier
+                .padding(horizontal = 12.dp)
+                .fillMaxWidth(),
+            shape = RoundedCornerShape(24.dp),
+            elevation = 10.dp
+        ) {
+            Column {
+                Text(
+                    text = "INGREDIENTS",
+                    color = Black,
+                    fontSize = 24.sp,
+                    fontWeight = FontWeight.Bold,
+                    modifier = Modifier
+                        .align(Alignment.Start)
+                        .padding(horizontal = 12.dp, vertical = 8.dp),
+                    textAlign = TextAlign.Start,
+                )
+                Text(
+                    text = ingredients,
+                    color = Black,
+                    fontSize = 20.sp,
+                    modifier = Modifier
+                        .align(Alignment.Start)
+                        .padding(horizontal = 12.dp, vertical = 8.dp),
+                    textAlign = TextAlign.Start
+                )
+            }
+        }
+        Card(
+            backgroundColor = Color(0xFFF8D247),
+            modifier = Modifier
+                .padding(horizontal = 12.dp)
+                .fillMaxWidth(),
+            shape = RoundedCornerShape(24.dp),
+            elevation = 10.dp
+        ) {
+            Column {
+                Text(
+                    text = "INSTRUCTIONS",
+                    color = Black,
+                    fontSize = 24.sp,
+                    fontWeight = FontWeight.Bold,
+                    modifier = Modifier
+                        .align(Alignment.Start)
+                        .padding(horizontal = 12.dp, vertical = 8.dp),
+                    textAlign = TextAlign.Center
+                )
+                Text(
+                    text = instructions,
+                    color = Black,
+                    fontSize = 20.sp,
+                    modifier = Modifier
+                        .align(Alignment.Start)
+                        .padding(horizontal = 12.dp, vertical = 8.dp),
+                    textAlign = TextAlign.Start
+                )
+            }
+        }
+    }
+}
 
 @RequiresApi(Build.VERSION_CODES.N)
 @Preview(showBackground = true)
@@ -1674,6 +1586,8 @@ fun RecipePreview() {
     }
 }
 
+// Random Recipe Suggestion requires separate function from tailored because API returns a different
+// JSON object when the built in random suggestion function is called
 @RequiresApi(Build.VERSION_CODES.N)
 fun displayRandomSuggestion(response: Response<RandomRecipesList>){
         val ingredientsBuilder = StringBuilder()
@@ -1783,7 +1697,7 @@ private fun generateDiets(): List<DietsSelectionModel> {
     val diets = mutableListOf<DietsSelectionModel>()
     diets.add(DietsSelectionModel("Gluten Free"))
     diets.add(DietsSelectionModel("Ketogenic"))
-    diets.add(DietsSelectionModel("Vegatarian"))
+    diets.add(DietsSelectionModel("Vegetarian"))
     diets.add(DietsSelectionModel("Lacto Vegetarian"))
     diets.add(DietsSelectionModel("Ovo Vegetarian"))
     diets.add(DietsSelectionModel("Vegan"))

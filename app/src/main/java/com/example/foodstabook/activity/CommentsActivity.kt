@@ -16,6 +16,7 @@ class CommentsActivity:AppCompatActivity() {
     private val adapter = CommentsAdapter(commentList)
     @RequiresApi(33)
     override fun onCreate(savedInstanceState: Bundle?) {
+        this.supportActionBar?.hide()
         super.onCreate(savedInstanceState)
         binding = ActivityCommentsBinding.inflate(layoutInflater)
         val view = binding.root

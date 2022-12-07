@@ -2,7 +2,7 @@ package com.example.foodstabook.model
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
-import java.text.SimpleDateFormat
+import java.time.LocalDateTime
 
 @Parcelize
 data class PostModel(
@@ -11,7 +11,7 @@ data class PostModel(
     var authorIcon: Int,
     var postTitle: String,
     val postImage: List<Int>,
-    val postDate: SimpleDateFormat,
+    val postDate: LocalDateTime,
     var postDescription: String,
     var postTags: List<String>,
     var postLikes: Int,

@@ -14,10 +14,9 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.example.foodstabook.R
-import com.example.foodstabook.model.User
+import com.example.foodstabook.model.UserModel
 import com.example.foodstabook.databinding.ActivitySignUpBinding
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
 class SignUpActivity : AppCompatActivity() {
@@ -46,22 +45,17 @@ class SignUpActivity : AppCompatActivity() {
             val lastName = binding.lastnameInput.text.toString().trim()
             val email = binding.emailinput.text.toString().trim()
             val password = binding.passwordinput.text.toString().trim()
-            val age = binding.ageInput.text.toString()
+            val age = binding.ageInput.text.toString().toInt()
             val checkBox = binding.checkbox
 
             if(checkBox.isChecked) {
                 if(inputValidation(userName, email, password, age)) {
                     firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener { it ->
                         if(it.isSuccessful) {
-                            val newUser = User(userName,firstName, lastName, email, age)
-                            newUser.userName = userName
-                            newUser.firstName = firstName
-                            newUser.lastName = lastName
-                            newUser.email = email
-                            newUser.age = age
+                            val newUserModel = UserModel(userName,firstName, lastName, age, email, R.drawable.default_profile_photo)
 
                             FirebaseDatabase.getInstance().getReference("users").child(FirebaseAuth.getInstance().currentUser!!.uid)
-                                .setValue(newUser).addOnCompleteListener {
+                                .setValue(newUserModel).addOnCompleteListener {
                                     if(it.isSuccessful) {
                                         Toast.makeText(this, "User added to database", Toast.LENGTH_LONG).show()
                                     }
@@ -82,7 +76,7 @@ class SignUpActivity : AppCompatActivity() {
         createCheckBoxText()
     }
 
-    private fun inputValidation(userName: String?, email: String?, password: String?, age: String?): Boolean {
+    private fun inputValidation(userName: String?, email: String?, password: String?, age: Int?): Boolean {
         if (userName == null || "" == userName) {
             Toast.makeText(this, "Please enter a username", Toast.LENGTH_LONG).show()
             return false

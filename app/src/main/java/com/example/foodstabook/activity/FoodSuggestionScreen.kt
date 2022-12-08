@@ -6,7 +6,6 @@ import androidx.annotation.RequiresApi
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import com.example.foodstabook.R
 import kotlinx.android.synthetic.main.activity_reset_password.view.*
 import androidx.compose.foundation.lazy.grid.GridCells
@@ -79,7 +78,7 @@ private val recipeListPosition: MutableState<Int> = mutableStateOf(0)
 @OptIn(ExperimentalMaterialApi::class)
 @RequiresApi(Build.VERSION_CODES.N)
 @Composable
-fun RecipeBuilder() {
+fun SuggestionCreator() {
     val scrollState = rememberScrollState()
     val url by recipeImageUrl
     val title by titleText
@@ -1272,23 +1271,25 @@ fun RecipeBuilder() {
                 else
                     typeBuilder.append(quickSelectedItem[0].title)
             }
-            for (want in wants) {
-                if (want.isSelected.value)
-                    wantsBuilder.append(want.title + ",")
-            }
-            for (doNotWant in doNotWants) {
-                if (doNotWant.isSelected.value)
-                    doNotWantsBuilder.append(doNotWant.title + ",")
-            }
-            for (diet in diets) {
-                if(diet.ANDisSelected.value)
-                    doNotWantsBuilder.append(diet.title + ",")
-                if (diet.ORisSelected.value)
-                    doNotWantsBuilder.append(diet.title + "|")
-            }
-            for (intolerance in intolerances) {
-                if (intolerance.isSelected.value)
-                    doNotWantsBuilder.append(intolerance.title + ",")
+            else {
+                for (want in wants) {
+                    if (want.isSelected.value)
+                        wantsBuilder.append(want.title + ",")
+                }
+                for (doNotWant in doNotWants) {
+                    if (doNotWant.isSelected.value)
+                        doNotWantsBuilder.append(doNotWant.title + ",")
+                }
+                for (diet in diets) {
+                    if (diet.ANDisSelected.value)
+                        doNotWantsBuilder.append(diet.title + ",")
+                    if (diet.ORisSelected.value)
+                        doNotWantsBuilder.append(diet.title + "|")
+                }
+                for (intolerance in intolerances) {
+                    if (intolerance.isSelected.value)
+                        doNotWantsBuilder.append(intolerance.title + ",")
+                }
             }
             LaunchedEffect(key1 = suggestionListRequest) {
                 coroutineScope.launch {
@@ -1471,6 +1472,7 @@ fun RecipeBuilder() {
 }
 }
 
+// Composable Function that holds the UI layout for recipe display
 @Composable
 fun RecipeCard(url: String, title: String, summary: String, ingredients: String, instructions: String){
     Column(
@@ -1577,15 +1579,7 @@ fun RecipeCard(url: String, title: String, summary: String, ingredients: String,
     }
 }
 
-@RequiresApi(Build.VERSION_CODES.N)
-@Preview(showBackground = true)
-@Composable
-fun RecipePreview() {
-    MaterialTheme {
-        RecipeBuilder()
-    }
-}
-
+// Function for displaying a recipe when user requests a random one
 // Random Recipe Suggestion requires separate function from tailored because API returns a different
 // JSON object when the built in random suggestion function is called
 @RequiresApi(Build.VERSION_CODES.N)
@@ -1628,11 +1622,13 @@ fun displayRandomSuggestion(response: Response<RandomRecipesList>){
             recipeImageUrl.value = "https://media.istockphoto.com/vectors/no-image-available-icon-vector-id1216251206?k=6&m=1216251206&s=612x612&w=0&h=G8kmMKxZlh7WyeYtlIHJDxP5XRGm9ZXyLprtVJKxd-o="
 }
 
+// Function that gets the list of results from the https GET request when a recipe is requested by preference
 @RequiresApi(Build.VERSION_CODES.N)
 fun getTailoredResultsList(response: Response<TailoredRecipesList>): List<Result>? {
     return response.body()?.results
 }
 
+// Function for displaying the recipe when a user requests one by preferences
 @RequiresApi(Build.VERSION_CODES.N)
 fun displayTailoredRecipe(response: Response<Recipe>) {
     val ingredientsBuilder = StringBuilder()
@@ -1673,6 +1669,7 @@ fun displayTailoredRecipe(response: Response<Recipe>) {
         recipeImageUrl.value = "https://media.istockphoto.com/vectors/no-image-available-icon-vector-id1216251206?k=6&m=1216251206&s=612x612&w=0&h=G8kmMKxZlh7WyeYtlIHJDxP5XRGm9ZXyLprtVJKxd-o="
 }
 
+// Function that generates the list of possible ingredients for users to choose from
 private fun generateIngredients(): List<PreferencesSelectionModel> {
     val ingredients = mutableListOf<PreferencesSelectionModel>()
     ingredients.add(PreferencesSelectionModel("Beef", mutableStateOf(false)))
@@ -1693,6 +1690,7 @@ private fun generateIngredients(): List<PreferencesSelectionModel> {
     return ingredients.toList().sortedBy { it.title }
 }
 
+// Function that generates the list of possible diets for users to choose from
 private fun generateDiets(): List<DietsSelectionModel> {
     val diets = mutableListOf<DietsSelectionModel>()
     diets.add(DietsSelectionModel("Gluten Free"))
@@ -1710,6 +1708,7 @@ private fun generateDiets(): List<DietsSelectionModel> {
     return diets.toList().sortedBy { it.title }
 }
 
+// Function that generates the list of possible intolerances for users to choose from
 private fun generateIntolerances(): List<PreferencesSelectionModel> {
     val intolerances = mutableListOf<PreferencesSelectionModel>()
     intolerances.add(PreferencesSelectionModel("Dairy"))
@@ -1728,6 +1727,7 @@ private fun generateIntolerances(): List<PreferencesSelectionModel> {
     return intolerances.toList().sortedBy { it.title }
 }
 
+// Function that generates the list of possible quick select options for users to choose from
 private fun generateQuickSelection(): List<QuickSelectionModel> {
     val quickSelect = mutableListOf<QuickSelectionModel>()
     quickSelect.add(

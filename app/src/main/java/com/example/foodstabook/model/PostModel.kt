@@ -14,6 +14,7 @@ data class PostModel(
     val postDate: LocalDateTime,
     var postDescription: String,
     var postTags: List<String>,
+    var postRating: Int,
     var postLikes: Int,
     var postComments: List<CommentsModel>
 ) : Parcelable

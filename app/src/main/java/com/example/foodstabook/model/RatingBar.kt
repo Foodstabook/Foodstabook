@@ -1,4 +1,4 @@
-package com.example.foodstabook.activity
+package com.example.foodstabook.model
 
 import android.view.MotionEvent
 import androidx.compose.animation.core.*

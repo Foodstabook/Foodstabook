@@ -144,7 +144,9 @@ fun SuggestionCreator() {
                     }
                     Button(
                         shape = RoundedCornerShape(24.dp),
-                        onClick = { screenState.value = 1 },
+                        onClick = { coroutineScope.launch {
+                            scrollState.scrollTo(0)}
+                            screenState.value = 1 },
                         colors = ButtonDefaults.buttonColors(
                             backgroundColor = Color(0xFFe69500)
                         ),
@@ -282,7 +284,7 @@ fun SuggestionCreator() {
                     )
                 }
                 LazyHorizontalGrid(
-                    rows = GridCells.Adaptive(minSize = 130.dp), modifier = Modifier
+                    rows = GridCells.Adaptive(minSize = 110.dp), modifier = Modifier
                         .fillMaxWidth()
                         .size(width = 300.dp, height = 260.dp)
                 ) {
@@ -1623,6 +1625,8 @@ fun displayRandomSuggestion(response: Response<RandomRecipesList>){
 }
 
 // Function that gets the list of results from the https GET request when a recipe is requested by preference
+// (Used to reduce the number of API calls, since we have a limited amount with the plan we're using and
+// we'll get charged if we go over.)
 @RequiresApi(Build.VERSION_CODES.N)
 fun getTailoredResultsList(response: Response<TailoredRecipesList>): List<Result>? {
     return response.body()?.results

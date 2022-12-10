@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.content.ContentValues.TAG
 import android.content.Context
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
@@ -29,6 +28,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.foodstabook.activity.ui.theme.FoodstabookTheme
+import com.example.foodstabook.model.RatingBar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -74,16 +74,16 @@ private fun Post() {
     var description by remember { mutableStateOf("") }
     val uid = user.currentUser!!.uid
 
-    var rating1: Int by remember { mutableStateOf(0) }
+    val rating1: Int by remember { mutableStateOf(0) }
 
     val (focusTitle,focusHashtags,focusPlace,focusDescription) = remember { FocusRequester.createRefs() }
     val focusManager = LocalFocusManager.current
 
-    val maxChar = 20;
-    val maxCharHashtag = 30;
-    val maxCharD = 100;
+    val maxChar = 20
+    val maxCharHashtag = 30
+    val maxCharD = 100
 
-    Scaffold(){
+    Scaffold{
         val mContext = LocalContext.current
         Column (
             modifier = Modifier
@@ -134,7 +134,7 @@ private fun Post() {
             Spacer(modifier = Modifier.height(8.dp))
 
 
-            var rating = RatingBar(ratingNum = rating1)
+            val rating = RatingBar(ratingNum = rating1)
             Text(
                 "Rating: $rating",
                 fontSize = 16.sp,
@@ -260,41 +260,41 @@ fun inputValidation(
     rating: Int,
     mContext: Context
 ): Boolean  {
-    if (title == null || "".equals(title)) {
+    if ("" == title) {
         Toast.makeText(mContext, "Please enter Title", Toast.LENGTH_LONG).show()
-        return false;
+        return false
     } else if(title.length>20){
         Toast.makeText(mContext, "Title no more than 20 characters.", Toast.LENGTH_LONG).show()
-        return false;
+        return false
     }
 
-    if (hashtags == null || "".equals(hashtags)) {
+    if ("" == hashtags) {
         Toast.makeText(mContext, "Please enter Hashtag", Toast.LENGTH_LONG).show()
-        return false;
+        return false
     }else if(hashtags.length>30){
         Toast.makeText(mContext, "Hashtag no more than 20 characters.", Toast.LENGTH_LONG).show()
-        return false;
+        return false
     }
 
-    if (place == null || "".equals(place)) {
+    if ("" == place) {
         Toast.makeText(mContext, "Please enter Place", Toast.LENGTH_LONG).show()
-        return false;
+        return false
     }else if(place.length>20){
         Toast.makeText(mContext, "Place no more than 20 characters.", Toast.LENGTH_LONG).show()
-        return false;
+        return false
     }
 
     if (rating <= 0) {
         Toast.makeText(mContext, "Please Rate", Toast.LENGTH_LONG).show()
-        return false;
+        return false
     }
 
-    if (description == null || "".equals(description) ) {
+    if ("" == description) {
         Toast.makeText(mContext, "Please enter Description", Toast.LENGTH_LONG).show()
-        return false;
+        return false
     }else if(description.length>100){
         Toast.makeText(mContext, "Description no more than 100 characters.", Toast.LENGTH_LONG).show()
-        return false;
+        return false
     }
     return true
 }

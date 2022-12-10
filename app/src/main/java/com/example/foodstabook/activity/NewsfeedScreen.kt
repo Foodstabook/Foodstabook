@@ -1,7 +1,13 @@
 package com.example.foodstabook.activity
 
+import android.content.ContentValues.TAG
 import android.content.Context
 import android.content.Intent
+import android.os.Build
+import android.os.Bundle
+import android.util.Log
+import androidx.activity.ComponentActivity
+import androidx.annotation.RequiresApi
 import androidx.compose.animation.animateContentSize
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Image
@@ -52,8 +58,13 @@ import com.example.foodstabook.R
 import com.example.foodstabook.model.CommentsModel
 import com.example.foodstabook.model.PostModel
 import com.example.foodstabook.model.UserModel
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.ktx.database
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.toObject
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_newsfeed.*
-import kotlinx.coroutines.flow.mapLatest
 import kotlinx.coroutines.launch
 import java.time.LocalDateTime
 import java.time.Month
@@ -73,29 +84,30 @@ private val imageList = listOf(R.drawable.borscht, R.drawable.blueberry_crumble,
     R.drawable.falafel, R.drawable.chicken_tikka_masala, R.drawable.ochazuke, R.drawable.kimchi_jjigae,
     R.drawable.shrimp_al_mojo_de_ajo, R.drawable.vegetable_terrine, R.drawable.ratatouille)
 
-fun generateUsersList(context: Context){
+fun generateUsersList(){
     userList.add(UserModel("Testing1", "Steven", "Barker", 31, "Sbarker@mail.com", R.drawable.foodstabook_logo4))
     userList.add(UserModel("Testing2", "Maria", "Love", 25, "LoveMaria@mail.com", R.drawable.foodstabook_logo4))
     userList.add(UserModel("Testing3", "Janine", "Lane", 39, "JLane@mail.com", R.drawable.foodstabook_logo4))
     userList.add(UserModel("Testing4", "Tyler", "Oner", 23, "TOner@mail.com", R.drawable.foodstabook_logo4))
 }
 
+@RequiresApi(Build.VERSION_CODES.O)
 fun generatePostList(context: Context) {
     postList.add(PostModel("1", "testing1", R.drawable.foodstabook_logo4, "A Smorgasbord of Suggestions", imageList.slice(0..3),
         LocalDateTime.of(2021, Month.NOVEMBER, 30, 12, 30, 42), context.getString(R.string.post_description_1),
-        generateTagsList1(), 100, generateCommentsList1()))
+        generateTagsList1(), 3,100, generateCommentsList1()))
 
     postList.add(PostModel("2", "testing2", R.drawable.foodstabook_logo4, "Some of My Favorite Dishes from My Recent Trip to Asia:", imageList.slice(4..6),
         LocalDateTime.of(2022, Month.NOVEMBER, 30, 12, 30, 42), context.getString(R.string.post_description_2),
-        generateTagsList2(), 64, generateCommentsList2()))
+        generateTagsList2(), 4, 64, generateCommentsList2()))
 
     postList.add(PostModel("3", "testing3", R.drawable.foodstabook_logo4, "Authentic Shrimp al Mojo de Ajo!", imageList.slice(7..7),
         LocalDateTime.of(2022, Month.OCTOBER, 30, 3, 20, 42), context.getString(R.string.post_description_3),
-        generateTagsList3(), 41, generateCommentsList3()))
+        generateTagsList3(), 5, 41, generateCommentsList3()))
 
     postList.add(PostModel("4", "testing4", R.drawable.foodstabook_logo4, "French Cuisine: Some Classics",imageList.slice(8..9),
         LocalDateTime.of(2020, Month.NOVEMBER, 30, 15, 23, 0), context.getString(R.string.post_description_4),
-        generateTagsList4(),250, generateCommentsList4()))
+        generateTagsList4(),2, 250, generateCommentsList4()))
 }
 
 private fun generateCommentsList1(): ArrayList<CommentsModel>{
@@ -236,7 +248,7 @@ fun PostCard(post: PostModel) {
                             focusManager.clearFocus()
                         })
             }
-            Box() {
+            Box {
                 Image(painter = painterResource(id = post.postImage[imagePosition.value]),
                     contentDescription = null,
                     contentScale = ContentScale.Crop,
@@ -264,7 +276,7 @@ fun PostCard(post: PostModel) {
                 )
                 if (imagePosition.value != 0) {
                     if (backArrowVisible.value) {
-                        Image(painter = painterResource(id = com.example.foodstabook.R.drawable.back_arrow),
+                        Image(painter = painterResource(id = R.drawable.back_arrow),
                             contentDescription = null,
                             contentScale = ContentScale.Fit,
                             modifier = Modifier
@@ -289,7 +301,7 @@ fun PostCard(post: PostModel) {
                 }
                 if(imagePosition.value != post.postImage.size - 1){
                     if (forwardArrowVisible.value) {
-                        Image(painter = painterResource(id = com.example.foodstabook.R.drawable.forward_arrow),
+                        Image(painter = painterResource(id = R.drawable.forward_arrow),
                             contentDescription = null,
                             contentScale = ContentScale.Fit,
                             modifier = Modifier
@@ -442,6 +454,7 @@ private fun searchUsers(searchText: String, users: List<UserModel>): MutableList
 }
 
 //Function for displaying posts on the newsfeed
+@RequiresApi(Build.VERSION_CODES.O)
 @OptIn(ExperimentalComposeUiApi::class)
 @Composable
 fun lazyNewsfeed(posts: List<PostModel>) {
@@ -687,7 +700,6 @@ fun lazyNewsfeed(posts: List<PostModel>) {
                     modifier = Modifier.fillMaxWidth(1f),
                     verticalArrangement = Arrangement.spacedBy(12.dp)) {
                     coroutineScope.launch {
-                        // Animate scroll to the 10th item
                         searchState.animateScrollToItem(index = selectedPost)
                     }
                     items(postSearchResults) { result ->
@@ -699,14 +711,16 @@ fun lazyNewsfeed(posts: List<PostModel>) {
     }
 }
 
+@RequiresApi(Build.VERSION_CODES.O)
 @Composable
 @Preview
 fun newsfeedPreview(){
     if(postList.isEmpty())
         generatePostList(LocalContext.current)
     if(userList.isEmpty())
-        generateUsersList((LocalContext.current))
+        generateUsersList()
     MaterialTheme{
         lazyNewsfeed(posts = postList)
     }
 }
+

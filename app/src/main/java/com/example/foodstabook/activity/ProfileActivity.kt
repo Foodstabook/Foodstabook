@@ -193,8 +193,6 @@ class ProfileActivity : AppCompatActivity() {
     //Function that  receives a timestamp from a firestore http function
     private fun getTimestampFromFunction() {
 
-
-
         val functions = FirebaseFunctions.getInstance()
         functions.getHttpsCallable("timeStamp")
             .call()
@@ -240,8 +238,6 @@ class ProfileActivity : AppCompatActivity() {
     }
 
 
-
-
     private fun addMessage(text: String): Task<String> {
         // Create the arguments to the callable function.
         val data = hashMapOf(
@@ -269,7 +265,7 @@ class ProfileActivity : AppCompatActivity() {
                     val e = task.exception
                     if (e is FirebaseFunctionsException) {
                         val code = e.code
-                        val details = e.details
+                        val details = e.message
 
                         Toast.makeText(this, "Error: $code $details", Toast.LENGTH_SHORT).show()
 

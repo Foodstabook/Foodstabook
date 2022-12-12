@@ -5,6 +5,7 @@ import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import com.example.foodstabook.activity.MainActivity
 import com.example.foodstabook.databinding.ActivitySignInBinding
@@ -22,10 +23,12 @@ class LoginPage : AppCompatActivity() {
     var EMAIL_KEY = "email"
     var PWD_KEY = "pwd"
     var UID_KEY = "uid"
+    var TOKEN_KEY = "token"
 
     var loggedEmail = ""
     var loggedPwd = ""
     var loggedUid = ""
+    var loggedToken = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -38,7 +41,7 @@ class LoginPage : AppCompatActivity() {
         loggedEmail = sharedPreferences.getString(EMAIL_KEY, "").toString()
         loggedPwd = sharedPreferences.getString(PWD_KEY, "").toString()
         loggedUid = sharedPreferences.getString(UID_KEY, "").toString()
-
+        loggedToken = sharedPreferences.getString(TOKEN_KEY, "").toString()
 
         user = FirebaseAuth.getInstance()
         goHome()
@@ -97,11 +100,29 @@ class LoginPage : AppCompatActivity() {
                 .addOnCompleteListener(MainActivity()) {task ->
                     if(task.isSuccessful){
 
+                        var tempToken = "1234567890"
+                
+                        //We will retrieve the user auth token from firebase
+                        user.currentUser!!.getIdToken(true)
+                            .addOnCompleteListener { task ->
+                                if (task.isSuccessful) {
+                                    val idToken = task.result!!.token
+                                    tempToken = idToken.toString()
+                                    Toast.makeText(this,
+                                        "This is your token: $idToken",
+                                        Toast.LENGTH_SHORT).show()
+                                    Log.d("TAG", "This is your token: $idToken")
+
+                                }}
+
+
+
 
                         val editor: SharedPreferences.Editor = sharedPreferences.edit()
                         editor.putString(EMAIL_KEY, email)
                         editor.putString(PWD_KEY, password)
                         editor.putString(UID_KEY, user.uid)
+                        editor.putString(TOKEN_KEY, tempToken)
                         editor.apply()
 
                         Toast.makeText(this, "Sign in successfully"+user.uid, Toast.LENGTH_SHORT).show()

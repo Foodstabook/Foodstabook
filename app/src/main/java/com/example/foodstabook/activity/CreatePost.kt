@@ -10,12 +10,16 @@ import android.util.Log
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.*
 import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusDirection
@@ -24,10 +28,15 @@ import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalFocusManager
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.ImeAction
+import androidx.compose.ui.text.input.TextFieldValue
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.foodstabook.R
 import com.example.foodstabook.activity.ui.theme.FoodstabookTheme
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
@@ -35,6 +44,7 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ktx.database
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
+import com.example.foodstabook.activity.ProfileScreen
 
 lateinit var user: FirebaseAuth
 private lateinit var db: FirebaseFirestore
@@ -90,7 +100,6 @@ private fun Post() {
                 .fillMaxWidth()
                 .padding(horizontal = 15.dp),
         ){
-
             OutlinedTextField(value = title, label = {Text(text = "Title")},
                 onValueChange = {
                     title = it.take(maxChar)
@@ -303,7 +312,14 @@ fun inputValidation(
 @Composable
 fun CreatePostPreview() {
     FoodstabookTheme {
-        Post()
+        user = FirebaseAuth.getInstance()
+
+        if(user.currentUser != null) {
+            Post()
+        }
+        else{
+            promptUserLoginScreen()
+        }
     }
 }
 

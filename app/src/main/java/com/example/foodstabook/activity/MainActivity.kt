@@ -1,16 +1,13 @@
 package com.example.foodstabook.activity
 
 import android.annotation.SuppressLint
-import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import androidx.activity.compose.setContent
 import androidx.annotation.RequiresApi
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
-import com.example.foodstabook.R
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Home
@@ -18,14 +15,10 @@ import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.viewinterop.AndroidView
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hierarchy
@@ -71,7 +64,7 @@ fun Scaffold() {
     }
 }
 
-//Create Destination
+///Create Destinations
 sealed class BottomBarItem(
     val route: String,
     val title: String,
@@ -79,7 +72,7 @@ sealed class BottomBarItem(
 ) {
     object Home: BottomBarItem(
         route = "home",
-        title = "Home",
+        title = "Newsfeed",
         icon = Icons.Default.Home
     )
     object FoodSuggestion: BottomBarItem(
@@ -99,7 +92,7 @@ sealed class BottomBarItem(
     )
 }
 
-//Create BottomNavigationBar Composable function in which
+//Create BottomBar Composable function in which
 // you click each object then it switch to the selected activity
 @Composable
 fun BottomBar(navController: NavHostController){
@@ -153,7 +146,7 @@ fun BottomNavGraph(navController: NavHostController) {
         startDestination = "profile",
     ) {
         composable(route = "home") {
-            Home(navController= navController)
+            Home()
         }
         composable(route = "profile") {
             Profile(navController= navController)
@@ -168,7 +161,7 @@ fun BottomNavGraph(navController: NavHostController) {
 
 }
 @Composable
-fun Home(navController: NavHostController){
+fun Home() {
     ConstraintLayout {
         newsfeedPreview()
     }

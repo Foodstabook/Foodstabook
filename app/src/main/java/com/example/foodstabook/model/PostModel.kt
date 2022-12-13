@@ -2,19 +2,19 @@ package com.example.foodstabook.model
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
-import java.time.LocalDateTime
+import java.sql.Date
 
 @Parcelize
 data class PostModel(
-    val postId: String,
-    var postAuthor: String,
-    var authorIcon: Int,
-    var postTitle: String,
-    val postImage: List<Int>,
-    val postDate: LocalDateTime,
-    var postDescription: String,
-    var postTags: List<String>,
-    var postRating: Int,
-    var postLikes: Int,
-    var postComments: List<CommentsModel>
-) : Parcelable
+    val authorIcon: String = "",
+    val postAuthor: String = "",
+    val postComments: List<CommentsModel> = listOf(),
+    val postDate: java.util.Date = Date(0),
+    val postDescription: String = "",
+    val postId: String = "",
+    val postImage: List<String> = listOf(),
+    val postLikes: Int = 0,
+    val postRating: Int = 0,
+    val postTags: List<String> = listOf(),
+    val postTitle: String = ""
+): Parcelable

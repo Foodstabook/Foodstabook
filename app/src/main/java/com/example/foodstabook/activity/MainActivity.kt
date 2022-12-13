@@ -170,7 +170,7 @@ fun BottomNavGraph(navController: NavHostController) {
 @Composable
 fun Home(navController: NavHostController){
     ConstraintLayout {
-        newsfeedPreview()
+        NewsfeedPreview()
     }
 }
 

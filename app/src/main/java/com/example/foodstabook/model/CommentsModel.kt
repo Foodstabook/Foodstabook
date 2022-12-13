@@ -5,7 +5,7 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class CommentsModel(
-    val authorIcon: Int,
-    val commentAuthor: String,
-    var commentBody: String
-) : Parcelable
+    val authorIcon: String = "",
+    val commentAuthor: String = "",
+    val commentBody: String = ""
+): Parcelable

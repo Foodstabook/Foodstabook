@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.compose.ui.graphics.Color
+import androidx.core.net.toUri
 import androidx.recyclerview.widget.RecyclerView
 import com.example.foodstabook.R
 import java.lang.reflect.Type
@@ -30,7 +31,7 @@ class CommentsAdapter(private val mList: List<CommentsModel>) : RecyclerView.Ada
         commentBody.setSpan(StyleSpan(Typeface.BOLD), 0, comment.commentAuthor.length,
             Spanned.SPAN_INCLUSIVE_INCLUSIVE)
         holder.commentBody.text = commentBody
-        holder.authorIcon.setImageResource(comment.authorIcon)
+        holder.authorIcon.setImageURI(comment.authorIcon.toUri())
     }
 
     override fun getItemCount(): Int {
